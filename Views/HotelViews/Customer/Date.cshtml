@@ -1,0 +1,429 @@
+@model Project.Models.Rooms;
+@{
+    float promotion=0;
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+  <link rel="stylesheet" href="~/css/global.css" />
+  <link rel="stylesheet" href="~/css/RoomDetail.css" />
+  <link rel="stylesheet" href="~/css/Nav&Footer.css">
+  <link rel="stylesheet" href="~/css/Scrollbar.css">
+  <link rel="stylesheet" href="~/css/btngrad.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=TradeGothic LT Extended:wght@700&display=swap" />
+  <script src="https://kit.fontawesome.com/d85c1eb16f.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="~/js/Nav.js"></script>
+  <script src="https://cdn.lordicon.com/lordicon.js"></script>
+  <link rel="stylesheet" href="~/css/datetimepicker.min.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_blue.css">
+  
+</head>
+
+<body>
+  <div class="hotel-listing">
+    <div class="scroll-btn"><a href="#"><span class="scroll-up-btn"><i class="fa-solid fa-chevron-up"></i></i></span></a></div>
+    <!--Navigation-->
+    <div id="header">
+      <div id="cover">
+        <a href="/Home/Index" id="logo"></a>
+        <img src="~/Image/logo.png" alt="logo.vn">
+      </div>
+      </a>
+      <nav class="container1">
+        <input type="checkbox" id="check">
+        <ul id="main-menu">
+          <li><a href="/Home/Index"><i class="bi bi-house"></i> Home</a></li>
+          <li>
+            <a class="hassub" href="#"><i class="fa-solid fa-sitemap"></i> Rooms <span class="spaceicon"><i
+                  class="bi bi-chevron-down"></i></span></a>
+            <ul class="sub-menu">
+              <li class="sub-item"><a href="/Home/RoomStandard">Standard room</a></li>
+              <li class="sub-item"><a href="/Home/RoomSuperior">Superior room</a></li>
+              <li class="sub-item"><a href="/Home/RoomDeluxe">Deluxe room</a></li>
+              <li class="sub-item"><a href="/Home/RoomSuite">Suite room</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a class="hassub" href="#"><i class="fa-solid fa-bell-concierge"></i> Service <span class="spaceicon"><i
+                  class="bi bi-chevron-down"></i></span></a>
+            <ul class="sub-menu">
+              <li class="sub-item more">
+                <a class="has-moresub" href="#restaurant"> Restaurant<span class="space"><i
+                      class="fa-solid fa-chevron-right"></i></span></a>
+                <ul class="more-menu">
+                  <li><a href="/Home/ReflectionR">Reflection Restaurant</a></li>
+                  <li><a href="/Home/Cafe">Cafe de l’Opera</a></li>
+                  <li><a href="/Home/Buffet">Buffet Nineteen Restaurant</a></li>
+                  <li><a href="/Home/Tapas">Tapas Kitchen</a></li>
+                </ul>
+              </li>
+              <li class="sub-item"><a href="/Home/Bar">Bar</a></li>
+              <li class="sub-item"><a href="/Home/Gym">Gym</a></li>
+              <li class="sub-item"><a href="/Home/Spa">Spa</a></li>
+              <li class="sub-item"><a href="/Home/Beach">Beach</a></li>
+              <li class="sub-item"><a href="/Home/Shuttle">Shuttle</a></li>
+            </ul>
+          </li>
+          <li><a href="/Home/Gallery"><i class="fa-solid fa-images"></i> Gallery</a></li>
+          <li>
+            <a class="hassub" href="#"><i class="fa-regular fa-calendar"></i> Event <i
+                class="bi bi-chevron-down"></i></a>
+            <ul class="sub-menu">
+              <li class="sub-item"><a href="/Home/Wedding">Wedding</a></li>
+              <li class="sub-item"><a href="/Home/Meeting">Meeting</a></li>
+              <li class="sub-item"><a href="/Home/Corporate">Corporate events</a></li>
+            </ul>
+          </li>
+          <label for="check" class="close-menu">
+            <i class="fa-solid fa-xmark"></i>
+          </label>
+        </ul>
+      </nav>
+      <div class="signup">
+        @if(ViewBag.customer_avatar.name == null){
+          <i class="fa-solid fa-user"></i>
+          <a href="/Login/Login" id="">Sign in</a>
+          
+        }else{
+          <a href="/Home/Account">
+          <span>Hello, @ViewBag.customer_avatar.name</span>
+          </a>
+          <a href="/Home/Account">
+          <img src="~/Image/Avatar/@ViewBag.customer_avatar.img" alt=""> 
+          </a>
+          <a href="/Login/SignOut1" id=""><i class="fa-solid fa-right-from-bracket"></i></a>   
+        }
+      </div>
+      <!--End:Nav-->
+      <label for="check" class="open-menu">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+    </div>
+    <form method="post" asp-action="ServiceDetail" asp-controller="Home">
+    <div class="detail-content">
+        <div class="rectangle-box">
+        <div class="taxes-box">
+          <div class="hotel-box">
+            <div>Ocean Hotel</div>
+          </div>
+          <div class="mini-box">
+            <div class="room-name-1">
+              <span>@Model.type - </span>
+              <span>@Model.name -</span>
+              <span>@Model.view!.name</span>
+              <input type="hidden" name="id" value="@Model.id">
+            </div>
+            <div class="box-price-1">
+              <span class="price-1">$@Model.price</span>
+              <span>/night</span>
+            </div>
+          </div>
+        </div>
+        <div class="rectangle-parent-2">
+          <div class="small-frame3-1 booking-calender">
+            <img src="~/Image/@Model.img" alt="" class="room-img-img">
+            <div class="furniture-box">
+              <span style="color:cornflowerblue;"><i class="fa-solid fa-circle-check"></i></span>
+              <span>Tv, Bathtub, Air conditioner, Wifi, Single Bed</span>
+            </div>
+          </div>
+          <div class="input-text">
+            <label>Check in</label>
+            <input type="text" name="checkin" id="checkin" placeholder="Select date..." required>
+            <label>Check out</label>
+            <input type="text" name="checkout" id="checkout" placeholder="Select date..." required>
+            <label>Number of people</label>
+            <input type="number" name="number" id="number" required>
+            <div class="taxes-detail">
+              <div class="taxes-text">
+                VAT tax
+              </div>
+              <div>
+                <span>Apply taxes in this booking</span><br>
+                <span>Taxes cost: $20</span>
+              </div>
+              <div class="taxes-icon"><i class="fa-solid fa-tag"></i></div>
+            </div>
+            <div class="taxes-detail">
+              <div class="discount-text">
+                Family discount
+              </div>
+              <div>
+                <span>Apply discount in this booking</span><br>
+                <span>Discount cost: $20</span>
+              </div>
+              <div class="taxes-icon"><i class="fa-solid fa-tag"></i></div>
+          </div>
+          </div>
+        </div>
+        </div>
+        <div class="detail-room">
+        <div class="box-detail">
+          <div class="box-detail-1">
+            <div class="avatar">
+              <img src="~/Image/@Model.img" alt="">
+            </div>
+            <div class="room-name">
+              <div>@Model.type</div>
+              <div>@Model.name</div>
+              <div class="review-room">
+                <div class="style-layer2">@Model.review!.rate</div>
+                @if(Model.review.rate >=4){
+                  <span>Very good</span>
+                }else if(Model.review.rate >=3){
+                  <span>Good</span>
+                }
+              </div>
+            </div>
+          </div>
+          <div class="frame-child-6"></div>
+          <div class="protect-text">
+            <span>Your booking is protected by Ocean Hotel</span>
+          </div>
+          <div class="frame-child-6"></div>
+            @if(ViewBag.promotion.Count != 0){
+              <input type="date" name="" value="@ViewBag.promotion[0].valid_to" id="valid_to" style="display:none;">
+            }
+            <div class="box-price cart"></div>
+          <div class="frame-child-6"></div>
+          <div class="box-price">
+            <b>Price details</b>
+            <div class="price-detail">
+              <span>Room price</span>
+              <span>$@Model.price</span>
+            </div>
+            <div class="price-detail">
+              <span>Discount</span>
+              @foreach(var promotion1 in ViewBag.promotion){
+                promotion=promotion+ promotion1.discount_percent;
+              }
+              <span>@promotion%</span>
+            </div>
+            <div class="price-detail">
+              <span>Tax</span>
+              <span>0%</span>
+            </div>
+          </div>
+          <div class="frame-child-6"></div>
+          <div class="box-price">
+              <div class="price-detail">
+                <span style="color:cornflowerblue;">Total</span>
+                <span id="result">$0</span>
+                <input type="hidden" name="total" id="total">
+              </div>
+          </div>
+        </div>
+        <div class="btn-box">
+          <button class="btn-grad">Next Step</button>
+        </div>
+        </div>
+    </div>
+    </form>
+    <div class="footer">
+      <div class="footer-parent">
+        <div class="footer-frame">
+          <div class="logo-parent">
+            <img class="logo-icon1" src="../Image/logo.png"alt="logo.vn" />
+            <div class="akar-iconsfacebook-fill-parent">
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-x-twitter"></i>
+              <i class="fa-brands fa-youtube"></i>
+            </div>
+          </div>
+          <div class="text-frame">
+            <div class="our-destinations-parent">
+              <b class="helping-others">Our Destinations</b>
+              <div class="canada-parent">
+                <div class="canada">New York</div>
+                <div class="canada">Miami</div>
+                <div class="canada">NJ</div>
+                <div class="canada">Los Angeles</div>
+              </div>
+            </div>
+            <div class="our-destinations-parent">
+              <b class="helping-others">Our Events</b>
+              <div class="canada-parent">
+                <div class="canada"><a href="/Home/Wedding">Wedding</a></div>
+                <div class="canada"><a href="/Home/Meeting">Meeting</a></div>
+                <div class="canada"><a href="/Home/Corporate">Corporate</a></div>
+              </div>
+            </div>
+            <div class="our-destinations-parent">
+              <b class="helping-others">Contact Us</b>
+              <div class="canada-parent">
+                <div class="canada"><i class="fa-solid fa-phone"></i> 0932718399</div>
+                <div class="canada"><i class="fa-solid fa-envelope"></i> oceanht@gm.com</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="~/js/StickyHeader.js"></script>
+  <script src="~/js/Datetimepicker/apexchart.js"></script>
+  <script src="~/js/Datetimepicker/moment.js"></script>
+  <script src="~/js/Datetimepicker/datetimepicker.min..js"></script>
+  <script src="~/js/Datetimepicker/jquery.peity.min.js"></script>
+  <script>
+    $(function () {
+			$('#datetimepicker').datetimepicker({
+				inline: true,
+			});
+		});
+    flatpickr('#checkin',{})
+    flatpickr('#checkout',{})
+    $(document).ready(function(){
+		  $(".booking-calender .fa.fa-clock-o").removeClass(this);
+		  $(".booking-calender .fa.fa-clock-o").addClass('fa-clock');
+
+      $('input[type=radio]').on("change", function() {
+        $('.discount-detail').each(function(){
+          $(this).removeClass('bg-color-1');
+          $(this).addClass('bg-color-2');
+        })
+        // Duyệt qua tất cả các radio input khác
+        $("input[type='radio']").not(this).prop("checked", false);
+        var taxesDetail = $(this).closest('.discount-detail');
+        taxesDetail.removeClass('bg-color-2');
+        taxesDetail.addClass('bg-color-1');
+      });
+      $('.bg-color-2').on('click', function(){
+        $('.discount-detail').each(function(){
+          $(this).find("input[type='radio']").prop("checked",false);
+          $(this).removeClass('bg-color-1');
+          $(this).addClass('bg-color-2');
+        });
+        $(this).removeClass('bg-color-2');
+        $(this).addClass('bg-color-1');
+        $('.bg-color-1').find("input[type='radio']").prop("checked",true);
+      });
+      $('#checkin').on("change",function(){
+        var selectedDate =new Date($('#checkin').val());
+        var currentDate=new Date();
+        currentDate.setHours(0, 0, 0, 0);
+        
+        if (selectedDate < currentDate) {
+            alert("Ngày check in phải lớn hơn ngày hôm nay.");
+            $('#checkin').val("");
+        }else{
+          const priceDetail = $('.check-in');
+          if(priceDetail.length){
+            $('.check-in').html(
+              "<span>Check out</span>" +
+              "<span>"+ $(this).val()+"</span>"
+            )
+          }else{
+          $('.cart').append(
+                "<div class='price-detail check-in'>"+
+                  "<span>Check in</span>" +
+                  "<span>"+ $(this).val()+"</span>"+
+                "</div>");
+          }
+        }
+      })
+      $('#checkout').on("change",function(){
+        var checkinDate =new Date($('#checkin').val());
+        var checkoutDate =new Date($('#checkout').val());
+        console.log(checkinDate);
+        if(checkinDate =="Invalid Date"){
+          alert("Phải nhập ngày check in trước khi nhập ngày check out");
+          $('#checkout').val("");
+        }else{
+          if(checkinDate > checkoutDate){
+            alert("Ngày check out phải lớn hơn ngày check in");
+            $('#checkout').val("");
+          }else{
+            if($('#valid_to').length){
+                var valid_toDate=new Date($('#valid_to').val());
+                var grandTotal=@Model.price;
+              if(valid_toDate.getTime() >= checkoutDate.getTime()){
+                grandTotal=grandTotal - grandTotal*@promotion/100;
+                var timeDiff=Math.abs(checkoutDate.getTime()-checkinDate.getTime());
+                var diffDay=(timeDiff/(86400000));
+                if(diffDay ==0){
+                  diffDay=1;
+                }
+                var total=diffDay* grandTotal;
+                $('#total').val(total);
+                $('#result').text(total);
+              }else if(valid_toDate.getTime() < checkoutDate.getTime() && valid_toDate.getTime()>= checkinDate.getTime()){
+                var timeDiff=Math.abs(valid_toDate.getTime()-checkinDate.getTime());
+                var diffDay=(timeDiff/(86400000));
+                if(diffDay ==0){
+                  diffDay=1;
+                }
+                grandTotal=grandTotal - grandTotal*@promotion/100;
+                var total=diffDay* grandTotal;
+                var timeDiff=Math.abs(checkoutDate.getTime()-valid_toDate.getTime());
+                var diffDay=(timeDiff/(86400000));
+                if(diffDay ==0){
+                  diffDay=1;
+                }
+                total=total+diffDay*@Model.price;
+                $('#total').val(total);
+                $('#result').text(total);
+              }
+            }else{
+              var grandTotal=@Model.price;
+              var timeDiff=Math.abs(checkoutDate.getTime()-checkinDate.getTime());
+                var diffDay=(timeDiff/(86400000));
+                if(diffDay ==0){
+                  diffDay=1;
+                }
+                var total=grandTotal+diffDay*@Model.price;
+                $('#total').val(total);
+                $('#result').text(total);
+            }
+            
+            const priceDetail = $('.check-out');
+            if(priceDetail.length){
+              $('.check-out').html(
+                "<span>Check out</span>" +
+                "<span>"+ $(this).val()+"</span>"
+              )
+            }else{
+            $('.cart').append(
+                  "<div class='price-detail check-out'>"+
+                    "<span>Check out</span>" +
+                    "<span>"+ $(this).val()+"</span>"+
+                  "</div>");
+            }
+          }
+        }
+        
+      })
+      $('#number').on("change",function(){
+        const priceDetail = $('.number-people');
+        if(priceDetail.length){
+          $('.number-people').html(
+            "<span>Number of people</span>" +
+            "<span>"+ $(this).val()+"</span>"
+          )
+        }else{
+        $('.cart').append(
+                "<div class='price-detail number-people'>"+
+                  "<span>Number of people</span>" +
+                  "<span>"+ $(this).val()+"</span>"+
+                "</div>");
+        }
+      })
+		});
+  </script>
+
+</body>
+
+</html>

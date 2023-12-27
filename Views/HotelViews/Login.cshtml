@@ -1,0 +1,98 @@
+@model Project.Models.Account;
+@{
+    Layout=null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="~/css/login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/SweetAlert/SweetAlert2.min.js"></script>
+    <link rel="stylesheet" href="~/css/SweetAlert/sweetalert.css">
+</head>
+<body>
+    <!-- LOGIN - REGISTER FORM CREATION -->
+    <div class="background"></div>
+    <div class="container">
+        <div class="panels-container">
+            <div class="panel panel-left">
+                <div class="content">
+                    <h3>Member of hotel?</h3>
+                    <p>Welcome back! Login to your account here.</p>
+                    <button class="btn-ex" id="sign-in-btn">Sign in</button>
+                </div>
+            </div>
+            <div class="panel panel-right">
+                <div class="content">
+                    <h3>Welcome! <br><span>
+                        To Our Hotel
+                    </span></h3>
+                    <p>New here? <br>Sign up and discover!</p>
+                    <button class="btn-ex" id="sign-up-btn">Sign up</button>
+                </div>
+            </div>  
+        </div>
+        <div class="signin-signup">
+            <form method="post" class="form-box sign-in" asp-action="SignIn" asp-controller="Login">
+                <h2>Sign In</h2>
+                <div class="input-box">
+                    <span class="icon"><i class='bx bxs-user'></i></span>
+                    <input type="text" required asp-for="username">
+                    @Html.ValidationMessageFor(m => m.username)
+                    <label >Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><i class='bx bxs-lock-alt' ></i></span>
+                    <input type="password" required asp-for="password">
+                    @Html.ValidationMessageFor(m => m.password)
+                    <label>Password</label>
+                </div>
+                <button type="submit" class="btn">Log In</button>
+            </form>
+            <form method="post" asp-action="SignUp" asp-controller="Login" class="form-box sign-up">
+
+                    <h2>Sign Up</h2>
+                    @if(ViewBag.check ==1 && ViewBag.check != null){
+                        <label >Username were used</label>
+                    }
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-user'></i></span>
+                        <input type="text" required asp-for="username" autocomplete="off">
+                        <label >Username</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-lock-alt' ></i></span>
+                        <input type="password" required asp-for="password" autocomplete="off">
+                        <label>Password</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-phone'></i></span>
+                        <input type="password" asp-for="confirmpassword" required>
+                        <label>Confirm password</label>
+                    </div>
+                    <button type="submit"class="btn">Sign Up</button>
+            </form>
+        </div>
+
+    </div>
+
+    <script src="~/js/login.js"></script>
+    <script>
+        $(document).ready(function(){
+            var strValue1="@ViewBag.status1";
+            if(strValue1 !== null  && strValue1 !==''){
+                Swal.fire({
+                  title: strValue1,
+                  text: "You clicked the button!",
+                  icon: "error"
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

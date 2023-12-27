@@ -1,0 +1,256 @@
+.event-detail-page {
+  font-size: var(--montserrat-regular-14-size);
+  color: var(--blackish-green);
+  font-family: var(--tradegothic-bold-24);
+}
+
+.event-page-child {
+  top: 0;
+  left: 0px;
+  /* border-radius: var(--br-5xl); */
+  border-bottom-left-radius: var(--br-5xl);
+  border-bottom-right-radius: var(--br-5xl);
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+}
+
+.event-page-item {
+  height: 90vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+}
+
+.bg {
+  display: flex;
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.2));
+  width: 100%;
+  height: 100%;
+  transform: rotate(180deg);
+  transform-origin: 0 0;
+}
+
+/* Text Img */
+.text-img {
+  position: absolute;
+  top: 180px;
+  left: 38%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-base);
+  text-align: center;
+  font-size: 45px;
+  font-family: var(--tradegothic-bold-40);
+  color: var(--white);
+}
+
+.best-place {
+  position: relative;
+}
+
+.best-place {
+  font-size: 60px;
+  text-transform: uppercase;
+}
+
+.text-cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-9xs);
+}
+
+#content {
+  position: relative;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 60px;
+}
+
+/* Description */
+.section-parent {
+  position: relative;
+  width: 100%;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 60px;
+  margin-bottom: 80px;
+  padding: 0px 8%;
+}
+
+.section-text {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--gap-5xl);
+  margin-bottom: 20px;
+  padding-left: 20px;
+  width: 50%;
+}
+
+.section-heading {
+  font-size: 32px;
+}
+
+.section-sub {
+  font-weight: 700;
+  font-style: italic;
+  font-size: 45px;
+  color: cornflowerblue;
+}
+
+.description {
+  font-size: 20px;
+}
+
+.about-img {
+  position: relative;
+}
+
+.img1 {
+  background-image: url("../../Image/event/meeting4.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 300px;
+  height: 369px;
+  margin-left: 60%;
+  border-radius: 15px;
+}
+
+.img2 {
+  background-image: url("../../Image/event/meeting5.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  left: 10%;
+  width: 260px;
+  height: 300px;
+  position: absolute;
+  top: 90px;
+  border-radius: 15px;
+}
+
+/* Event Image */
+.image-section {
+  position: relative;
+  display: block;
+  margin-bottom: 50px;
+  padding: 0px 8%;
+}
+
+.event-img {
+  margin-bottom: 12px;
+  position: relative;
+  display: block;
+  height: 48.76vw;
+  overflow: hidden;
+}
+
+.event-img img {
+  object-fit: cover;
+  object-position: 50% 50%;
+  font-family: "object-fit: cover; object-position: 50% 50%";
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  transition: transform 1.5s ease-in-out;
+}
+
+.event-img img:hover {
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/****** Responsive ******/
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .text-img {
+    font-size: 25px;
+    left: 28%;
+  }
+
+  .best-place {
+    font-size: 40px;
+  }
+
+  .section-text {
+    width: 100%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .text-img {
+    left: 30%;
+  }
+
+  .best-place {
+    font-size: 45px;
+  }
+
+  .section-text {
+    width: 100%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .text-img {
+    left: 35%;
+  }
+
+  .best-place {
+    font-size: 50px;
+  }
+
+  .section-text {
+    width: 50%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .text-img {
+    left: 40%;
+  }
+
+  .best-place {
+    font-size: 55px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .text-img {
+    left: 38%;
+  }
+
+  .best-place {
+    font-size: 60px;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .text-img {
+    left: 42%;
+  }
+
+}

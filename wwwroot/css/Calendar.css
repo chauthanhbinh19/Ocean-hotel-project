@@ -1,0 +1,104 @@
+.calendar-box-cover{
+    display: flex;
+    transform: translate(10%);
+    column-gap: 50px;
+}
+.calendar-bg{
+    position: relative;
+}
+.calendar-block> p{
+    text-align: center;
+    font-size: 20px;
+    color:white;
+}
+.calendar-weekdays{
+    border:1px solid #8d8c8c;
+    border-left: 0;
+    border-right: 0;
+    font-size: 16px;
+    padding:10px 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: rgb(222, 230, 178);
+    /* border-top:1px solid  #cccbcb;
+    border-bottom:1px solid  #cccbcb; */
+}
+.calendar-days{
+    position: relative;
+    height: 50px;
+    text-align: center;
+    width: 14.2%;
+    min-width: 50px;
+    font-size: 16px;
+    vertical-align: top;
+    padding: 3px 0 0;
+    cursor: pointer;
+    background: white;
+    border-top:1px solid  #cccbcb;
+    border-bottom:1px solid  #cccbcb;
+}
+.calendar-days:hover{
+    background: rgb(212, 211, 211);
+}
+.calendar-days-active{
+    background: rgb(87, 141, 230);
+    color:white;
+}
+.day-number{
+    font-size: 14px;
+    font-weight: 600;
+    margin:0 0 3px;
+    text-align: center;
+}
+.day-price{
+    display: block;
+    font-size: 14px;
+    margin: 0 0 2px;
+    min-height: 18px;
+}
+.day-unavailable-price{
+    display: none;
+    font-size: 12px;
+    line-height: 15px;
+    margin: 0 0 2px;
+    min-height: 18px;
+}
+.day-in{
+    display: none;
+    font-size: 12px;
+    line-height: 15px;
+    margin: 0 0 2px;
+    min-height: 18px;
+}
+.day-out{
+    display: none;
+    font-size: 12px;
+    line-height: 15px;
+    margin: 0 0 2px;
+    min-height: 18px;
+}
+.day-min-stay{
+    display: none;
+    height: 8px;
+    margin:0;
+}
+table ,tr,th{
+    padding:0;
+    border-collapse: collapse;
+}
+.button-cover{
+    position: absolute;
+    top:20px;
+}
+.right{
+    left:77%;
+}
+.button-cover button{
+    outline: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: gold;
+}

@@ -1,0 +1,117 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  /* fonts */
+  --montserrat-medium-12: Montserrat;
+  --montserrat-semibold-14: Montserrat;
+  --montserrat-semibold-16: Montserrat;
+  --montserrat-semibold-20: Montserrat;
+  --montserrat-medium-20: Montserrat;
+  --montserrat-semibold-24: Montserrat;
+  --tradegothic-regular-14: "TradeGothic LT Extended";
+  --tradegothic-bold-14: "TradeGothic LT Extended";
+  --tradegothic-bold-16: "TradeGothic LT Extended"; 
+  --tradegothic-bold-24: "TradeGothic LT Extended";
+  --tradegothic-bold-32: "TradeGothic LT Extended";
+  --tradegothic-bold-40: "TradeGothic LT Extended";
+  --medium-14: Manrope;
+  --font-inherit: inherit;
+
+  /* font sizes */
+  --font-size-5xs: 8px;
+  --font-size-3xs: 10px;
+  --font-size-5xl: 24px;
+  --font-size-25xl: 44px;
+  --tradegothic-bold-12-size: 12px;
+  --tradegothic-bold-14-size: 14px;
+  --tradegothic-regular-14-size: 14px;
+  --tradegothic-bold-16-size: 16px;
+  --tradegothic-bold-20-size: 20px;
+  --tradegothic-bold-24-size: 24px;
+  --tradegothic-bold-32-size: 32px;
+  --tradegothic-bold-36-size: 36px;
+  --tradegothic-bold-40-size: 40px;
+  --montserrat-regular-12-size: 12px;
+  --montserrat-semibold-12-size: 12px;
+  --montserrat-medium-12-size: 12px;
+  --montserrat-regular-14-size: 14px;
+  --montserrat-medium-14-size: 14px;
+  --montserrat-bold-14-size: 14px;
+  --montserrat-semibold-14-size: 14px;
+  --montserrat-semibold-16-size: 16px;
+  --montserrat-regular-16-size: 16px;
+  --montserrat-semibold-16-size: 16px;
+  --montserrat-semibold-20-size: 20px;
+  --montserrat-semibold-20-size: 20px;
+  --montserrat-medium-20-size: 20px;
+  --montserrat-semibold-24-size: 24px;
+  --montserrat-bold-24-size: 24px;
+  --montserrat-bold-32-size: 32px;
+  --montserrat-semibold-32-size: 32px;
+  /* Colors */
+  --white:white;
+  --color-gray-100: #79747e;
+  --color-gray-200: #1c1b1f;
+  --blackish-green: #112211;
+  --mint-green: rgb(16, 72, 140);
+  --color-mediumaquamarine-100: rgba(141, 211, 187, 0.4);
+  --color-lightcyan: #cdeae1;
+  --neutrals: #fff;
+  --color-black: #000;
+  --color-paleturquoise: #9be0c8;
+  --orange-range-orange-90: #ff7900;
+  --slamon: #ff8682;
+  --color-lavender: #d7e2ee;
+  --color-whitesmoke: #eaeaea;
+  --color-paleturquoise: #9be0c8;
+
+  /* Gaps */
+  --gap-11xs: 2px;
+  --gap-9xs: 4px;
+  --gap-5xs: 8px;
+  --gap-xs: 12px;
+  --gap-base: 16px;
+  --gap-xl: 20px;
+  --gap-5xl: 24px;
+  --gap-13xl: 32px;
+  --gap-21xl: 40px;
+  --gap-45xl: 64px;
+  --gap-61xl: 80px;
+  --gap-121xl: 140px;
+  --gap-269xl: 288px;
+  --gap-881xl: 900px;
+  /* Paddings */
+  --padding-9xs: 4px;
+  --padding-5xs: 8px;
+  --padding-3xs: 10px;
+  --padding-xs: 12px;
+  --padding-base: 16px;
+  --padding-2xl: 21px;
+  --padding-5xl: 24px;
+  --padding-13xl: 32px;
+  --padding-45xl: 64px;
+  --padding-85xl: 104px;
+  --padding-121xl: 140px;
+
+  /* Border radiuses */
+  --br-12xs-7: 0.7px;
+  --br-11xs: 2px;
+  --br-9xs: 4px;
+  --br-5xs: 8px;
+  --br-xs: 12px;
+  --br-base: 16px;
+  --br-xl: 20px;
+  --br-5xl: 24px;
+  --br-11xl: 30px;
+  --br-81xl: 100px;
+  /* Effects */
+  --cards-shadow: 0px 4px 16px rgba(17, 34, 17, 0.2);
+}

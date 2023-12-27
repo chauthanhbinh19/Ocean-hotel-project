@@ -1,0 +1,146 @@
+@model List<Project.Models.Service>;
+@{
+  int count=0;
+}   
+@foreach(var service in Model){
+              <div class="rectangle-parent">
+                <img class="rectangle-icon" alt="" src="~/Image/service/@service.img"/>
+                <div class="frame-parent14">
+                  <div class="frame-parent15">
+                    <div class="cvk-park-bosphorus-hotel-istan-parent">
+                      <b class="cvk-park-bosphorus">@service.name</b>
+                      <input type="hidden" name="" value="@service.name" id="service-name-@service.id">
+                      <div class="frame-parent16">
+                        <div class="location-parent">
+                          <i class="fa-solid fa-hotel" style="color:cornflowerblue;"></i>
+                          <div class="images">
+                            Ocean hotel
+                          </div>
+                        </div>
+                        <div class="frame-group">
+                          <div class="airplane-parent">
+                            <div class="hotels-wrapper">
+                              <i class="fa-solid fa-star" style="color: yellow;"></i>
+                              <i class="fa-solid fa-star" style="color: yellow;"></i>
+                              <i class="fa-solid fa-star" style="color: yellow;"></i>
+                              <i class="fa-solid fa-star" style="color: yellow;"></i>
+                              <i class="fa-solid fa-star" style="color: yellow;"></i>
+                            </div>
+                            <div class="free-breakfast">5 Star Hotel</div>
+                          </div>
+                          <div class="cafe-parent">
+                            <i class="fa-solid fa-mug-saucer"></i>
+                            <div class="sort-by-recommended-container">
+                              <span class="reviews"> service</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="airplane-parent">
+                          <div class="button1">
+                            <div class="button-wrapper">
+                              <div class="free-breakfast">5</div>
+                            </div>
+                          </div>
+                          <div class="sort-by-recommended-container">
+                            <b>Description: </b>
+                            <span class="reviews">@service.description</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="starting-from-parent">
+                      <div class="starting-from">starting from</div>
+                      <b class="night">
+                        <span>$@service.price</span>
+                        <input type="hidden" name="" value="@service.price" id="service-price-@service.id">
+                        <span class="night1"></span>
+                      </b>
+                      <div class="excl-tax">excl. tax</div>
+                    </div>
+                  </div>
+                  <div class="frame-child5"></div>
+                  <div class="button-parent1">
+                    <div class="button13">
+                      <div class="style-layer1">
+                        <i class="fa-solid fa-heart" style="color: cornflowerblue;"></i>
+                      </div>
+                    </div>
+                    <div class="button14">
+                      <div class="style-layer2">
+                        <div class="btn-box">
+                          <button class="btn-grad add-to-cart" id="add-to-cart" value="@service.id">Add to cart</button>
+                          @* <input type="hidden" asp-for="@Model[@count].id" id="service-id-@service.id" value="0"> *@
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              count++;
+            }
+<script>
+      $(document).ready(function(){
+        $('.service-1').on('click', function(){
+          $.ajax({
+            type:"POST",
+            url:"/Home/GetServiceList",
+            dataType:"html",
+            data:{selectedOption:"service"},
+            success: function (response) {
+              $('.box-service').html(response);
+            },
+            error: function () {
+              alert("An error occurred while retrieving contact information.");
+            }
+          })
+        });
+        $('.shuttle-1').on('click', function(){
+          $.ajax({
+            type:"POST",
+            url:"/Home/GetServiceList",
+            dataType:"html",
+            data:{selectedOption:"shuttle"},
+            success: function (response) {
+              $('.box-service').html(response);
+            },
+            error: function () {
+              alert("An error occurred while retrieving contact information.");
+            }
+          })
+        });
+        $(".add-to-cart").on('click',function(event) {
+          event.preventDefault();
+          var id=$(this).val()
+          if($('#service-name-'+id).hasClass("added")){
+
+          }else{
+            var serviceName = $('#service-name-'+id).val();
+            var servicePrice = $('#service-price-'+id).val();
+            $(".cart").append(
+              "<div class='price-detail' id='service-"+ id +"'>" +
+                "<span>" + serviceName + "</span>" +
+                "<button value='"+ id +"' class='remove-service'><i class='fa-solid fa-trash'></i></button>" +
+                "<span>$" + servicePrice + "</span>" +
+                "<input type='hidden' value='"+ servicePrice +"' id='service-t-"+ id +"'>"+
+              "</div>"
+            );
+            $('#service-id-'+id).val(id);
+            $('#service-name-'+id).addClass('added');
+            $(".remove-service").on('click',function(){
+              var id=$(this).val()
+              var servicePrice=$('#service-t-'+id).val();
+              if(servicePrice == null){
+                  servicePrice=0;
+                }
+              $('#service-id-'+id).val("");
+              $('#service-name-'+id).removeClass('added');
+              $('#service-'+id).remove();
+              $('#result').text(parseFloat($('#total').val())- parseFloat(servicePrice))
+              $('#total').val(parseFloat($('#total').val())-parseFloat(servicePrice));
+            })
+            $('#result').text(parseFloat(servicePrice)+parseFloat($('#total').val()))
+            $('#total').val(parseFloat(servicePrice)+parseFloat($('#total').val()));
+          }
+        });
+      });
+    </script>

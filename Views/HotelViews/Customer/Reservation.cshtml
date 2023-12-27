@@ -1,0 +1,319 @@
+@model Project.Models.Customer;
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+  <link rel="stylesheet" href="~/css/global.css" />
+  <link rel="stylesheet" href="~/css/history.css" />
+  <link rel="stylesheet" href="~/css/AccountHead.css">
+  <link rel="stylesheet" href="~/css/btngrad.css">
+  <link rel="stylesheet" href="~/css/cancelmodal.css">
+  <link rel="stylesheet" href="~/css/scroll-btn.css">
+
+  <link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <script src="https://kit.fontawesome.com/d85c1eb16f.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="~/js/Nav.js"></script>
+</head>
+
+<body>
+  <div class="account-history">
+    <div class="account-page-item">
+      <img class="account-cover" alt="" src="~/Image/z4949244113871_1f0eedc5882e8ce0268edc2526263fe1.jpg" />
+    </div>
+    <div class="scroll-btn"><a href="#"><span class="scroll-up-btn"><i class="fa-solid fa-chevron-up"></i></i></span></a></div>
+    <!--Navigation-->
+    <div id="header"> 
+      
+        <div id="cover">
+          <a href="/Home/Index" id="logo"></a>
+          <img src="~/Image/logo.png"
+            alt="logo.vn">
+        </div>
+      </a>
+      <nav class="container1">
+        <input type="checkbox" id="check">
+        <ul id="main-menu">
+          <li><a href="/Home/Index"><i class="bi bi-house"></i> Home</a></li>
+          <li>
+            <a class="hassub" href="#"><i class="fa-solid fa-sitemap"></i> Rooms <span class="spaceicon"><i class="bi bi-chevron-down"></i></span></a>
+            <ul class="sub-menu">
+              <li class="sub-item"><a href="/Home/RoomStandard">Standard room</a></li>
+              <li class="sub-item"><a href="/Home/RoomSuperior">Superior room</a></li>
+              <li class="sub-item"><a href="/Home/RoomDeluxe">Deluxe room</a></li>
+              <li class="sub-item"><a href="/Home/RoomSuite">Suite room</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a class="hassub" href="#"><i class="fa-solid fa-bell-concierge"></i> Service <span class="spaceicon"><i
+                  class="bi bi-chevron-down"></i></span></a>
+            <ul class="sub-menu">
+              <li class="sub-item more">
+                <a class="has-moresub" href="#restaurant"> Restaurant<span class="space"><i
+                      class="fa-solid fa-chevron-right"></i></span></a>
+                <ul class="more-menu">
+                  <li><a href="/Home/ReflectionR">Reflection Restaurant</a></li>
+                  <li><a href="/Home/Cafe">Cafe de l’Opera</a></li>
+                  <li><a href="/Home/Buffet">Buffet Nineteen Restaurant</a></li>
+                  <li><a href="/Home/Tapas">Tapas Kitchen</a></li>
+                </ul>
+              </li>
+              <li class="sub-item"><a href="/Home/Bar">Bar</a></li>
+              <li class="sub-item"><a href="/Home/Gym">Gym</a></li>
+              <li class="sub-item"><a href="/Home/Spa">Spa</a></li>
+              <li class="sub-item"><a href="/Home/Beach">Beach</a></li>
+              <li class="sub-item"><a href="/Home/Shuttle">Shuttle</a></li>
+            </ul>
+          </li>
+          <li><a href="/Home/Gallery"><i class="fa-solid fa-images"></i> Gallery</a></li>
+          <li>
+            <a class="hassub" href="#"><i class="fa-regular fa-calendar"></i> Event <i
+                class="bi bi-chevron-down"></i></a>
+            <ul class="sub-menu">
+              <li class="sub-item"><a href="/Home/Wedding">Wedding</a></li>
+              <li class="sub-item"><a href="/Home/Meeting">Meeting</a></li>
+              <li class="sub-item"><a href="/Home/Corporate">Corporate events</a></li>
+            </ul>
+          </li>
+          <label for="check" class="close-menu">
+            <i class="fa-solid fa-xmark"></i>
+          </label>
+        </ul>
+      </nav>
+      <div class="signup">
+        @if(ViewBag.customer_avatar.name == null){
+          <i class="fa-solid fa-user"></i>
+          <a href="/Login/Login" id="">Sign in</a>
+          
+        }else{
+          <a href="/Home/Account">
+          <span>Hello, @ViewBag.customer_avatar.name</span>
+          </a>
+          <a href="/Home/Account">
+          <img src="~/Image/Avatar/@ViewBag.customer_avatar.img" alt=""> 
+          </a>
+          <a href="/Login/SignOut1" id=""><i class="fa-solid fa-right-from-bracket"></i></a>        
+        }
+      </div>
+    <!--End:Nav-->
+      <label for="check" class="open-menu">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+    </div>
+    <!--Content-->
+    <div id="content">
+      <div class="avatar-group">
+        <img class="avatar" id="profile-pic" alt="" src="~/Image/Avatar/@Model.img" />
+        <div class="user-account">
+          <div class="name">@Model.name</div>
+          <div class="mail">@Model.email</div>
+        </div>
+        <div class="pen-wrapper">
+          <label for="input-file"><img class="pen-icon" alt="" src="~/Image/pen.svg" /></label>
+          <input type="file" accept="image/jpg, image/png, image/jpeg" name="" id="input-file">
+
+        </div>
+      </div>
+      <div class="frame-parent2">
+        <div class="account-parent">
+          <div class="account1"><a href="/Home/Account">Account</a></div>
+          <div class="line-div"></div>
+          <div class="history"><a href="/Home/History">History</a></div>
+          <div class="line-div"></div>
+          <div class="history"><a href="#">Reservation</a></div>
+        </div>
+      </div>
+      <div class="frame-parent1">
+        <div class="frame-parent3">
+          <div class="text">
+            <b class="history">Reservation</b>
+          </div>
+          <form action="" method="post" style="width: 100%">
+           @foreach(var booking in ViewBag.booking){
+            <div class="history-child">
+            <div class="image-wrapper">
+              <img class="room-img" alt="" src="~/Image/@booking.room.img" />
+            </div>
+            <div class="detail-wrapper">
+              <div class="frame-div">
+                <div class="newarkewr-parent">
+                  <div class="newarkewr">@booking.room.type - @booking.room.name</div>
+                  <div class="pm center">@booking.room.view.name</div>
+                </div>
+              </div>
+              <div class="frame-child5"></div>
+              <div class="frame-div">
+                <div class="newarkewr-parent">
+                  <div class="newarkewr">Check-in</div>
+                  <div class="pm">@booking.check_in_date</div>
+                </div>
+                <div class="pm">—</div>
+                <div class="newarkewr-parent">
+                  <div class="newarkewr">Check-out</div>
+                  <div class="pm">@booking.check_out_date</div>
+                </div>
+              </div>
+              <div class="frame-child5"></div>
+              <div class="frame-parent8">
+                <div class="newarkewr-parent">
+                  <div class="frame-parent10">
+                    <i class="fa-solid fa-key frame-icon" style="color: cornflowerblue;"></i>
+
+                    <div class="date-parent">
+                      <div class="title">ID room</div>
+                      <div class="div2">#@booking.room.id</div>
+                    </div>
+                  </div>
+                  <div class="frame-parent10">
+                    <i class="fa-solid fa-hotel frame-icon" style="color: cornflowerblue;"></i>
+                    <div class="date-parent">
+                      <div class="title">Floor</div>
+                      <div class="div2">@booking.room.floor</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="newarkewr-parent">
+                  <div class="frame-parent10">
+                    <i class="fa-solid fa-people-group frame-icon"  style="color: cornflowerblue;"></i>
+
+                    <div class="date-parent">
+                      <div class="title">Number of people</div>
+                      <div class="div2">@booking.number_of_guest</div>
+                    </div>
+                  </div>
+                  <div class="frame-parent10">
+                    <i class="fa-solid fa-up-right-and-down-left-from-center" style="color: cornflowerblue;"></i>
+
+                    <div class="date-parent">
+                      <div class="title">Size</div>
+                      <div class="div2">@booking.room.size</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="frame-div">
+              <div class="newarkewr-parent">
+                <div class="price">$@booking.total_price</div>
+              </div>
+            </div>
+            <div class="frame-div-1">
+              <div class="newarkewr-parent">
+                @Html.ActionLink("Canceled", "CanceledReservation","Home", new {room_id=@booking.room.id, booking_id=@booking.id}, new {@Class="btn-grad"})
+              </div>
+              <div class="newarkewr-parent-1">
+                <span class="booking-status">@booking.status</span>
+              </div>
+            </div>
+          </div>
+          }
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--Footer-->
+    <div class="footer">
+      <div class="footer-parent">
+        <div class="footer-frame">
+          <div class="logo-parent">
+            <img class="logo-icon1" src="../Image/logo.png"alt="logo.vn" />
+            <div class="akar-iconsfacebook-fill-parent">
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-x-twitter"></i>
+              <i class="fa-brands fa-youtube"></i>
+            </div>
+          </div>
+          <div class="text-frame">
+            <div class="our-destinations-parent">
+              <b class="helping-others">Our Destinations</b>
+              <div class="canada-parent">
+                <div class="canada">New York</div>
+                <div class="canada">Miami</div>
+                <div class="canada">NJ</div>
+                <div class="canada">Los Angeles</div>
+              </div>
+            </div>
+            <div class="our-destinations-parent">
+              <b class="helping-others">Our Events</b>
+              <div class="canada-parent">
+                <div class="canada"><a href="/Home/Wedding">Wedding</a></div>
+                <div class="canada"><a href="/Home/Meeting">Meeting</a></div>
+                <div class="canada"><a href="/Home/Corporate">Corporate</a></div>
+              </div>
+            </div>
+            <div class="our-destinations-parent">
+              <b class="helping-others">Contact Us</b>
+              <div class="canada-parent">
+                <div class="canada"><i class="fa-solid fa-phone"></i> 0932718399</div>
+                <div class="canada"><i class="fa-solid fa-envelope"></i> oceanht@gm.com</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Form-->
+    <div class="modal js-modal"> 
+      <div class="modal-container js-modal-container">
+        <div class="modal-close js-modal-close">
+          &times;
+        </div>
+
+        <div class="modal-body">
+          <h2>Cancel Reservation</h2>
+          <div class="form-element">
+            <label for="reason">Reason: </label>
+            <textarea name="" id="reason" cols="30" rows="10"></textarea>
+          </div>
+          <div class="form-element">
+            <button value="confirm">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="~/js/StickyHeader.js"></script>
+  <script>
+    let profilePic = document.getElementById("profile-pic");
+    let inputFile = document.getElementById("input-file");
+
+    inputFile.onchange = function () {
+      profilePic.src = URL.createObjectURL(inputFile.files[0]);
+    }
+
+  </script> 
+  @* <script>
+    const cancelBtns = document.querySelectorAll('#show-cancel-form')
+    const modal = document.querySelector('.js-modal')
+    const modalContainer = document.querySelector('.js-modal-container')
+    const modalClose = document.querySelector('.js-modal-close')
+    // Hàm hiển thị modal 
+    function showCancelForm() {
+      modal.classList.add('open')
+    }
+    // Hàm ẩn modal  
+    function hideCancelForm() {
+      modal.classList.remove('open')
+    }
+    // Lặp qua từng thẻ button và nghe hành vi click
+    for (const cancelBtn of cancelBtns) {
+      cancelBtn.addEventListener('click', showCancelForm)
+    }
+    // Nghe hành vi click vào button close
+    modalClose.addEventListener('click', hideCancelForm)
+
+    modal.addEventListener('click', hideCancelForm)
+
+    modalContainer.addEventListener('click', function (event) {
+      event.stopPropagation()
+    })
+  </script> *@
+</body>
+
+</html>

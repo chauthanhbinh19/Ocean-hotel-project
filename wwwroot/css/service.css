@@ -1,0 +1,335 @@
+
+.service-detail-page {
+  font-size: var(--montserrat-regular-14-size);
+  color: var(--blackish-green);
+  font-family: var(--tradegothic-bold-24);
+}
+.service-page-child {
+  top: 0;
+  left: 0px;
+  border-bottom-right-radius: 24px 24px;
+  border-bottom-left-radius: 24px 24px;
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+}
+.bg {
+  display: flex;
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.1));
+  width: 100%;
+  height: 100%;
+  transform: rotate(180deg);
+  transform-origin: 0 0;
+}
+/* Text Img */
+.text-img {
+  position: absolute;
+  top: 180px;
+  left: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-base);
+  text-align: center;
+  font-size: 45px;
+  font-family: var(--tradegothic-bold-40);
+  color: var(--white);
+}
+.best-place{
+  position: relative;
+}
+.best-place{
+  font-size: 60px;
+  text-transform: uppercase;
+}
+.text-cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-9xs);
+}
+.enjoy {
+  position: relative;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: var(--montserrat-medium-12);
+}
+p{
+  text-align: center;
+}
+/*Content */
+#content{
+  position:relative;
+  width:100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.heading {
+  position: relative;
+}
+.features-parent{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  align-self: stretch;
+  justify-content: space-between;
+}
+.frame-icon {
+  border-radius: var(--br-xs);
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+.description {
+  border-radius: var(--br-5xs);
+  background-color: var(--bg-blue-1);
+  flex-direction: column;
+  padding: var(--padding-base);
+  margin-top: 30px;
+}
+.subhead {
+  position: relative;
+  font-weight: 500;
+  font-family: var(--montserrat-semibold-24);
+  opacity: 0.75;
+}
+.open,
+.location{
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-base);
+}
+.description
+{
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-base);
+}
+
+.frame-parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0px 5%;
+}
+.section-frame{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0px 5px;
+}
+.section-frame,
+.frame-parent {
+  align-items: flex-start;
+}
+.section-frame {
+  align-self: stretch;
+  border-radius: var(--br-xs);
+  background-color: var(--neutrals-white);
+  box-shadow: var(--cards-shadow);
+  padding: var(--padding-13xl) var(--padding-5xl);
+  gap: var(--gap-5xl);
+  font-size: var(--montserrat-medium-20-size);
+}
+.frame-parent {
+  position:relative;
+  gap: var(--gap-21xl);
+  font-size: 22px;
+}
+
+.icon-parent {
+  flex-wrap: wrap;
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+/* Image */
+.image-section{
+  position: relative;
+  margin: 32px 5%;
+  gap: var(--gap-21xl);
+  color: black;
+}
+.wrapper {
+  max-height: 360px;
+  min-height: 125px;
+  position:relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.service-wrap,
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.row {
+  width: 100%;
+  flex-direction: row;
+  gap: var(--gap-13xl);
+}
+.service-wrap{
+  flex-direction: column;
+}
+.service-wrap {
+  gap: var(--gap-13xl);
+  font-size: var(--montserrat-semibold-16-size);
+  color: var(--blackish-green);
+}
+.service-frame
+{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-5xs);
+  flex: 1;
+  flex-direction: column;
+}
+.service-frame {
+  border-radius: var(--br-base);
+  background-color: var(--neutrals);
+  box-shadow: var(--cards-shadow);
+  flex-direction: row;
+  align-items: center;
+  padding: var(--padding-base);
+  gap: var(--gap-base);
+}
+.service-img {
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  border-radius: var(--br-5xs);
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+/****** Responsive ******/
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .text-img {
+    font-size:25px;
+    left:5%;
+  }
+  .enjoy{
+  font-size: 18px;
+  }
+  .best-place{
+  font-size: 40px;
+  }
+
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .text-img {
+    left:10%;
+  }
+  .best-place{
+    font-size: 45px;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .text-img {
+    left:15%;
+  }
+  .best-place{
+    font-size: 50px;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .text-img {
+    left:20%;
+  }
+  .best-place{
+    font-size: 55px;
+  }
+  .booking-button-parent {
+    align-self: center;
+  }
+  input{
+    padding: 3px 5px;
+    width: 180px;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .best-place{
+    font-size: 60px;
+  }
+  .text-resr {
+    left:18%;
+  }
+  .text-buffet{
+    left: 28%;
+  }
+
+  .text-bar{
+    left: 32%;
+  }
+  .text-beach{
+    left: 30%;
+  }
+  .text-spa{
+    left: 24%;
+  }
+  .text-gym{
+    left: 32%;
+  }
+  .text-shuttle{
+    left: 29%;
+  }
+  .text-tapas{
+    left: 32%;
+  }
+}
+@media only screen and (min-width: 1400px) {
+
+  .text-resr {
+    left:23%;
+  }
+
+  .text-buffet{
+    left: 30%;
+  }
+
+  .text-bar{
+    left: 36%;
+  }
+
+  .text-beach{
+    left: 35%;
+  }
+  .text-spa{
+    left: 28%;
+  }
+  .text-gym{
+    left: 34%;
+  }
+  .text-shuttle{
+    left: 35%;
+  }
+  .text-tapas{
+    left: 38%;
+  }
+}
+
+

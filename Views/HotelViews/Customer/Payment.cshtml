@@ -1,0 +1,365 @@
+@model Project.Models.Multiple;
+@{
+  int count=0;
+}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="~/css/global.css" />
+    <link rel="stylesheet" href="~/css/Payment.css" />
+    <link rel="stylesheet" href="~/css/Scrollbar.css">
+    <link rel="stylesheet" href="~/css/Checkbox.css">
+    <link rel="stylesheet" href="~/css/Nav&Footer.css">
+    <link rel="stylesheet" href="~/css/btngrad.css">
+    <link rel="stylesheet" href="~/css/scroll-btn.css">
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"/>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=TradeGothic LT Extended:wght@700&display=swap"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://kit.fontawesome.com/d85c1eb16f.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="~/js/Nav.js"></script>
+  </head>
+  <body>
+    <div class="booking-detail">
+        <div class="scroll-btn"><a href="#"><span class="scroll-up-btn"><i class="fa-solid fa-chevron-up"></i></i></span></a></div>
+        <div id="header">
+      
+        <div id="cover">
+          <a href="/Home/Index" id="logo"></a>
+          <img src="~/Image/logo.png"
+            alt="logo.vn">
+        </div>
+      </a>
+      <nav class="container1">
+        <input type="checkbox" id="check">
+        <ul id="main-menu">
+          <li><a href="/Home/Index"><i class="bi bi-house"></i> Home</a></li>
+          <li>
+            <a class="hassub" href="#"><i class="fa-solid fa-sitemap"></i> Rooms <span class="spaceicon"><i class="bi bi-chevron-down"></i></span></a>
+            <ul class="sub-menu">
+              <li class="sub-item"><a href="/Home/RoomStandard">Standard room</a></li>
+              <li class="sub-item"><a href="/Home/RoomSuperior">Superior room</a></li>
+              <li class="sub-item"><a href="/Home/RoomDeluxe">Deluxe room</a></li>
+              <li class="sub-item"><a href="/Home/RoomSuite">Suite room</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a class="hassub" href="#"><i class="fa-solid fa-bell-concierge"></i> Service <span class="spaceicon"><i
+                  class="bi bi-chevron-down"></i></span></a>
+            <ul class="sub-menu">
+              <li class="sub-item more">
+                <a class="has-moresub" href="#restaurant"> Restaurant<span class="space"><i
+                      class="fa-solid fa-chevron-right"></i></span></a>
+                <ul class="more-menu">
+                  <li><a href="/Home/ReflectionR">Reflection Restaurant</a></li>
+                  <li><a href="/Home/Cafe">Cafe de l’Opera</a></li>
+                  <li><a href="/Home/Buffet">Buffet Nineteen Restaurant</a></li>
+                  <li><a href="/Home/Tapas">Tapas Kitchen</a></li>
+                </ul>
+              </li>
+              <li class="sub-item"><a href="/Home/Bar">Bar</a></li>
+              <li class="sub-item"><a href="/Home/Gym">Gym</a></li>
+              <li class="sub-item"><a href="/Home/Spa">Spa</a></li>
+              <li class="sub-item"><a href="/Home/Beach">Beach</a></li>
+              <li class="sub-item"><a href="/Home/Shuttle">Shuttle</a></li>
+            </ul>
+          </li>
+          <li><a href="/Home/Gallery"><i class="fa-solid fa-images"></i> Gallery</a></li>
+          <li>
+            <a class="hassub" href="#"><i class="fa-regular fa-calendar"></i> Event <i
+                class="bi bi-chevron-down"></i></a>
+            <ul class="sub-menu">
+              <li class="sub-item"><a href="/Home/Wedding">Wedding</a></li>
+              <li class="sub-item"><a href="/Home/Meeting">Meeting</a></li>
+              <li class="sub-item"><a href="/Home/Corporate">Corporate events</a></li>
+            </ul>
+          </li>
+          <label for="check" class="close-menu">
+            <i class="fa-solid fa-xmark"></i>
+          </label>
+        </ul>
+      </nav>
+      <div class="signup">
+        @if(ViewBag.customer_avatar.name == null){
+          <i class="fa-solid fa-user"></i>
+          <a href="/Login/Login" id="">Sign in</a>
+          
+        }else{
+          <a href="/Home/Account">
+          <span>Hello, @ViewBag.customer_avatar.name</span>
+          </a>
+          <a href="/Home/Account">
+          <img src="~/Image/Avatar/@ViewBag.customer_avatar.img" alt=""> 
+          </a>
+          <a href="/Login/SignOut1" id=""><i class="fa-solid fa-right-from-bracket"></i></a>   
+        }
+      </div>
+    <!--End:Nav-->
+      <label for="check" class="open-menu">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+        </div>
+      <div class="turkey-parent">
+        <div class="turkey">Payment</div>
+      </div>
+      <form method="post">
+      <div class="frame-parent">
+        <div class="frame-group">
+          <div class="emirates-a380-airbus-wrapper">
+            <b class="emirates-a380-airbus">Ocean hotel</b>
+          </div>
+          <div class="frame-wrapper">
+            <div class="location-parent">
+              <div class="gmssuyu-mah-inn">
+                Reception is open: 24 hours
+              </div>
+              <div class="gmssuyu-mah-inn">
+                Contact +39 00390817640666
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="parent">
+          <b class="emirates-a380-airbus">$@ViewBag.total</b>
+          <input type="hidden" asp-for="booking!.total_price" value="@ViewBag.total">
+           @if(ViewBag.promotion.Count != 0){
+            <input type="hidden" asp-for="promotion!.id" value="@ViewBag.promotion[0].id">
+          }
+          <div class="button-parent">
+            <div class="button">
+              <div class="style-layer">
+                <i class="fa-solid fa-share-nodes share-icon" style="display:flex; justify-content:center; align-items:center;"></i>
+              </div>
+            </div>
+            <div class="button1">
+              <div class="style-layer1">
+                <button class="btn-grad" asp-action="Pay" asp-controller="Home">Pay</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame-container">
+        <div class="frame-div">
+          <div class="group-parent">
+            <img class="group-icon" alt="" src="./public/group.svg" />
+
+            <div class="frame-parent1">
+              <div class="pm-parent">
+                <div class="pm">@ViewBag.checkin</div>
+                <div class="newarkewr">Check in</div>
+                <input type="hidden" asp-for="booking!.check_in_date" value="@ViewBag.checkin">
+              </div>
+              <div class="vector-parent">
+              </div>
+              <div class="pm-group">
+                <div class="pm">@ViewBag.checkout</div>
+                <div class="newarkewr">Check out</div>
+                <input type="hidden" asp-for="booking!.check_out_date" value="@ViewBag.checkout">
+              </div>
+            </div>
+            <div class="frame-parent2">
+              <div class="frame-wrapper1">
+                <div class="frame-parent3">
+                  <div class="ellipse-parent">
+                    <img class="frame-inner"alt=""src="~/Image/Avatar/@ViewBag.customer_avatar.img"/>
+                    <div class="james-doe-parent">
+                      <b class="james-doe">@ViewBag.customer_avatar.name</b>
+                      <div class="boarding-pass-n123">Boarding Pass N’123</div>
+                      <input type="hidden" asp-for="customer!.id" value="@ViewBag.customer_avatar.id">
+                    </div> 
+                  </div>
+                  <div class="b-class">
+                    <b class="busniess-class">@ViewBag.room.type - @ViewBag.room.name</b>
+                    <b class="busniess-class">@ViewBag.room.view.name</b>
+                    <input type="hidden" asp-for="room!.id" value="@ViewBag.room.id">
+                  </div>
+                </div>
+              </div>
+              <div class="frame-parent4">
+                <div class="frame-parent5">
+                    <i class="fa-solid fa-clock frame-icon" style="color: cornflowerblue;"></i>
+                  <div class="date-parent">
+                    <div class="date">Check-in time</div>
+                    <div class="div">8:00am</div>
+                  </div>
+                </div>
+                <div class="frame-parent6">
+                    <i class="fa-solid fa-clock frame-icon" style="color: cornflowerblue;"></i>
+                  <div class="flight-time-parent">
+                    <div class="date">Check-out time</div>
+                    <div class="div">11:30pm</div>
+                  </div>
+                </div>
+                <div class="frame-parent7">
+                    <i class="fa-solid fa-up-right-and-down-left-from-center frame-icon" style="color: cornflowerblue;"></i>
+                  <div class="gate-parent">
+                    <div class="date">Size</div>
+                    <div class="div">15x25</div>
+                  </div>
+                </div>
+                <div class="frame-parent8">
+                    <i class="fa-solid fa-hotel frame-icon" style="color: cornflowerblue;"></i>
+                  <div class="flight-time-parent">
+                    <div class="date">Floor</div>
+                    <div class="div1">3</div>
+                  </div>
+                </div>
+              </div>
+              <div class="ek-parent">
+                <div class="pm1">ID room: #@ViewBag.room.id</div>
+              </div>
+              <div class="ek-parent">
+                <div class="pm1">Number of people: #@ViewBag.number</div>
+                <input type="hidden" asp-for="booking!.number_of_guest" value="@ViewBag.number">
+              </div>
+            </div>
+          </div>
+          <div class="frame-wrapper2">
+            <div class="group-container">
+              <img class="frame-child4" alt="" src="~/Image/group-3.svg" />
+
+              <img class="frame-child5" alt="" src="~/Image/vector-6.svg" />
+
+              <img class="frame-child6" alt="" src="~/Image/vector-7.svg" />
+
+              <div class="frame-parent9">
+                <div class="rectangle-parent">
+                  <img class="rectangle-icon"alt=""src="~/Image/Avatar/@ViewBag.customer_avatar.img"/>
+
+                  <div class="james-doe-group">
+                    <b class="emirates-a380-airbus">@ViewBag.customer_avatar.name</b>
+                    <div class="boarding-pass-n1231">Boarding Pass N’123</div>
+                  </div>
+                </div>
+                <img class="polygon-icon" alt="" src="./public/polygon-1.svg" />
+              </div>
+              <div class="frame-parent10">
+                <div class="rectangle-parent">
+                  <img class="rectangle-icon"alt=""src="~/Image/Avatar/@ViewBag.customer_avatar.img"/>
+
+                  <div class="james-doe-group">
+                    <b class="emirates-a380-airbus">@ViewBag.customer_avatar.name</b>
+                    <div class="boarding-pass-n1231">Boarding Pass N’123</div>
+                  </div>
+                </div>
+                <img
+                  class="frame-child8"
+                  alt=""
+                  src="./public/polygon-11.svg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-parent11">
+          <div class="box-service">
+            <span class="text-color">Services included in this booking</span>
+            @foreach(var service in ViewBag.service){
+              <div class="service-content">
+                <span><i class="fa-solid fa-gift"></i>&nbsp; @service.name</span>
+                <span>$@service.price</span>
+                <input type="hidden" asp-for="@Model.services[@count].id" value="@service.id">
+              </div>
+              count++;
+            }
+          </div>
+          <div class="terms-and-conditions-wrapper">
+            <div class="pm">Terms and Conditions</div>
+          </div>
+          <div class="frame-parent12">
+            <div class="payments-wrapper">
+              <div class="turkey">Payments</div>
+            </div>
+            <div class="if-you-are-container">
+              <ul class="if-you-are">
+                If you do not supply the correct card billing address and/or
+                cardholder information, your booking will not be confirmed and
+                the overall cost may increase. We reserve the right to cancel
+                your booking if payment is declined for any reason or if you
+                have supplied incorrect card information. If we become aware of,
+                or is notified of, any fraud or illegal activity associated with
+                the payment for the booking, the booking will be cancelled and
+                you will be liable for all costs and expenses arising from such
+                cancellation, without prejudice to any action that may be taken
+                against us.
+              </ul>
+            </div>
+            <div class="payments-wrapper">
+              <div class="turkey">Cancellation Policies</div>
+            </div>
+            <div class="if-you-are-container">
+              <ul class="if-you-are">
+                If you cancel your reservation during 42 hours after booking,
+                you will not charge a cancellation fee.
+                After this time, this fee can be a flat rate, 
+                a percentage of your total stay, or even the full cost of the first night's stay.
+                With rooms have promotion, if you cancel your reservation, you will not be refunded.
+              </ul>
+            </div>
+          </div>
+          <div class="frame-parent13">
+            <div class="terms-and-conditions-wrapper">
+              <div class="turkey">Contact Us</div>
+            </div>
+            <div class="if-you-have-container">
+              <p class="if-you-have">
+                If you have any questions about our Website or our Terms of Use,
+                please contact:
+              </p>
+              <p class="if-you-have">Phone: 0932718399</p>
+              <p class="if-you-have">Mail: oceanht@gm.com</p>
+            </div>
+          </div>
+        </div>
+        </div>
+      </form>
+    <div class="footer">
+      <div class="footer-parent">
+        <div class="footer-frame">
+          <div class="logo-parent">
+            <img class="logo-icon1" src="../Image/logo.png"alt="logo.vn" />
+            <div class="akar-iconsfacebook-fill-parent">
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-x-twitter"></i>
+              <i class="fa-brands fa-youtube"></i>
+            </div>
+          </div>
+          <div class="text-frame">
+            <div class="our-destinations-parent">
+              <b class="helping-others">Our Destinations</b>
+              <div class="canada-parent">
+                <div class="canada">New York</div>
+                <div class="canada">Miami</div>
+                <div class="canada">NJ</div>
+                <div class="canada">Los Angeles</div>
+              </div>
+            </div>
+            <div class="our-destinations-parent">
+              <b class="helping-others">Our Events</b>
+              <div class="canada-parent">
+                <div class="canada"><a href="/Home/Wedding">Wedding</a></div>
+                <div class="canada"><a href="/Home/Meeting">Meeting</a></div>
+                <div class="canada"><a href="/Home/Corporate">Corporate</a></div>
+              </div>
+            </div>
+            <div class="our-destinations-parent">
+              <b class="helping-others">Contact Us</b>
+              <div class="canada-parent">
+                <div class="canada"><i class="fa-solid fa-phone"></i> 0932718399</div>
+                <div class="canada"><i class="fa-solid fa-envelope"></i> oceanht@gm.com</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <script src="~/js/StickyHeader.js"></script>
+  </body>
+</html>

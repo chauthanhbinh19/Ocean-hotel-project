@@ -1,0 +1,42 @@
+.error-page{
+    align-items:center;
+    color:#1f1f1f;
+    display:flex
+}
+.error-page .main-wrapper{
+    display:flex;
+    flex-wrap:wrap;
+    height:auto;
+    justify-content:center;
+    width:100%;
+    min-height:unset
+}
+.error-box{
+    margin:0 auto;
+    max-width:480px;
+    padding:1.875rem 0;
+    text-align:center;
+    width:100%
+}
+.font-weight-normal{
+    font-weight:400!important
+}
+h1{
+    font-size: 5.6rem;
+    color: rgb(3, 76, 133);
+}
+.h2{
+    color: rgb(3, 76, 133);
+    font-size: 30px;
+}
+.h4{
+    font-size: 25px;
+}
+.btn{
+    background-color: rgb(3, 76, 133);
+    padding: 15px 15px;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}

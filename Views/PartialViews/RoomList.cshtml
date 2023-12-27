@@ -1,0 +1,105 @@
+@model List<Project.Models.Rooms>;
+@{
+  string type=@ViewBag.type;
+  float total=0;
+  float? total_price=0;
+}
+@foreach(var room in Model){
+            <div class="rectangle-parent">
+            <img class="rectangle-icon" alt="" src="~/Image/@room.img"/>
+            @if(((List<Promotion>)ViewBag.promotion).Count !=0){
+              @foreach(var promotion in ViewBag.promotion){
+                total=total+promotion.discount_percent;
+              }
+              <div class="ribbon ribbon-top-left"><span>DISCOUNT @total%</span></div>
+            }
+            <div class="frame-parent14">
+              <div class="frame-parent15">
+                <div class="cvk-park-bosphorus-hotel-istan-parent">
+                  <b class="cvk-park-bosphorus">@room.name - #<span style="color:#ff8682;">@room.id</span></b>
+                  <div class="frame-parent16">
+                    <div class="location-parent">
+                      <i class="fa-solid fa-mountain-sun"></i> 
+                      <div class="images">
+                        View of room: @room.view!.name
+                      </div>
+                      <span>&nbsp; <i class="fa-solid fa-users" style="color:cornflowerblue;"></i> @room.number_of_guest</span>
+                    </div>
+                    <div class="frame-group">
+                      <div class="airplane-parent">
+                        <div class="hotels-wrapper">
+                          <i class="fa-solid fa-star" style="color: yellow;"></i>
+                          <i class="fa-solid fa-star" style="color: yellow;"></i>
+                          <i class="fa-solid fa-star" style="color: yellow;"></i>
+                          <i class="fa-solid fa-star" style="color: yellow;"></i>
+                          <i class="fa-solid fa-star" style="color: yellow;"></i>
+                        </div>
+                        <div class="free-breakfast">5 Star Hotel</div>
+                      </div>
+                      <div class="cafe-parent">
+                        <i class="fa-solid fa-mug-saucer"></i>
+                        <div class="sort-by-recommended-container">
+                          <b>20+</b>
+                          <span class="reviews"> Aminities</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="airplane-parent">
+                      <div class="button1">
+                        <div class="button-wrapper">
+                          @if(room!.review!.rate != null){
+                            <div class="free-breakfast">@room.review!.rate</div>
+                          }else{
+                            <div class="free-breakfast">?</div>
+                          }
+                        </div>
+                      </div>
+                      <div class="sort-by-recommended-container">
+                        @if(room.review.rate >=4){
+                          <b>Very good, Size: </b>
+                        }else if (room.review.rate >=3){
+                          <b>Good, Size: </b>
+                        }
+                        <span class="reviews">@room.size</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="starting-from-parent">
+                  <div class="starting-from">starting from</div>
+                  @if(((List<Promotion>)ViewBag.promotion).Count !=0){
+                    <b class="night">
+                      <span class="line-through">$@room.price</span>
+                      <span class="night1">/night</span>
+                    </b>
+                    total_price = @room.price - @room.price*total/100;
+                    <b class="night">
+                      <span>$@total_price</span>
+                      <span class="night1">/night</span>
+                    </b>
+                  }else{
+                    <b class="night">
+                      <span>$@room.price</span>
+                      <span class="night1">/night</span>
+                    </b>
+                  }
+                  <div class="excl-tax">excl. tax</div>
+                </div>
+              </div>
+              <div class="frame-child5"></div>
+              <div class="button-parent1">
+                <div class="button13">
+                  <div class="style-layer1">
+                    <i class="fa-solid fa-heart" style="color: cornflowerblue;"></i>
+                  </div>
+                </div>
+                <div class="button14">
+                  <div class="style-layer2">
+                    @Html.ActionLink("View Room", "RoomDetail", "Home",new {id=@room.id},new {@class="cl-white btn-grad"})
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          total=0;
+          }

@@ -1,0 +1,321 @@
+d:\C#\Project\bin\Debug\net7.0\appsettings.Development.json
+d:\C#\Project\bin\Debug\net7.0\appsettings.json
+d:\C#\Project\bin\Debug\net7.0\Project.staticwebassets.runtime.json
+d:\C#\Project\bin\Debug\net7.0\Project.exe
+d:\C#\Project\bin\Debug\net7.0\Project.deps.json
+d:\C#\Project\bin\Debug\net7.0\Project.runtimeconfig.json
+d:\C#\Project\bin\Debug\net7.0\Project.dll
+d:\C#\Project\bin\Debug\net7.0\Project.pdb
+d:\C#\Project\obj\Debug\net7.0\Project.GeneratedMSBuildEditorConfig.editorconfig
+d:\C#\Project\obj\Debug\net7.0\Project.AssemblyInfoInputs.cache
+d:\C#\Project\obj\Debug\net7.0\Project.AssemblyInfo.cs
+d:\C#\Project\obj\Debug\net7.0\Project.csproj.CoreCompileInputs.cache
+d:\C#\Project\obj\Debug\net7.0\Project.MvcApplicationPartsAssemblyInfo.cache
+d:\C#\Project\obj\Debug\net7.0\Project.RazorAssemblyInfo.cache
+d:\C#\Project\obj\Debug\net7.0\Project.RazorAssemblyInfo.cs
+d:\C#\Project\obj\Debug\net7.0\staticwebassets\msbuild.Project.Microsoft.AspNetCore.StaticWebAssets.props
+d:\C#\Project\obj\Debug\net7.0\staticwebassets\msbuild.build.Project.props
+d:\C#\Project\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.Project.props
+d:\C#\Project\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.Project.props
+d:\C#\Project\obj\Debug\net7.0\staticwebassets.pack.json
+d:\C#\Project\obj\Debug\net7.0\staticwebassets.build.json
+d:\C#\Project\obj\Debug\net7.0\staticwebassets.development.json
+d:\C#\Project\obj\Debug\net7.0\scopedcss\bundle\Project.styles.css
+d:\C#\Project\obj\Debug\net7.0\Project.dll
+d:\C#\Project\obj\Debug\net7.0\refint\Project.dll
+d:\C#\Project\obj\Debug\net7.0\Project.pdb
+d:\C#\Project\obj\Debug\net7.0\Project.genruntimeconfig.cache
+d:\C#\Project\obj\Debug\net7.0\ref\Project.dll
+d:\C#\Project\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+d:\C#\Project\obj\Debug\net7.0\scopedcss\projectbundle\Project.bundle.scp.css
+d:\C#\Project\obj\Debug\net7.0\Project.csproj.AssemblyReference.cache
+d:\C#\Project\bin\Debug\net7.0\BouncyCastle.Cryptography.dll
+d:\C#\Project\bin\Debug\net7.0\Google.Protobuf.dll
+d:\C#\Project\bin\Debug\net7.0\K4os.Compression.LZ4.dll
+d:\C#\Project\bin\Debug\net7.0\K4os.Compression.LZ4.Streams.dll
+d:\C#\Project\bin\Debug\net7.0\K4os.Hash.xxHash.dll
+d:\C#\Project\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+d:\C#\Project\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+d:\C#\Project\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+d:\C#\Project\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
+d:\C#\Project\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+d:\C#\Project\bin\Debug\net7.0\MySql.Data.dll
+d:\C#\Project\bin\Debug\net7.0\MySqlConnector.dll
+d:\C#\Project\bin\Debug\net7.0\MySqlConnector.DependencyInjection.dll
+d:\C#\Project\bin\Debug\net7.0\Pomelo.EntityFrameworkCore.MySql.dll
+d:\C#\Project\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
+d:\C#\Project\bin\Debug\net7.0\System.Drawing.Common.dll
+d:\C#\Project\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
+d:\C#\Project\bin\Debug\net7.0\System.Security.Permissions.dll
+d:\C#\Project\bin\Debug\net7.0\System.Windows.Extensions.dll
+d:\C#\Project\bin\Debug\net7.0\ZstdSharp.dll
+d:\C#\Project\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+d:\C#\Project\bin\Debug\net7.0\runtimes\win-x64\native\comerr64.dll
+d:\C#\Project\bin\Debug\net7.0\runtimes\win-x64\native\gssapi64.dll
+d:\C#\Project\bin\Debug\net7.0\runtimes\win-x64\native\k5sprt64.dll
+d:\C#\Project\bin\Debug\net7.0\runtimes\win-x64\native\krb5_64.dll
+d:\C#\Project\bin\Debug\net7.0\runtimes\win-x64\native\krbcc64.dll
+d:\C#\Project\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+d:\C#\Project\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+d:\C#\Project\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+d:\C#\Project\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+d:\C#\Project\obj\Debug\net7.0\Project.csproj.CopyComplete
+d:\C#\Project\bin\Debug\net7.0\Microsoft.AspNetCore.JsonPatch.dll
+d:\C#\Project\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+d:\C#\Project\bin\Debug\net7.0\Microsoft.AspNetCore.Razor.Language.dll
+d:\C#\Project\bin\Debug\net7.0\Microsoft.CodeAnalysis.dll
+d:\C#\Project\bin\Debug\net7.0\Microsoft.CodeAnalysis.CSharp.dll
+d:\C#\Project\bin\Debug\net7.0\Microsoft.CodeAnalysis.Razor.dll
+d:\C#\Project\bin\Debug\net7.0\Microsoft.DotNet.PlatformAbstractions.dll
+d:\C#\Project\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+d:\C#\Project\bin\Debug\net7.0\Newtonsoft.Json.dll
+d:\C#\Project\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
+d:\C#\Project\bin\Debug\net7.0\cs\Microsoft.CodeAnalysis.resources.dll
+d:\C#\Project\bin\Debug\net7.0\de\Microsoft.CodeAnalysis.resources.dll
+d:\C#\Project\bin\Debug\net7.0\es\Microsoft.CodeAnalysis.resources.dll
+d:\C#\Project\bin\Debug\net7.0\fr\Microsoft.CodeAnalysis.resources.dll
+d:\C#\Project\bin\Debug\net7.0\it\Microsoft.CodeAnalysis.resources.dll
+d:\C#\Project\bin\Debug\net7.0\ja\Microsoft.CodeAnalysis.resources.dll
+d:\C#\Project\bin\Debug\net7.0\ko\Microsoft.CodeAnalysis.resources.dll
+d:\C#\Project\bin\Debug\net7.0\pl\Microsoft.CodeAnalysis.resources.dll
+d:\C#\Project\bin\Debug\net7.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+d:\C#\Project\bin\Debug\net7.0\ru\Microsoft.CodeAnalysis.resources.dll
+d:\C#\Project\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.resources.dll
+d:\C#\Project\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+d:\C#\Project\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+d:\C#\Project\bin\Debug\net7.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\C#\Project\bin\Debug\net7.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\C#\Project\bin\Debug\net7.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\C#\Project\bin\Debug\net7.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\C#\Project\bin\Debug\net7.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\C#\Project\bin\Debug\net7.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\C#\Project\bin\Debug\net7.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\C#\Project\bin\Debug\net7.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\C#\Project\bin\Debug\net7.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\C#\Project\bin\Debug\net7.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\C#\Project\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\C#\Project\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\C#\Project\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\C#\Project\bin\Debug\net7.0\Microsoft.Extensions.Caching.Abstractions.dll
+d:\C#\Project\bin\Debug\net7.0\Microsoft.Extensions.Caching.Memory.dll
+d:\C#\Project\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+d:\C#\Project\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+d:\C#\Project\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll
+D:\C#\Project\bin\Debug\net7.0\JetBrains.Annotations.dll
+D:\C#\Project\bin\Debug\net7.0\X.PagedList.dll
+D:\C#\Project\bin\Debug\net7.0\X.PagedList.Mvc.Core.dll
+D:\C#\Project\obj\Debug\net7.0\Project.MvcApplicationPartsAssemblyInfo.cs
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\appsettings.Development.json
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\appsettings.json
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\Project.staticwebassets.runtime.json
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\Project.exe
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\Project.deps.json
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\Project.runtimeconfig.json
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\Project.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\Project.pdb
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\BouncyCastle.Cryptography.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\Google.Protobuf.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\JetBrains.Annotations.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\K4os.Compression.LZ4.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\K4os.Compression.LZ4.Streams.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\K4os.Hash.xxHash.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\Microsoft.AspNetCore.JsonPatch.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\Microsoft.AspNetCore.Razor.Language.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\Microsoft.CodeAnalysis.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\Microsoft.CodeAnalysis.CSharp.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\Microsoft.CodeAnalysis.Razor.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\Microsoft.DotNet.PlatformAbstractions.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\Microsoft.Extensions.Caching.Abstractions.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\Microsoft.Extensions.Caching.Memory.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\MySql.Data.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\MySqlConnector.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\MySqlConnector.DependencyInjection.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\Newtonsoft.Json.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\Pomelo.EntityFrameworkCore.MySql.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\System.Drawing.Common.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\System.Security.Permissions.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\System.Windows.Extensions.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\X.PagedList.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\X.PagedList.Mvc.Core.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\ZstdSharp.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\cs\Microsoft.CodeAnalysis.resources.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\de\Microsoft.CodeAnalysis.resources.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\es\Microsoft.CodeAnalysis.resources.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\fr\Microsoft.CodeAnalysis.resources.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\it\Microsoft.CodeAnalysis.resources.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\ja\Microsoft.CodeAnalysis.resources.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\ko\Microsoft.CodeAnalysis.resources.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\pl\Microsoft.CodeAnalysis.resources.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\ru\Microsoft.CodeAnalysis.resources.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.resources.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\runtimes\win-x64\native\comerr64.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\runtimes\win-x64\native\gssapi64.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\runtimes\win-x64\native\k5sprt64.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\runtimes\win-x64\native\krb5_64.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\runtimes\win-x64\native\krbcc64.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+d:\Downloads\jjuu\Project\Project\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+d:\Downloads\jjuu\Project\Project\obj\Debug\net7.0\Project.csproj.AssemblyReference.cache
+d:\Downloads\jjuu\Project\Project\obj\Debug\net7.0\Project.GeneratedMSBuildEditorConfig.editorconfig
+d:\Downloads\jjuu\Project\Project\obj\Debug\net7.0\Project.AssemblyInfoInputs.cache
+d:\Downloads\jjuu\Project\Project\obj\Debug\net7.0\Project.AssemblyInfo.cs
+d:\Downloads\jjuu\Project\Project\obj\Debug\net7.0\Project.csproj.CoreCompileInputs.cache
+d:\Downloads\jjuu\Project\Project\obj\Debug\net7.0\Project.MvcApplicationPartsAssemblyInfo.cs
+d:\Downloads\jjuu\Project\Project\obj\Debug\net7.0\Project.MvcApplicationPartsAssemblyInfo.cache
+d:\Downloads\jjuu\Project\Project\obj\Debug\net7.0\Project.RazorAssemblyInfo.cache
+d:\Downloads\jjuu\Project\Project\obj\Debug\net7.0\Project.RazorAssemblyInfo.cs
+d:\Downloads\jjuu\Project\Project\obj\Debug\net7.0\staticwebassets\msbuild.Project.Microsoft.AspNetCore.StaticWebAssets.props
+d:\Downloads\jjuu\Project\Project\obj\Debug\net7.0\staticwebassets\msbuild.build.Project.props
+d:\Downloads\jjuu\Project\Project\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.Project.props
+d:\Downloads\jjuu\Project\Project\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.Project.props
+d:\Downloads\jjuu\Project\Project\obj\Debug\net7.0\staticwebassets.pack.json
+d:\Downloads\jjuu\Project\Project\obj\Debug\net7.0\staticwebassets.build.json
+d:\Downloads\jjuu\Project\Project\obj\Debug\net7.0\staticwebassets.development.json
+d:\Downloads\jjuu\Project\Project\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+d:\Downloads\jjuu\Project\Project\obj\Debug\net7.0\scopedcss\bundle\Project.styles.css
+d:\Downloads\jjuu\Project\Project\obj\Debug\net7.0\scopedcss\projectbundle\Project.bundle.scp.css
+d:\Downloads\jjuu\Project\Project\obj\Debug\net7.0\Project.csproj.CopyComplete
+d:\Downloads\jjuu\Project\Project\obj\Debug\net7.0\Project.dll
+d:\Downloads\jjuu\Project\Project\obj\Debug\net7.0\refint\Project.dll
+d:\Downloads\jjuu\Project\Project\obj\Debug\net7.0\Project.pdb
+d:\Downloads\jjuu\Project\Project\obj\Debug\net7.0\Project.genruntimeconfig.cache
+d:\Downloads\jjuu\Project\Project\obj\Debug\net7.0\ref\Project.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\appsettings.Development.json
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\appsettings.json
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\Project.staticwebassets.runtime.json
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\Project.exe
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\Project.deps.json
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\Project.runtimeconfig.json
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\Project.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\Project.pdb
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\BouncyCastle.Cryptography.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\Google.Protobuf.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\JetBrains.Annotations.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\K4os.Compression.LZ4.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\K4os.Compression.LZ4.Streams.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\K4os.Hash.xxHash.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\Microsoft.AspNetCore.JsonPatch.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\Microsoft.AspNetCore.Razor.Language.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\Microsoft.CodeAnalysis.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\Microsoft.CodeAnalysis.CSharp.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\Microsoft.CodeAnalysis.Razor.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\Microsoft.DotNet.PlatformAbstractions.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\Microsoft.Extensions.Caching.Abstractions.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\Microsoft.Extensions.Caching.Memory.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\MySql.Data.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\MySqlConnector.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\MySqlConnector.DependencyInjection.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\Newtonsoft.Json.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\Pomelo.EntityFrameworkCore.MySql.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\System.Drawing.Common.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\System.Security.Permissions.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\System.Windows.Extensions.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\X.PagedList.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\X.PagedList.Mvc.Core.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\ZstdSharp.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\cs\Microsoft.CodeAnalysis.resources.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\de\Microsoft.CodeAnalysis.resources.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\es\Microsoft.CodeAnalysis.resources.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\fr\Microsoft.CodeAnalysis.resources.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\it\Microsoft.CodeAnalysis.resources.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\ja\Microsoft.CodeAnalysis.resources.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\ko\Microsoft.CodeAnalysis.resources.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\pl\Microsoft.CodeAnalysis.resources.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\ru\Microsoft.CodeAnalysis.resources.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.resources.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\runtimes\win-x64\native\comerr64.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\runtimes\win-x64\native\gssapi64.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\runtimes\win-x64\native\k5sprt64.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\runtimes\win-x64\native\krb5_64.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\runtimes\win-x64\native\krbcc64.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+d:\Downloads\Project (1)\Project\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+d:\Downloads\Project (1)\Project\obj\Debug\net7.0\Project.csproj.AssemblyReference.cache
+d:\Downloads\Project (1)\Project\obj\Debug\net7.0\Project.GeneratedMSBuildEditorConfig.editorconfig
+d:\Downloads\Project (1)\Project\obj\Debug\net7.0\Project.AssemblyInfoInputs.cache
+d:\Downloads\Project (1)\Project\obj\Debug\net7.0\Project.AssemblyInfo.cs
+d:\Downloads\Project (1)\Project\obj\Debug\net7.0\Project.csproj.CoreCompileInputs.cache
+d:\Downloads\Project (1)\Project\obj\Debug\net7.0\Project.MvcApplicationPartsAssemblyInfo.cs
+d:\Downloads\Project (1)\Project\obj\Debug\net7.0\Project.MvcApplicationPartsAssemblyInfo.cache
+d:\Downloads\Project (1)\Project\obj\Debug\net7.0\Project.RazorAssemblyInfo.cache
+d:\Downloads\Project (1)\Project\obj\Debug\net7.0\Project.RazorAssemblyInfo.cs
+d:\Downloads\Project (1)\Project\obj\Debug\net7.0\staticwebassets\msbuild.Project.Microsoft.AspNetCore.StaticWebAssets.props
+d:\Downloads\Project (1)\Project\obj\Debug\net7.0\staticwebassets\msbuild.build.Project.props
+d:\Downloads\Project (1)\Project\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.Project.props
+d:\Downloads\Project (1)\Project\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.Project.props
+d:\Downloads\Project (1)\Project\obj\Debug\net7.0\staticwebassets.pack.json
+d:\Downloads\Project (1)\Project\obj\Debug\net7.0\staticwebassets.build.json
+d:\Downloads\Project (1)\Project\obj\Debug\net7.0\staticwebassets.development.json
+d:\Downloads\Project (1)\Project\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+d:\Downloads\Project (1)\Project\obj\Debug\net7.0\scopedcss\bundle\Project.styles.css
+d:\Downloads\Project (1)\Project\obj\Debug\net7.0\scopedcss\projectbundle\Project.bundle.scp.css
+d:\Downloads\Project (1)\Project\obj\Debug\net7.0\Project.csproj.CopyComplete
+d:\Downloads\Project (1)\Project\obj\Debug\net7.0\Project.dll
+d:\Downloads\Project (1)\Project\obj\Debug\net7.0\refint\Project.dll
+d:\Downloads\Project (1)\Project\obj\Debug\net7.0\Project.pdb
+d:\Downloads\Project (1)\Project\obj\Debug\net7.0\Project.genruntimeconfig.cache
+d:\Downloads\Project (1)\Project\obj\Debug\net7.0\ref\Project.dll

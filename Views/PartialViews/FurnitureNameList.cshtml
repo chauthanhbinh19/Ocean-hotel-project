@@ -1,0 +1,33 @@
+@model List<Project.Models.Furniture>;
+@{
+    int count=0;
+}
+@foreach( var furniture in Model){
+  <div class="checkbox-parent3">
+    <input type="checkbox" name="furniture" value="@furniture.name">
+    <div class="free-breakfast">@furniture.name</div>
+    <input type="hidden" name="" value="@furniture.type" id="name-@count">
+  </div>
+  count++;
+}
+<script>
+    $('input[type="checkbox"][name="furniture"]').on('change', function(){
+          var selectedCheck = $('input[type="checkbox"][name="furniture"]:checked').map(function(){
+            return $(this).val();
+          }).get();
+          console.log($('#name-0').val())
+          var type=$('#name-0').val()
+          $.ajax({
+            type:"POST",
+            url:"/Home/GetFilterRoomFurniture",
+            dataType:"html",
+            data:{selectedOption:selectedCheck, type:type},
+            success: function (response) {
+              $('.frame-parent13').html(response);
+            },
+            error: function () {
+              alert("An error occurred while retrieving contact information.");
+            }
+          })
+        });
+</script>

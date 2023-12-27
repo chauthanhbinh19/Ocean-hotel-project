@@ -1,0 +1,515 @@
+@model Project.Models.Rooms;
+@{
+  float total=0;
+  float? total_price=0;
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+  <link rel="stylesheet" href="~/css/global.css" />
+  <link rel="stylesheet" href="~/css/RoomDetail.css" />
+  <link rel="stylesheet" href="~/css/Nav&Footer.css">
+  <link rel="stylesheet" href="~/css/Scrollbar.css">
+  <link rel="stylesheet" href="~/css/btngrad.css">
+  <link rel="stylesheet" href="~/css/Ribbon.css">
+  <link rel="stylesheet" href="~/css/scroll-btn.css">
+  <link rel="stylesheet" href="~/css/cancelmodal.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=TradeGothic LT Extended:wght@700&display=swap" />
+  <script src="https://kit.fontawesome.com/d85c1eb16f.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="~/js/Nav.js"></script>
+  <script src="https://cdn.lordicon.com/lordicon.js"></script>
+  <script src="~/js/SweetAlert/SweetAlert2.min.js"></script>
+  <link rel="stylesheet" href="~/css/SweetAlert/sweetalert.css">
+</head>
+
+<body>
+  <div class="hotel-listing">
+        <div class="scroll-btn"><a href="#"><span class="scroll-up-btn"><i class="fa-solid fa-chevron-up"></i></i></span></a></div>
+    <!--Navigation-->
+    <div id="header">
+
+      <div id="cover">
+        <a href="/Home/Index" id="logo"></a>
+        <img src="~/Image/logo.png" alt="logo.vn">
+      </div>
+      </a>
+      <nav class="container1">
+        <input type="checkbox" id="check">
+        <ul id="main-menu">
+          <li><a href="/Home/Index"><i class="bi bi-house"></i> Home</a></li>
+          <li>
+            <a class="hassub" href="#"><i class="fa-solid fa-sitemap"></i> Rooms <span class="spaceicon"><i
+                  class="bi bi-chevron-down"></i></span></a>
+            <ul class="sub-menu">
+              <li class="sub-item"><a href="/Home/RoomStandard">Standard room</a></li>
+              <li class="sub-item"><a href="/Home/RoomSuperior">Superior room</a></li>
+              <li class="sub-item"><a href="/Home/RoomDeluxe">Deluxe room</a></li>
+              <li class="sub-item"><a href="/Home/RoomSuite">Suite room</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a class="hassub" href="#"><i class="fa-solid fa-bell-concierge"></i> Service <span class="spaceicon"><i
+                  class="bi bi-chevron-down"></i></span></a>
+            <ul class="sub-menu">
+              <li class="sub-item more">
+                <a class="has-moresub" href="#restaurant"> Restaurant<span class="space"><i
+                      class="fa-solid fa-chevron-right"></i></span></a>
+                <ul class="more-menu">
+                  <li><a href="/Home/ReflectionR">Reflection Restaurant</a></li>
+                  <li><a href="/Home/Cafe">Cafe de l’Opera</a></li>
+                  <li><a href="/Home/Buffet">Buffet Nineteen Restaurant</a></li>
+                  <li><a href="/Home/Tapas">Tapas Kitchen</a></li>
+                </ul>
+              </li>
+              <li class="sub-item"><a href="/Home/Bar">Bar</a></li>
+              <li class="sub-item"><a href="/Home/Gym">Gym</a></li>
+              <li class="sub-item"><a href="/Home/Spa">Spa</a></li>
+              <li class="sub-item"><a href="/Home/Beach">Beach</a></li>
+              <li class="sub-item"><a href="/Home/Shuttle">Shuttle</a></li>
+            </ul>
+          </li>
+          <li><a href="/Home/Gallery"><i class="fa-solid fa-images"></i> Gallery</a></li>
+          <li>
+            <a class="hassub" href="#"><i class="fa-regular fa-calendar"></i> Event <i
+                class="bi bi-chevron-down"></i></a>
+            <ul class="sub-menu">
+              <li class="sub-item"><a href="/Home/Wedding">Wedding</a></li>
+              <li class="sub-item"><a href="/Home/Meeting">Meeting</a></li>
+              <li class="sub-item"><a href="/Home/Corporate">Corporate events</a></li>
+            </ul>
+          </li>
+          <label for="check" class="close-menu">
+            <i class="fa-solid fa-xmark"></i>
+          </label>
+        </ul>
+      </nav>
+      <div class="signup">
+        @if(ViewBag.customer_avatar.name == null){
+          <i class="fa-solid fa-user"></i>
+          <a href="/Login/Login" id="">Sign in</a>
+          
+        }else{
+          <a href="/Home/Account">
+          <span>Hello, @ViewBag.customer_avatar.name</span>
+          </a>
+          <a href="/Home/Account">
+          <img src="~/Image/Avatar/@ViewBag.customer_avatar.img" alt=""> 
+          </a>
+          <a href="/Login/SignOut1" id=""><i class="fa-solid fa-right-from-bracket"></i></a>   
+        }
+      </div>
+      <!--End:Nav-->
+      <label for="check" class="open-menu">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+    </div>
+    <form method="post">
+    <div class="frame-parent2">
+      <div class="overview-parent">
+        <div class="frame-div">
+          <b class="very-good-371-container">@Model.name - <span style="color:#ff8682;">@Model.status</span></b>
+          <div class="frame-parent4">
+            <div class="star-parent"> 
+              <i class="fa-solid fa-star" style="color: yellow;"></i>
+              <i class="fa-solid fa-star" style="color: yellow;"></i>
+              <i class="fa-solid fa-star" style="color: yellow;"></i>
+              <i class="fa-solid fa-star" style="color: yellow;"></i>
+              <i class="fa-solid fa-star" style="color: yellow;"></i>
+            </div>
+          </div>
+        </div>
+        <div class="frame-parent5">
+          <div class="location-parent">
+            <i class="fa-solid fa-mountain-sun"></i> 
+            <div class="gmssuyu-mah-inn">
+              View of room: @Model.view!.name
+            </div>
+          </div>
+          <div class="button-parent">
+            <div class="button2">
+              <div class="button-wrapper">
+                <div class="turkey">@Model.review!.rate</div>
+              </div>
+            </div>
+            <div class="very-good-371-container">
+              @if(Model.review.rate >=4){
+                <b>Very good</b>
+              }else if (Model.review.rate >=3){
+                <b>Good</b>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="night-parent">
+        @if(((List<Promotion>)ViewBag.promotion).Count !=0){
+          @foreach(var promotion in ViewBag.promotion){
+            total=total+promotion.discount_percent;
+          }
+        }
+        @if(((List<Promotion>)ViewBag.promotion).Count !=0){
+          <b class="very-good-371-container">
+            <span class="line-through">$@Model.price</span>
+            <span class="night1">/night</span>
+          </b>
+          total_price = @Model.price - @Model.price*total/100;
+          <b class="very-good-371-container">
+            <span>$@total_price</span>
+            <span class="night1">/night</span>
+            <input type="hidden" name="total" value="@total_price">
+          </b>
+        }else{
+          <b class="night">
+            <span>$@Model.price</span>
+            <span class="night1">/night</span>
+          </b>
+        }
+        <div class="button-group">
+          <div class="button4">
+            <div class="style-layer1">
+              <i class="fa-solid fa-heart" style="color: cornflowerblue;"></i>
+            </div>
+          </div>
+          <div class="button4">
+            <div class="style-layer1">
+              <i class="fa-solid fa-share" style="color: cornflowerblue;"></i>
+            </div>
+          </div>
+          <div class="button6">
+            <div class="style-layer">
+              @if(Model.status=="Available"){
+                @Html.ActionLink("Book now", "ServiceDetail","Home",new {id=@Model.id}, new {@Class="btn-grad"})
+              }else{
+                <a class="btn-grad" style="text-decoration: line-through; line-through-height:4px;">Book now</a>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </form>
+    <div class="rectangle-parent">
+      <div class="img-cover-1">
+        <img class="frame-inner" alt="" src="~/Image/@Model.img" />
+      </div>
+      <div class="img-cover-2">
+        <img class="img-bg" alt="" src="~/Image/pic1.c6506d3c83b1c03275c2.png" />
+        <img class="img-bg" alt="" src="~/Image/pic2.db43734e7df07c155d97.png" />
+        <img class="img-bg" alt="" src="~/Image/pic3.084e84fc095022101602.png" />
+        <img class="img-bg" alt="" src="~/Image/pic4.053798fbb50244a93499.png" />
+      </div>
+    </div>
+    <div class="rectangle-parent1">
+      <div class="rectangle-div"></div>
+      <div class="parent">
+        <div class="overview-parent">
+          <b class="very-good-371-container">Overview</b>
+          <div class="located-in-taksim">
+            Discover urban luxury with a combination of sophisticated design, handcrafted details, and modern-day comforts at Ocean Hotel. Enjoy the world-class restaurants in Atlantic City and our tranquil spa.
+            Ocean Hotel looks forward to welcoming you with warm and dignified service for the ultimate personalised luxury experience.
+          </div>
+        </div>
+        <div class="frame-parent7">
+          <div class="frame-wrapper">
+            <div class="parent">
+              <b class="very-good-371-container" style="color:white;">@Model.review!.rate</b>
+              <div class="very-good-parent">
+                @if(Model.review!.rate >=4){
+                  <b class="very-good-371-container" style="color:white;">Very good</b>
+                }else if (Model.review!.rate >=3){
+                  <b class="very-good-371-container" style="color:white;">Good</b>
+                }
+                <div class="reviews1" style="color:white;">371 reviews</div>
+              </div>
+            </div>
+          </div>
+          <div class="frame-wrapper1 img-bg-bg1">
+            <div class="stars-parent">
+              <i class="fa-solid fa-location-dot"></i>
+              <div class="turkey">Near park</div>
+            </div>
+          </div>
+          <div class="frame-wrapper1 img-bg-bg2">
+            <div class="stars-parent">
+              <i class="fa-solid fa-location-dot"></i>
+              <div class="turkey">Near nightlife</div>
+            </div>
+          </div>
+          <div class="frame-wrapper1 img-bg-bg3">
+            <div class="stars-parent">
+              <i class="fa-solid fa-location-dot"></i>
+              <div class="turkey">Near theater</div>
+            </div>
+          </div>
+          <div class="frame-wrapper1 img-bg-bg4">
+            <div class="stars-parent">
+              <i class="fa-solid fa-location-dot"></i>
+              <div class="turkey">Clean Hotel</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rectangle-div"></div>
+      <div class="parent">
+        <b class="very-good-371-container">Available Rooms</b>
+        <div class="frame-parent8">
+          @foreach(var room in ViewBag.room_list){
+            <div class="reviews-parent">
+            <div class="frame-div">
+              <img class="frame-child5" alt="" src="~/Image/@room.img" />
+              <div class="turkey">
+                @room.name - @room.type - @room.view.name
+              </div>
+            </div>
+            <div class="night-group">
+              <div class="find-flight">
+                @if(((List<Promotion>)ViewBag.promotion).Count !=0){
+                  total_price = @room.price - @room.price*total/100;
+                  <b class="very-good-371-container">
+                    <span>$@total_price</span>
+                    <span class="night1">/night</span>
+                    <input type="hidden" name="total" value="@total_price">
+                  </b>
+                }else{
+                  <b class="night">
+                    <span>$@room.price</span>
+                    <span class="night1">/night</span>
+                  </b>
+                }
+              </div>
+              <div class="button8">
+                <div class="style-layer">
+                  @Html.ActionLink("Book now","RoomDetail","Home",new {id=@room.id}, new{@class="btn-grad"});
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="frame-child6"></div>
+          }
+        </div>
+      </div>
+      <div class="rectangle-div"></div>
+      <div class="parent">
+        <div class="locationmap-parent">
+          <b class="very-good-371-container">Location/Map</b>
+          <div class="button16">
+            <div class="style-layer">
+              <div class="find-flight">View on google maps</div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-parent5">
+          <div class="google-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24504.73552129068!2d-74.43366815865049!3d39.37481922644017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c0ef191281333d%3A0x653dd938353e9bf!2sRevel!5e0!3m2!1svi!2s!4v1703149924432!5m2!1svi!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+          <div class="location-parent">
+            <img class="location-icon" alt="" src="./Image/public8/location1.svg" />
+
+            <div class="gmssuyu-mah-inn">
+              Atlantic City, NJ.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rectangle-div"></div>
+      <div class="parent-1">
+        <b class="very-good-371-container">Amenities</b>
+        <div class="frame-parent14">
+          <div class="logo-parent-2">
+            @foreach(var furniture in ViewBag.furniture_list){
+              <div class="mdipool-parent">
+                <i class="fa-solid fa-circle-check" style="color:cornflowerblue;"></i>
+                <div class="turkey">@furniture.name</div>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+      <div class="rectangle-div"></div>
+      <div class="parent"></div>
+      <div class="logo-parent">
+          <div class="logo-parent-1">
+            <div class="locationmap-parent">
+              <b class="very-good-371-container">Reviews</b>
+              <div class="button16">
+                <div class="style-layer">
+                  <button class="btn-grad" id="popup" style="font-size: 15px; padding: 0px 14px !important;">Give your reviews</button>
+                </div>
+              </div>
+            </div>
+            <div class="group">
+              <b class="very-good-371-container">@Model.review.rate</b>
+              <div class="very-good-group">
+                @if(Model.review.rate>=4){
+                  <div class="find-flight">Very good</div>
+                }else if(Model.review.rate>=3){
+                  <div class="find-flight">Good</div>
+                }
+                <div class="verified-reviews">371 verified reviews</div>
+              </div>
+            </div>
+          </div>
+          <div class="frame-child6"></div>
+          <div class="frame-parent19">
+            @foreach(var review in ViewBag.customer_list_review){
+              <div class="ellipse-group">
+              <img class="ellipse-icon" alt="" src="~/Image/Avatar/@review.img"/>
+              <div class="frame-parent20">
+                <div class="amazing-parent">
+                  <div class="find-flight">@review.review.rate<span>.0 Amazing</span></div>
+                  <div class="very-good-371-container">|</div>
+                  <div class="very-good-371-container">@review.name</div>
+                </div>
+                <div class="lorem-ipsum-dolor">@review.review.comment</div>
+              </div>
+              <i class="fa-solid fa-heart fa-beat" style="color: cornflowerblue;"></i>
+            </div>
+            <div class="frame-child6"></div>
+            }
+          </div>
+      </div>
+    </div>
+    <!--Footer-->
+    <div class="footer"> 
+      <div class="footer-parent">
+        <div class="footer-frame">
+          <div class="logo-parent">
+            <img class="logo-icon1" src="~/Image/logo.png"alt="logo.vn" />
+            <div class="akar-iconsfacebook-fill-parent">
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-x-twitter"></i>
+              <i class="fa-brands fa-youtube"></i>
+            </div> 
+          </div>
+          <div class="text-frame">
+            <div class="our-destinations-parent">
+              <b class="helping-others">Our Destinations</b>
+              <div class="canada-parent">
+                <div class="canada">New York</div>
+                <div class="canada">Miami</div>
+                <div class="canada">NJ</div>
+                <div class="canada">Los Angeles</div>
+              </div>
+            </div>
+            <div class="our-destinations-parent">
+              <b class="helping-others">Our Events</b>
+              <div class="canada-parent">
+                <div class="canada"><a href="/Home/Wedding">Wedding</a></div>
+                <div class="canada"><a href="/Home/Meeting">Meeting</a></div>
+                <div class="canada"><a href="/Home/Corporate">Corporate</a></div>
+              </div>
+            </div>
+            <div class="our-destinations-parent">
+              <b class="helping-others">Contact Us</b>
+              <div class="canada-parent">
+                <div class="canada"><i class="fa-solid fa-phone"></i> 0932718399</div>
+                <div class="canada"><i class="fa-solid fa-envelope"></i> oceanht@gm.com</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Form-->
+    <div class="modal js-modal"> 
+      <div class="modal-container js-modal-container">
+        <div class="modal-close js-modal-close">
+          &times;
+        </div>
+        <div class="modal-body">
+          <h2>Leave a comment</h2>
+          <form action="/Home/AddReview" method="post">
+          <div class="form-element">
+            <h4>Rating:</h4>
+            <div class="rating">
+              <input class="star" id="star-1" name="star" value="0" data-id="5" type="radio">
+              <label class="star" for="star-1"></label>
+              <input class="star" id="star-2" name="star" value="0" data-id="4" type="radio">
+              <label class="star" for="star-2"></label>
+              <input class="star" id="star-3" name="star" value="0" data-id="3" type="radio">
+              <label class="star" for="star-3"></label>
+              <input class="star" id="star-4" name="star" value="0" data-id="2" type="radio">
+              <label class="star" for="star-4"></label>
+              <input class="star" id="star-5" name="star" value="0" data-id="1" type="radio">
+              <label class="star" for="star-5"></label>
+              <input type="hidden" name="rate" id="rate">
+              <input type="hidden" name="id" id="" value="@Model.id">
+            </div>
+          </div>
+          <div class="form-element">
+            <textarea name="comment" id="review" placeholder="Write your comment..." cols="30" rows="5"></textarea>
+          </div>
+          <div class="form-element">
+            <button type="submit" id="confirmRate">Post comment</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="~/js/StickyHeader.js"></script>
+    <script>
+    const reviewBtns = document.querySelectorAll('#popup')
+    const modal = document.querySelector('.js-modal')
+    const modalContainer = document.querySelector('.js-modal-container')
+    const modalClose = document.querySelector('.js-modal-close')
+    // Hàm hiển thị modal 
+    function showForm() {
+      modal.classList.add('open')
+    }
+    // Hàm ẩn modal  
+    function hideForm() {
+      modal.classList.remove('open')
+    }
+   
+    for (const reviewBtn of reviewBtns) {
+      reviewBtn.addEventListener('click', showForm)
+    }
+    // Nghe hành vi click vào button close
+    modalClose.addEventListener('click', hideForm)
+
+    modal.addEventListener('click', hideForm)
+
+    modalContainer.addEventListener('click', function (event) {
+      event.stopPropagation()
+    })
+  </script>
+  <script>
+    $(document).ready(function(){
+      $('input[type="radio"][name="star"]').on('click', function(){
+        var a=$(this).data("id");
+        $('#rate').val(a);
+      })
+      var strValue="@ViewBag.status";
+        if(strValue !== null  && strValue !==''){
+            Swal.fire({
+              title: strValue,
+              text: "You clicked the button!",
+              icon: "success"
+            });
+        }
+        var strValue1="@ViewBag.status1";
+        if(strValue1 !== null  && strValue1 !==''){
+            Swal.fire({
+              title: strValue1,
+              text: "You clicked the button!",
+              icon: "error"
+            });
+        }
+    });
+  </script>
+</body>
+
+</html>

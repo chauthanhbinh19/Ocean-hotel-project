@@ -1,0 +1,569 @@
+@model Project.Models.Booking;
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+  <link rel="stylesheet" href="~/css/global.css" />
+  <link rel="stylesheet" href="~/css/Home.css" />
+  <link rel="stylesheet" href="~/css/Nav&Footer.css">
+  <link rel="stylesheet" href="~/css/Scrollbar.css">
+  <link rel="stylesheet" href="~/css/scroll-btn.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=TradeGothic LT Extended:wght@700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <script src="https://kit.fontawesome.com/d85c1eb16f.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="~/js/Nav.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_blue.css">
+</head>
+
+<body>
+  <div class="landing-page">
+    <div class="landing-page-item">
+      <img class="landing-page-child" src="../Image/background.jpg" />
+      <div class="bg"></div>
+    </div>
+    <div class="scroll-btn"><a href="#"><span class="scroll-up-btn"><i class="fa-solid fa-chevron-up"></i></i></span></a></div>
+    <!--Navigation-->
+    <div id="header"> 
+      <a href="/Home/Index" id="logo">
+        <div id="cover">
+          <img src="../Image/logo.png" alt="logo.vn">
+        </div>
+      </a>
+      <nav class="container1">
+        <input type="checkbox" id="check">
+        <ul id="main-menu">
+          <li><a href="/Home/Index"><i class="bi bi-house"></i> Home</a></li>
+          <li>
+            <a class="hassub" href="#"><i class="fa-solid fa-sitemap"></i> Rooms <span class="spaceicon"><i
+                  class="bi bi-chevron-down"></i></span></a>
+            <ul class="sub-menu">
+              <li class="sub-item"><a href="/Home/RoomStandard">Standard room</a></li>
+              <li class="sub-item"><a href="/Home/RoomSuperior">Superior room</a></li>
+              <li class="sub-item"><a href="/Home/RoomDeluxe">Deluxe room</a></li>
+              <li class="sub-item"><a href="/Home/RoomSuite">Suite room</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a class="hassub" href="#"><i class="fa-solid fa-bell-concierge"></i> Service <span class="spaceicon"><i
+                  class="bi bi-chevron-down"></i></span></a>
+            <ul class="sub-menu">
+              <li class="sub-item more">
+                <a class="has-moresub" href="#restaurant"> Restaurant<span class="space"><i
+                      class="fa-solid fa-chevron-right"></i></span></a>
+                <ul class="more-menu">
+                  <li><a href="/Home/ReflectionR">Reflection Restaurant</a></li>
+                  <li><a href="/Home/Cafe">Cafe de l’Opera</a></li>
+                  <li><a href="/Home/Buffet">Buffet Nineteen Restaurant</a></li>
+                  <li><a href="/Home/Tapas">Tapas Kitchen</a></li>
+                </ul>
+              </li>
+              <li class="sub-item"><a href="/Home/Bar">Bar</a></li>
+              <li class="sub-item"><a href="/Home/Gym">Gym</a></li>
+              <li class="sub-item"><a href="/Home/Spa">Spa</a></li>
+              <li class="sub-item"><a href="/Home/Beach">Beach</a></li>
+              <li class="sub-item"><a href="/Home/Shuttle">Shuttle</a></li>
+            </ul>
+          </li>
+          <li><a href="/Home/Gallery"><i class="fa-solid fa-images"></i> Gallery</a></li>
+          <li>
+            <a class="hassub" href="#"><i class="fa-regular fa-calendar"></i> Event <i
+                class="bi bi-chevron-down"></i></a>
+            <ul class="sub-menu">
+              <li class="sub-item"><a href="/Home/Wedding">Wedding</a></li>
+              <li class="sub-item"><a href="/Home/Meeting">Meeting</a></li>
+              <li class="sub-item"><a href="/Home/Corporate">Corporate events</a></li>
+            </ul>
+          </li>
+          <label for="check" class="close-menu">
+            <i class="fa-solid fa-xmark"></i>
+          </label>
+        </ul>
+      </nav>
+      <div class="signup">
+        @if(ViewBag.customer_avatar.name == null){
+          <i class="fa-solid fa-user"></i>
+          <a href="/Login/Login" id="">Sign in</a>
+          
+        }else{
+          <a href="/Home/Account">
+          <span>Hello, @ViewBag.customer_avatar.name</span>
+          </a>
+          <a href="/Home/Account">
+          <img src="~/Image/Avatar/@ViewBag.customer_avatar.img" alt=""> 
+          </a>
+          <a href="/Login/SignOut1" id=""><i class="fa-solid fa-right-from-bracket"></i></a>      
+        }
+      </div>
+      <!--End:Nav-->
+      <label for="check" class="open-menu">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+    </div>
+    <!--End Nav-->
+
+    <div class="text-img">
+      <div class="text-cover">
+        <b class="ocean-hotel">Ocean Hotel</b>
+        <b class="best-place">A Best Place To Stay</b>
+      </div>
+      <div class="enjoy">Enjoy your dream vacation</div>
+    </div>
+    <div id="content">
+      <!--Booking-->
+      <form asp-action="SearchRoom" asp-controller="Home" method="post">
+      <div class="booking-section">
+        <div class="booking-textfield">
+          <div class="text-field-parent">
+            <div class="text-field">
+              <div class="text-field1">
+                <div class="state-layer">
+                  <div class="content">
+                    <div class="input-text">
+                      <!-- <label for="checkin"></label> -->
+                      <input type="text" asp-for="check_in_date" id="checkin" required>
+                    </div>
+                    <div class="label-text">
+                      <div class="booking-text">Check-in</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-field">
+              <div class="text-field1">
+                <div class="state-layer">
+                  <div class="content">
+                    <div class="input-text">
+                      <input type="text" asp-for="check_out_date" id="checkout" required>
+                    </div>
+                    <div class="label-text">
+                      <div class="booking-text">Check-out</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-field">
+              <div class="text-field1">
+                <div class="state-layer">
+                  <div class="content">
+                    <div class="input-text">
+                      <select asp-for="number_of_guest" id="" required>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                      </select>
+                    </div>
+                    <div class="label-text4">
+                      <div class="booking-text">People </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-field">
+               <div class="button">
+                <button type="submit" href="" id="booking">Booking</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </form>
+      <!--About Us-->
+      <div class="about-us-section">
+        <div class="about-text">
+        <div class="about-heading">About Us <i class="fa-solid fa-comment fa-beat" style="color:cornflowerblue"></i></div>
+        <div class="about-sub">At Ocean Hotel</div>
+        <div class="about-description">
+         Welcome to the largest hotel on the famous Atlantic City Boardwalk. 
+         As a mainstay of AC’s legendary Boardwalk, we believe the fun should be where you are. 
+         Bring your crew, your family, and your furry friends to epic performances from today’s best acts, athletes, and entertainers, or be your own showrunner and tell us how you’d like to transform our versatile convention spaces for your own Atlantic City events.
+        </div>
+        </div>
+        <div class="about-img">
+          <div class="img1" ></div>
+          <div class="img2"></div>
+        </div>
+      </div>
+      <!--Room-->
+      <div class="room-section">
+        <div class="room-heading">Rooms <i class="fa-solid fa-bed fa-beat" style="color:cornflowerblue"></i></div>
+        <div class="room-list">
+          <div class="room">
+            <img class="room-img" alt="" src="../Image/Standard2.png" />
+            <div class="room-text">
+              <div class="room-parent">
+                <b class="room-type">Standard</b>
+                <div class="room-description">
+                  A standard room is the most basic type of room in a hotel, typically with a small size, simple
+                  furnishings, and basic amenities.
+                </div>
+              </div>
+              <div class="button8">
+                <div class="style-layer1">
+                  <i class="fa-solid fa-ticket" style="color:white"></i>
+                  <div class="detail"><a href="/Home/RoomStandard">Show Detail</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="room">
+            <img class="room-img" alt="" src="../Image/Superior2.jpg" />
+            <div class="room-text">
+              <div class="room-parent">
+                <b class="room-type">Superior</b>
+                <div class="room-description">
+                  A superior room is more upscale than a standard room, typically with a larger size, more modern furnishings, 
+                  and additional amenities such as a minibar, coffee maker, etc.
+                </div>
+              </div>
+              <div class="button8">
+                <div class="style-layer1">
+                  <i class="fa-solid fa-ticket" style="color:white"></i>
+
+                  <div class="detail"><a href="/Home/RoomSuperior">Show Detail</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="room">
+            <img class="room-img" alt="" src="../Image/Deluxe2.jpeg" />
+            <div class="room-text">
+              <div class="room-parent">
+                <b class="room-type">Deluxe</b>
+                <div class="room-description">
+                  A deluxe room is the most luxurious of the basic room types, 
+                  with the largest size, high-end furnishings, and all the amenities.
+                </div>
+              </div>
+              <div class="button8">
+                <div class="style-layer1">
+                  <i class="fa-solid fa-ticket" style="color:white"></i>
+
+                  <div class="detail"><a href="/Home/RoomDeluxe">Show Detail</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="room">
+            <img class="room-img" alt="" src="../Image/Suite2.jpeg" />
+            <div class="room-text">
+              <div class="room-parent">
+                <b class="room-type">Suite</b>
+                <div class="room-description">
+                  A suite is the most luxurious type of room in a hotel, 
+                  with a large size, luxurious furnishings, and additional amenities such as a living room, dining room, and workroom, etc.
+                </div>
+              </div>
+              <div class="button8">
+                <div class="style-layer1">
+                  <i class="fa-solid fa-ticket" style="color:white"></i>
+                  <div class="detail"><a href="/Home/RoomSuite">Show Detail</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Service-->
+      <div class="service-section">
+        <div class="service-text">
+          <div class="service-heading">
+            <div class="service-heading"><i class="fa-solid fa-bell-concierge fa-shake" style="color:cornflowerblue"></i> Services</div>
+            <div class="service-sub">
+              You will be treated like a king
+              <i class="fa-solid fa-crown fa-beat" style="color: #054cc7;"></i>
+            </div>
+          </div>
+        </div>
+        <div class="service-wrap">
+          <div class="row">
+            <div class="service-frame">
+              <div class="rectangle-wrapper">
+                <img class="service-img" alt="" src="https://cdn.lifestyleasia.com/wp-content/uploads/sites/5/2021/04/01201349/Dining-Area.jpg" />
+              </div>
+              <div class="service-parent">
+                <div class="service-name">Reflection Restaurant</div>
+                <div class="text-parent">
+                  <div class="div">Hotel</div>
+                  <div class="div">•</div>
+                  <div class="div">Food</div>
+                  <div class="div">•</div>
+                  <div class="s-detail"><a href="/Home/ReflectionR">Details</a></div>
+  
+                </div>
+              </div>
+            </div>
+            <div class="service-frame">
+              <div class="rectangle-wrapper">
+                <img class="service-img" alt="" src="../Image/service/Cafe-de-lOpera-Header-1360x600-1-1.jpg" />
+              </div>
+              <div class="service-parent">
+                <div class="service-name">Cafe de l’Opera </div>
+                <div class="text-parent">
+                  <div class="div">Hotel</div>
+                  <div class="div">•</div>
+                  <div class="div">Drink</div>
+                  <div class="div">•</div>
+                  <div class="s-detail"><a href="/Home/Cafe">Details</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="service-frame">
+              <div class="rectangle-wrapper">
+                <img class="service-img" alt="" src="../Image/service/Buffet_Nineteen/CaravelleNineteen-Buffet-2020-1.jpg" />
+              </div>
+              <div class="service-parent">
+                <div class="service-name">Buffet Nineteen Restaurant</div>
+                <div class="text-parent">
+                  <div class="div">Hotel</div>
+                  <div class="div">•</div>
+                  <div class="div">Food</div>
+                  <div class="div">•</div>
+                  <div class="s-detail"><a href="/Home/Buffet">Details</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="service-frame">
+              <div class="rectangle-wrapper">
+                <img class="service-img" alt="" src="../Image/service/TapasKitchen/TapasKitchen.jfif" />
+              </div>
+              <div class="service-parent">
+                <div class="service-name">Tapas Kitchen</div>
+                <div class="text-parent">
+                  <div class="div">Hotel</div>
+                  <div class="div">•</div>
+                  <div class="div">Food</div>
+                  <div class="div">•</div>
+                  <div class="s-detail"><a href="/Home/Tapas">Details</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="service-frame">
+              <div class="rectangle-wrapper">
+                <img class="service-img" alt="" src="../Image/service/Bar/Martini-bar-footerjpg.jpg" />
+              </div>
+              <div class="service-parent">
+                <div class="service-name">Bar</div>
+                <div class="text-parent">
+                  <div class="div">Hotel</div>
+                  <div class="div">•</div>
+                  <div class="div">Drink</div>
+                  <div class="div">•</div>
+                  <div class="s-detail"><a href="/Home/Bar">Details</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="service-frame">
+              <div class="rectangle-wrapper">
+                <img class="service-img" alt="" src="../Image/service/Gym/best-hotel-gym-Bangkok-Chatrium-Residence-Sathon-Bangkok-3.png" />
+              </div>
+              <div class="service-parent">
+                <div class="service-name">Gym</div>
+                <div class="text-parent">
+                  <div class="div">Hotel</div>
+                  <div class="div">•</div>
+                  <div class="div">Health</div>
+                  <div class="div">•</div>
+                  <div class="s-detail"><a href="/Home/Gym">Details</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="service-frame">
+              <div class="rectangle-wrapper">
+                <img class="service-img" alt="" src="../Image/service/Spa/spa2.jpg" />
+              </div>
+              <div class="service-parent">
+                <div class="service-name">Spa</div>
+                <div class="text-parent">
+                  <div class="div">Hotel</div>
+                  <div class="div">•</div>
+                  <div class="div">Health</div>
+                  <div class="div">•</div>
+                  <div class="s-detail"><a href="/Home/Spa">Details</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="service-frame">
+              <div class="rectangle-wrapper">
+                <img class="service-img" alt="" src="../Image/service/Beach/Pool&Beach.jpg" />
+              </div>
+              <div class="service-parent">
+                <div class="service-name">Beach</div>
+                <div class="text-parent">
+                  <div class="div">Hotel</div>
+                  <div class="div">•</div>
+                  <div class="div">Relax</div>
+                  <div class="div">•</div>
+                  <div class="s-detail"><a href="/Home/Beach">Details</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="service-frame">
+              <div class="rectangle-wrapper">
+                <img class="service-img" alt="" src="../Image/service/shuttle.jpg" />
+              </div>
+              <div class="service-parent">
+                <div class="service-name">Shuttle</div>
+                <div class="text-parent">
+                  <div class="div">Hotel</div>
+                  <div class="div">•</div>
+                  <div class="div">Convenience</div>
+                  <div class="div">•</div>
+                  <div class="s-detail"><a href="/Home/Shuttle">Details</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-section">
+        <div class="gallery-text">
+          <div class="about-heading">Our Gallery
+          <i class="fa-brands fa-envira fa-bounce" style="color:cornflowerblue"></i>
+          </div>
+        </div>
+        <div class="service-wrap">
+          <div class="row">
+            <div class="service-frame">
+              <div class="wrapper">
+                <img class="service-img" alt="" src="../Image/event/Wedding-at-Caravelle-016.jpg" />
+                <div class="overlay">
+                  <div class="g-name">Event</div>
+                </div>
+              </div>
+            </div>
+            <div class="service-frame">
+              <div class="wrapper">
+                <img class="service-img" alt="" src="../Image/service/Bar/martinis6.jpg" />
+                <div class="overlay">
+                  <div class="g-name">Service</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="service-frame">
+              <div class="wrapper">
+                <img class="service-img" alt="" src="../Image/wp6957277.jpg" />
+                <div class="overlay">
+                  <div class="g-name">Room</div>
+                </div>
+              </div>
+            </div>
+            <div class="service-frame">
+              <div class="wrapper">
+                <img class="service-img" alt="" src="../Image/thumb-1920-402052.jpg" />
+                <div class="overlay">
+                  <div class="g-name">Others</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-parent">
+        <div class="footer-frame">
+          <div class="logo-parent">
+            <img class="logo-icon1" src="../Image/logo.png"alt="logo.vn" />
+            <div class="akar-iconsfacebook-fill-parent">
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-x-twitter"></i>
+              <i class="fa-brands fa-youtube"></i>
+            </div>
+          </div>
+          <div class="text-frame">
+            <div class="our-destinations-parent">
+              <b class="helping-others">Our Destinations</b>
+              <div class="canada-parent">
+                <div class="canada">New York</div>
+                <div class="canada">Miami</div>
+                <div class="canada">NJ</div>
+                <div class="canada">Los Angeles</div>
+              </div>
+            </div>
+            <div class="our-destinations-parent">
+              <b class="helping-others">Our Events</b>
+              <div class="canada-parent">
+                <div class="canada"><a href="/Home/Wedding">Wedding</a></div>
+                <div class="canada"><a href="/Home/Meeting">Meeting</a></div>
+                <div class="canada"><a href="/Home/Corporate">Corporate</a></div>
+              </div>
+            </div>
+            <div class="our-destinations-parent">
+              <b class="helping-others">Contact Us</b>
+              <div class="canada-parent">
+                <div class="canada"><i class="fa-solid fa-phone"></i> 0932718399</div>
+                <div class="canada"><i class="fa-solid fa-envelope"></i> oceanht@gm.com</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <script src="./js/script.js"></script> -->
+  <script src="../js/StickyHeader.js"></script>
+  <script>
+    $(function () {
+			$('#datetimepicker').datetimepicker({
+				inline: true,
+			});
+		});
+    flatpickr('#checkin',{})
+    flatpickr('#checkout',{})
+    $(document).ready(function(){
+      $('#checkin').on("change",function(){
+        var selectedDate =new Date($('#checkin').val());
+        var currentDate=new Date();
+        currentDate.setHours(0, 0, 0, 0);
+        
+        if (selectedDate < currentDate) {
+            alert("Check in date must greater than today.");
+            $('#checkin').val("");
+        }
+      })
+      $('#checkout').on("change",function(){
+        var checkinDate =new Date($('#checkin').val());
+        var checkoutDate =new Date($('#checkout').val());
+        console.log(checkinDate);
+        if(checkinDate =="Invalid Date"){
+          alert("Select check in date before choosing check out date.");
+          $('#checkout').val("");
+        }else{
+          if(checkinDate > checkoutDate){
+            alert("Check out date must greater than check in date.");
+            $('#checkout').val("");
+          }
+        }
+        
+      })
+      $('#number').on("change",function(){
+
+      })
+    }); 
+  </script>
+</body>
+
+</html>

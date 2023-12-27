@@ -1,0 +1,51 @@
+body{
+    margin:0 0;
+    /* background-image: linear-gradient(4deg, rgba(9, 144, 255, 0.1) 30%, rgba(14, 146, 255, 0.1) 45%, rgba(55, 200, 240, 0.1) 100%), url(../Image/whale-bg.png); */
+    background-image: url(../Image/whale-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+html{
+    scroll-snap-type: y mandatory;
+}
+.section-class{
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+    height: 100vh;
+}
+section{
+    scroll-snap-align: start;
+}
+#header, #extra-bar{
+    scroll-snap-align: start;
+}
+.rimg5{
+    background-image: url(../Image/Picture1-removebg-preview_upscayl_4x_realesrgan-x4plus\ \(1\).png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 800px;
+    height: 400px;
+    top:20%;
+    left:13%;
+    transform: rotate(5deg);
+    position: absolute;
+    filter: saturate(3);
+    z-index: 0;
+  }
+  .rimg6{
+    background-image: url(../Image/pngtree-cute-hand-drawn-cartoon-sea-creature-dolphin-lovely-hand-painted-cartoon-png-image_3953428-removebg-preview1.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 250px;
+    height: 270px;
+    top:20%;
+    left:41%;
+    transform: rotate(42deg);
+    position: absolute;
+    filter: saturate(2);
+    z-index: 1;
+  }

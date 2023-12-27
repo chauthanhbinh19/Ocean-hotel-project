@@ -1,0 +1,606 @@
+@model Project.Models.Rooms;
+@{
+  string type=@ViewBag.type;
+  float total=0;
+  float total_price=0;
+}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="~/css/global.css" />
+    <link rel="stylesheet" href="~/css/room.css" />
+    <link rel="stylesheet" href="~/css/Nav&Footer.css">
+    <link rel="stylesheet" href="~/css/btngrad.css">
+    <link rel="stylesheet" href="~/css/inputrange.css">
+    <link rel="stylesheet" href="~/css/Scrollbar.css">
+    <link rel="stylesheet" href="~/css/Checkbox.css">
+    <link rel="stylesheet" href="~/css/Ribbon.css">
+    <link rel="stylesheet" href="~/css/scroll-btn.css">
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"/>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=TradeGothic LT Extended:wght@700&display=swap"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://kit.fontawesome.com/d85c1eb16f.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="~/js/Nav.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_blue.css">
+  </head>
+  <body>
+    <div class="hotel-listing">
+          <div class="scroll-btn"><a href="#"><span class="scroll-up-btn"><i class="fa-solid fa-chevron-up"></i></i></span></a></div>
+    <!--Navigation-->
+    <div id="header">
+      
+        <div id="cover">
+          <a href="/Home/Index" id="logo"></a>
+          <img src="~/Image/logo.png"
+            alt="logo.vn">
+        </div>
+      </a>
+      <nav class="container1">
+        <input type="checkbox" id="check">
+        <ul id="main-menu">
+          <li><a href="/Home/Index"><i class="bi bi-house"></i> Home</a></li>
+          <li>
+            <a class="hassub" href="#"><i class="fa-solid fa-sitemap"></i> Rooms <span class="spaceicon"><i class="bi bi-chevron-down"></i></span></a>
+            <ul class="sub-menu">
+              <li class="sub-item"><a href="/Home/RoomStandard">Standard room</a></li>
+              <li class="sub-item"><a href="/Home/RoomSuperior">Superior room</a></li>
+              <li class="sub-item"><a href="/Home/RoomDeluxe">Deluxe room</a></li>
+              <li class="sub-item"><a href="/Home/RoomSuite">Suite room</a></li>
+            </ul>
+          </li> 
+
+          <li>
+            <a class="hassub" href="#"><i class="fa-solid fa-bell-concierge"></i> Service <span class="spaceicon"><i
+                  class="bi bi-chevron-down"></i></span></a>
+            <ul class="sub-menu">
+              <li class="sub-item more">
+                <a class="has-moresub" href="#restaurant"> Restaurant<span class="space"><i
+                      class="fa-solid fa-chevron-right"></i></span></a>
+                <ul class="more-menu">
+                  <li><a href="/Home/ReflectionR">Reflection Restaurant</a></li>
+                  <li><a href="/Home/Cafe">Cafe de l’Opera</a></li>
+                  <li><a href="/Home/Buffet">Buffet Nineteen Restaurant</a></li>
+                  <li><a href="/Home/Tapas">Tapas Kitchen</a></li>
+                </ul>
+              </li>
+              <li class="sub-item"><a href="/Home/Bar">Bar</a></li>
+              <li class="sub-item"><a href="/Home/Gym">Gym</a></li>
+              <li class="sub-item"><a href="/Home/Spa">Spa</a></li>
+              <li class="sub-item"><a href="/Home/Beach">Beach</a></li>
+              <li class="sub-item"><a href="/Home/Shuttle">Shuttle</a></li>
+            </ul>
+          </li>
+          <li><a href="/Home/Gallery"><i class="fa-solid fa-images"></i> Gallery</a></li>
+          <li>
+            <a class="hassub" href="#"><i class="fa-regular fa-calendar"></i> Event <i
+                class="bi bi-chevron-down"></i></a>
+            <ul class="sub-menu">
+              <li class="sub-item"><a href="/Home/Wedding">Wedding</a></li>
+              <li class="sub-item"><a href="/Home/Meeting">Meeting</a></li>
+              <li class="sub-item"><a href="/Home/Corporate">Corporate events</a></li>
+            </ul>
+          </li>
+          <label for="check" class="close-menu">
+            <i class="fa-solid fa-xmark"></i>
+          </label>
+        </ul>
+      </nav>
+      <div class="signup">
+        @if(ViewBag.customer_avatar.name == null){
+          <i class="fa-solid fa-user"></i>
+          <a href="/Login/Login" id="">Sign in</a>
+          
+        }else{
+          <a href="/Home/Account">
+          <span>Hello, @ViewBag.customer_avatar.name</span>
+          </a>
+          <a href="/Home/Account">
+          <img src="~/Image/Avatar/@ViewBag.customer_avatar.img" alt=""> 
+          </a>
+          <a href="/Login/SignOut1" id=""><i class="fa-solid fa-right-from-bracket"></i></a>   
+        }
+      </div>
+    <!--End:Nav-->
+      <label for="check" class="open-menu">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+    </div>
+    <div class="landing-page-item">
+      <img class="landing-page-child" src="~/Image/z4949244113871_1f0eedc5882e8ce0268edc2526263fe1.jpg" />
+    </div>
+    <div class="booking-section">
+      @if(ViewBag.type == "Standard"){
+        <h2>Standard Room</h2>
+      }else if(ViewBag.type == "Superior"){
+        <h2>Superior Room</h2>
+      }else if(ViewBag.type == "Deluxe"){
+        <h2>Deluxe Room</h2>
+      }else{
+        <h2>Suite Room</h2>
+      }
+      <h4>Limited space, essential amenities, affordable price, wide availability, suitable for short stays</h4>
+    </div>
+      <form action="/Home/SearchRoom1" method="post">
+        <div class="frame-booking">
+          <div class="frame-booking1">
+            <div class="booking-wrapper">
+              <div class="date">
+                <i class="fa-regular fa-calendar-days" style="color:cornflowerblue;"></i>
+                <input type="text" name="checkin" id="checkin" value="@ViewBag.check_in" required>
+              </div>
+            </div>
+          </div>
+          <div class="line-div"></div>
+          <div class="frame-booking1">
+            <div class="booking-wrapper">
+              <div class="date">
+                <i class="fa-regular fa-calendar-days" style="color:cornflowerblue;"></i>
+                <input type="text" name="checkout" id="checkout" value="@ViewBag.check_out" required>
+              </div>
+            </div>
+          </div>
+          <div class="line-div"></div>
+          <div class="frame-booking1">
+            <div class="booking-wrapper">
+              <div class="find-flight">
+                <i class="fa-solid fa-users" style="color:cornflowerblue;"></i>
+                <select name="number" id="" required>
+                  <option value="1" selected="@(ViewBag.number == 1)">1</option>
+                  <option value="2" selected="@(ViewBag.number == 2)">2</option>
+                  <option value="3" selected="@(ViewBag.number == 3)">3</option>
+                  <option value="4" selected="@(ViewBag.number == 4)">4</option>
+                  <option value="5" selected="@(ViewBag.number == 5)">5</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="line-div"></div>
+          <div class="frame-booking1">
+            <div class="booking-wrapper">
+              <div class="find-flight">
+                <button class="btn-grad">Apply</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    <div id="content">
+      <div class="filters-parent">
+        <div class="filters">Filters</div>
+        <div class="frame-parent3">
+          <div class="price-parent">
+            <div class="find-flight">Price</div>
+            <i class="fa-solid fa-dollar-sign fa-beat"></i>
+          </div>
+          <div class="group-parent">
+            <input type="range" name="price" id="" min="@ViewBag.min" max="@ViewBag.max" step="50">
+            <input type="hidden" name="" class="price-value" value="">
+            <div class="parent">
+              <div class="free-breakfast">$@ViewBag.min</div>
+              <div class="div2">$@ViewBag.max</div>
+            </div>
+          </div>
+        </div>
+        <div class="rectangle-div"></div>
+        <div class="frame-parent3">
+          <div class="price-parent">
+            <div class="find-flight">Rating</div>
+            <i class="fa-solid fa-star fa-beat"></i>
+          </div>
+          <div class="button-parent">
+            <input type="hidden" name="" class="rate-value" value="">
+            <div class="button1">
+              <button class="button-wrapper" id="button-rate-0" value="0">0+</button>
+            </div>
+            <div class="button1">
+              <button class="button-wrapper" id="button-rate-1" value="1">1+</button>
+            </div>
+            <div class="button1">
+              <button class="button-wrapper" id="button-rate-2" value="2">2+</button>
+            </div>
+            <div class="button1">
+              <button class="button-wrapper" id="button-rate-3" value="3">3+</button>
+            </div>
+            <div class="button1">
+              <button class="button-wrapper" id="button-rate-4" value="4">4+</button>
+            </div>
+          </div>
+        </div>
+        <div class="rectangle-div"></div>
+        <div class="frame-parent3">
+          <div class="price-parent">
+            <div class="find-flight">Room name</div>
+            <i class="fa-solid fa-feather fa-beat"></i>
+          </div>
+          <div class="frame-parent4">
+            @foreach(var room in ViewBag.room_name){
+              <div class="checkbox-parent">
+                <input type="checkbox" name="roomname" class="roomname" value="@room.name">
+                <div class="free-breakfast">@room.name</div>
+              </div>
+            }
+          </div>
+        </div>
+        <div class="rectangle-div"></div>
+        <div class="frame-parent5">
+          <div class="frame-parent3">
+            <div class="price-parent">
+              <div class="find-flight">Amenities</div>
+              <i class="fa-solid fa-wifi fa-beat"></i>
+            </div>
+            <div class="frame-parent4 furniture_name">
+              @foreach( var furniture in ViewBag.furniture){
+                <div class="checkbox-parent3">
+                  <input type="checkbox" name="furniture" value="@furniture.name">
+                  <div class="free-breakfast">@furniture.name</div>
+                </div>
+              }
+            </div>
+          </div>
+          <button class="more" id="more" value="more">More</button>
+        </div>
+      </div>
+      <div class="frame-parent8">
+        <div class="frame-parent9">
+          <div class="frame-parent10">
+            <div class="hotels-wrapper">
+              <div class="find-flight">
+                <a href="/Home/RoomStandard">Standard</a>
+              </div>
+            </div>
+            <div class="places">@ViewBag.NumberStandard rooms</div>
+          </div>
+          <div class="line-div"></div>
+          <div class="frame-parent11">
+            <div class="hotels-wrapper">
+              <div class="find-flight">
+                <a href="/Home/RoomSuperior">Superior</a>
+              </div>
+            </div>
+            <div class="places">@ViewBag.NumberSuperior rooms</div>
+          </div>
+          <div class="frame-child3"></div>
+          <div class="frame-parent12">
+            <div class="hotels-wrapper">
+              <div class="find-flight">
+                <a href="/Home/RoomDeluxe">Deluxe</a>
+              </div>
+            </div>
+            <div class="places">@ViewBag.NumberDeluxe rooms</div>
+          </div>
+          <div class="frame-child3"></div>
+          <div class="frame-parent12">
+            <div class="hotels-wrapper">
+              <div class="find-flight">
+                <a href="/Home/RoomSuite">Suite</a>
+              </div>
+            </div>
+            <div class="places">@ViewBag.NumberSuite rooms</div>
+          </div>
+        </div>
+        <div class="frame-parent13">
+          @foreach(var room in ViewBag.room_list){
+            <div class="rectangle-parent">
+            <img class="rectangle-icon" alt="" src="~/Image/@room.img"/>
+            @if(((List<Promotion>)ViewBag.promotion).Count !=0){
+              @foreach(var promotion in ViewBag.promotion){
+                total=total+promotion.discount_percent;
+              }
+              <div class="ribbon ribbon-top-left"><span>DISCOUNT @total%</span></div>
+            }
+            <div class="frame-parent14">
+              <div class="frame-parent15">
+                <div class="cvk-park-bosphorus-hotel-istan-parent">
+                  <b class="cvk-park-bosphorus">@room.name - <span style="color:#ff8682;">#@room.id</span></b>
+                  <div class="frame-parent16">
+                    <div class="location-parent">
+                      <i class="fa-solid fa-mountain-sun"></i> 
+                      <div class="images">
+                        View of room: @room.view.name
+                      </div>
+                      <span>&nbsp; <i class="fa-solid fa-users" style="color:cornflowerblue;"></i> @room.number_of_guest</span>
+                    </div>
+                    <div class="frame-group">
+                      <div class="airplane-parent">
+                        <div class="hotels-wrapper">
+                          <i class="fa-solid fa-star" style="color: yellow;"></i>
+                          <i class="fa-solid fa-star" style="color: yellow;"></i>
+                          <i class="fa-solid fa-star" style="color: yellow;"></i>
+                          <i class="fa-solid fa-star" style="color: yellow;"></i>
+                          <i class="fa-solid fa-star" style="color: yellow;"></i>
+                        </div>
+                        <div class="free-breakfast">5 Star Hotel</div>
+                      </div>
+                      <div class="cafe-parent">
+                        <i class="fa-solid fa-mug-saucer"></i>
+                        <div class="sort-by-recommended-container">
+                          <b>20+</b>
+                          <span class="reviews"> Aminities</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="airplane-parent">
+                      <div class="button1">
+                        <div class="button-wrapper">
+                          <div class="free-breakfast">@room.review.rate</div>
+                        </div>
+                      </div>
+                      <div class="sort-by-recommended-container">
+                        @if(room.review.rate >=4){
+                          <b>Very good, Size: </b>
+                        }else if (room.review.rate >=3){
+                          <b>Good, Size: </b>
+                        }
+                        <span class="reviews">@room.size</span>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="starting-from-parent">
+                  <div class="starting-from">starting from</div>
+                  @if(((List<Promotion>)ViewBag.promotion).Count !=0){
+                    <b class="night">
+                      <span class="line-through">$@room.price</span>
+                      <span class="night1">/night</span>
+                    </b>
+                    total_price = @room.price - @room.price*total/100;
+                    <b class="night">
+                      <span>$@total_price</span>
+                      <span class="night1">/night</span>
+                    </b>
+                  }else{
+                    <b class="night">
+                      <span>$@room.price</span>
+                      <span class="night1">/night</span>
+                    </b>
+                  }
+                  <div class="excl-tax">excl. tax</div>
+                </div>
+              </div>
+              <div class="frame-child5"></div>
+              <div class="button-parent1">
+                <div class="button13">
+                  <div class="style-layer1">
+                    <i class="fa-solid fa-heart" style="color: cornflowerblue;"></i>
+                  </div>
+                </div>
+                <div class="button14">
+                  <div class="style-layer2">
+                    @Html.ActionLink("View Room", "RoomDetail", "Home",new {id=@room.id},new {@class="cl-white btn-grad"})
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          total=0;
+          }
+        </div>
+        <div class="button31">
+          <div class="style-layer9">
+            <button class="btn-show" value="more">Show more results</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-parent">
+        <div class="footer-frame">
+          <div class="logo-parent">
+            <img class="logo-icon1" src="../Image/logo.png"alt="logo.vn" />
+            <div class="akar-iconsfacebook-fill-parent">
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-x-twitter"></i>
+              <i class="fa-brands fa-youtube"></i>
+            </div>
+          </div>
+          <div class="text-frame">
+            <div class="our-destinations-parent">
+              <b class="helping-others">Our Destinations</b>
+              <div class="canada-parent">
+                <div class="canada">New York</div>
+                <div class="canada">Miami</div>
+                <div class="canada">NJ</div>
+                <div class="canada">Los Angeles</div>
+              </div>
+            </div>
+            <div class="our-destinations-parent">
+              <b class="helping-others">Our Events</b>
+              <div class="canada-parent">
+                <div class="canada"><a href="/Home/Wedding">Wedding</a></div>
+                <div class="canada"><a href="/Home/Meeting">Meeting</a></div>
+                <div class="canada"><a href="/Home/Corporate">Corporate</a></div>
+              </div>
+            </div>
+            <div class="our-destinations-parent">
+              <b class="helping-others">Contact Us</b>
+              <div class="canada-parent">
+                <div class="canada"><i class="fa-solid fa-phone"></i> 0932718399</div>
+                <div class="canada"><i class="fa-solid fa-envelope"></i> oceanht@gm.com</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <script src="~/js/StickyHeader.js"></script>
+    <script>
+        flatpickr('#checkin',{})
+        flatpickr('#checkout',{})
+        $(document).ready(function(){
+      $('#checkin').on("change",function(){
+        var selectedDate =new Date($('#checkin').val());
+        var currentDate=new Date();
+        currentDate.setHours(0, 0, 0, 0);
+        
+        if (selectedDate < currentDate) {
+            alert("Check in date must greater than today.");
+            $('#checkin').val("");
+        }
+      })
+      $('#checkout').on("change",function(){
+        var checkinDate =new Date($('#checkin').val());
+        var checkoutDate =new Date($('#checkout').val());
+        console.log(checkinDate);
+        if(checkinDate =="Invalid Date"){
+          alert("Select check in date before choosing check out date.");
+          $('#checkout').val("");
+        }else{
+          if(checkinDate > checkoutDate){
+            alert("Check out date must greater than check in date.");
+            $('#checkout').val("");
+          }
+        }
+        
+      })
+      $('#number').on("change",function(){
+
+      });
+      });
+    </script>
+    <script>
+      $(document).ready(function(){
+        var offset=10;
+        $('input[type="checkbox"][name="roomname"]').on('change', function(){
+          var selectedCheck = $('input[type="checkbox"][name="roomname"]:checked').map(function(){
+            return $(this).val();
+          }).get();
+          $.ajax({
+            type:"POST",
+            url:"/Home/GetFilterRoom",
+            dataType:"html",
+            data:{selectedOption:selectedCheck,
+                  type:"@type"},
+            success: function (response) {
+              $('.frame-parent13').html(response);
+              offset=10;
+              $('.rate-value').val("");
+              $('.price-value').val("");
+            },
+            error: function () {
+              alert("An error occurred while retrieving contact information.");
+            }
+          })
+        });
+        $('input[type="range"][name="price"]').on('change', function(){
+          var selectedRange=$(this).val();
+          $('input[type="checkbox"][name="roomname"]').prop('checked',false);
+          $.ajax({
+            type:"POST",
+            url:"/Home/GetFilterRoomPrice",
+            dataType:"html",
+            data:{selectedOption:selectedRange,
+                  type:"@type"},
+            success: function (response) {
+              $('.frame-parent13').html(response);
+              offset=10;
+              $('.rate-value').val("");
+              $('.price-value').val(selectedRange);
+            },
+            error: function () {
+              alert("An error occurred while retrieving contact information.");
+            }
+          })
+        });
+        $('input[type="checkbox"][name="furniture"]').on('change', function(){
+          var selectedCheck = $('input[type="checkbox"][name="furniture"]:checked').map(function(){
+            return $(this).val();
+          }).get();
+          $.ajax({
+            type:"POST",
+            url:"/Home/GetFilterRoomFurniture",
+            dataType:"html",
+            data:{selectedOption:selectedCheck, type:"@type"},
+            success: function (response) {
+              $('.frame-parent13').html(response);
+              offset=10;
+              $('.rate-value').val("");
+              $('.price-value').val("");
+            },
+            error: function () {
+              alert("An error occurred while retrieving contact information.");
+            }
+          })
+        });
+        $('.button-wrapper').on('click', function(){
+          var selectedCheck = $(this).val();
+          $.ajax({
+            type:"POST",
+            url:"/Home/GetFilterRoomRate",
+            dataType:"html",
+            data:{selectedOption:selectedCheck,
+                  type:"@type"},
+            success: function (response) {
+              $('.frame-parent13').html(response);
+              offset=10;
+              $('.rate-value').val(selectedCheck);
+              $('.price-value').val("");
+            },
+            error: function () {
+              alert("An error occurred while retrieving contact information.");
+            }
+          })
+        });
+        $('.more').on('click', function(){
+          var selectedCheck = $(this).val();
+          $.ajax({
+            type:"POST",
+            url:"/Home/GetFurnitureName",
+            dataType:"html",
+            data:{selectedOption:selectedCheck, type:"@type"},
+            success: function (response) {
+              $('.furniture_name').html(response);
+              if(selectedCheck == "more"){
+                $('.more').val("collapse")
+                $('.more').text("Collapse")
+              }else{
+                $('.more').val("more")
+                $('.more').text("More")
+              }
+            },
+            error: function () {
+              alert("An error occurred while retrieving contact information.");
+            }
+          })
+        });
+        $('.btn-show').on('click', function(){
+          var selectedCheck = $('input[type="checkbox"][name="roomname"]:checked').map(function(){
+            return $(this).val();
+          }).get();
+          var selectedCheck2 = $('input[type="checkbox"][name="furniture"]:checked').map(function(){
+            return $(this).val();
+          }).get();
+          var selectedCheck1 = $('.rate-value').val();
+          var selectedCheck3 = $('.price-value').val();
+          $.ajax({
+            type:"POST",
+            url:"/Home/GetMoreRoom",
+            dataType:"html",
+            data:{selectedOption:selectedCheck, 
+                  type:"@type",
+                  selectedOption1:selectedCheck1,
+                  selectedOption2:selectedCheck2,
+                  selectedOption3:selectedCheck3,
+                  offset:offset},
+            success: function (response) {
+              $('.frame-parent13').append(response);
+              offset=offset+10;
+            },
+            error: function () {
+              alert("An error occurred while retrieving contact information.");
+            }
+          })
+        });
+      });
+    </script>
+  </body>
+</html>

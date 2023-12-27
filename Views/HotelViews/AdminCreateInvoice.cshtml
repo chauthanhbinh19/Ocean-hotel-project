@@ -1,0 +1,398 @@
+@model Project.Models.Invoice;
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="~/Image/sea.png" type="image/x-icon">
+    <link rel="stylesheet" href="~/css/Admin.css">
+    <link rel="stylesheet" href="~/css/Checkbox.css">
+    <link rel="stylesheet" href="~/css/Button.css">
+    <script src="https://kit.fontawesome.com/d85c1eb16f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/Admin.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-rough"></script>
+    <title>Hotel Dashboard</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul class="nav-ul">
+                <li>
+                    <a class="btn1">
+                        <span class="icon"><img src="~/Image/svgpng.com/item (118).png" alt="" style="width: 45px;"></span>
+                        <span class="tittle">Ocean Hotel</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="btn2" href="/DashBoard/AdminDashBoard">
+                        <span class="icon"><i class="fa-solid fa-house"></i></span>
+                        <span class="tittle">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="btn3">
+                        <span class="icon"><i class="fa-solid fa-people-group"></i></span>
+                        <span class="tittle">Booking <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="all-booking-button" href="/Booking/AdminBooking">All Booking</a></li>
+                        <li><a class="edit-booking-button" href="/Booking/AdminEditBooking">Edit Booking</a></li>
+                        <li><a class="add-booking-button" href="/Booking/AdminAddBooking">Add Booking</a></li>
+                        <li><a class="add-booking-button" href="/Booking/AdminBookingDetails">Booking Details</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn4">
+                        <span class="icon"><i class="fas fa-bed"></i></span>
+                        <span class="tittle">Rooms <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="all-room-button" href="/Room/AdminRoom">All Rooms</a></li>
+                        <li><a class="edit-room-button" href="/Room/AdminEditRoom">Edit Room</a></li>
+                        <li><a class="add-room-button" href="/Room/AdminAddRoom">Add Room</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn5">
+                        <span class="icon"><i class="fa-solid fa-user"></i></span>
+                        <span class="tittle">Customers <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="all-customer-button" href="/Customer/AdminCustomer">All Customers</a></li>
+                        <li><a class="edit-customer-button" href="/Customer/AdminEditCustomer">Edit Customer</a></li>
+                        <li><a class="add-customer-button" href="/Customer/AdminAddCustomer">Add Customer</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn6">
+                        <span class="icon"><i class="fa-solid fa-user"></i></span>
+                        <span class="tittle">Employees <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="all-employee-button" href="/Employee/AdminEmployee">All Employees</a></li>
+                        <li><a class="edit-employee-button" href="/Employee/AdminEditEmployee">Edit Employee</a></li>
+                        <li><a class="add-employee-button" href="/Employee/AdminAddEmployee">Add Employee</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn7">
+                        <span class="icon"><i class="fas fa-concierge-bell"></i></span>
+                        <span class="tittle">Services <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="service-button" href="/Service/AdminServices">All Services</a></li>
+                        <li><a class="shuttle-button" href="/Service/AdminShuttle">Shuttle Services</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn16">
+                        <span class="icon"><i class="fa-solid fa-couch"></i></span>
+                        <span class="tittle">Furniture <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="all-furniture-button" href="/Furniture/AdminFurniture">All Furniture</a></li>
+                        <li><a class="edit-furniture-button" href="/Furniture/AdminEditFurniture">Edit Furniture</a></li>
+                        <li><a class="add-furniture-button" href="/Furniture/AdminAddFurniture">Add Furniture</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn8" href="/Promotion/AdminPricing">
+                        <span class="icon"><i class="fa-solid fa-money-bill-wave"></i></span>
+                        <span class="tittle">Pricing</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="btn9">
+                        <span class="icon"><i class="fa-solid fa-clipboard-user"></i></span>
+                        <span class="tittle">Staff <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="leave-button" href="/Employee/AdminLeave">Leave</a></li>
+                        <li><a class="attendance-button" href="/Employee/AdminAttendance">Attandance</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn10 hovered">
+                        <span class="icon"><i class="fa-solid fa-van-shuttle"></i></span>
+                        <span class="tittle">Accounting <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul active-li">
+                        <li class="active"><a class="invoice-button" href="/Invoice/AdminInvoice">Invoices</a></li>
+                        <li><a class="payment-button" href="/Payment/AdminPayment">Payments</a></li>
+                        <li><a class="Expenses-button" href="/Expense/AdminExpense">Expenses</a></li>
+                        <li><a class="Taxes-button" href="/Taxes/AdminTaxes">Taxes</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn11">
+                        <span class="icon"><i class="fa-solid fa-book"></i></span>
+                        <span class="tittle">Payroll <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="employee-salary-button" href="/Employee/AdminEmployeeSalary">Employee Salary</a>
+                        </li>
+                        <li><a class="payslip-button" href="/Employee/AdminPayslip">Payslip</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn12">
+                        <span class="icon"><i class="fas fa-chart-bar"></i></span>
+                        <span class="tittle">Chart <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="bar-button" href="/Chart/AdminBarChart">Bar Chart</a></li>
+                        <li><a class="line-button" href="/Chart/AdminLineChart">Line Chart</a></li>
+                        <li><a class="pie-button" href="/Chart/AdminPieChart">Pie Chart</a></li>
+                        <li><a class="donut-button" href="/Chart/AdminDonutChart">Donut Chart</a></li>
+                        <li><a class="mixed-button" href="/Chart/AdminMixedChart">Mixed Chart</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn13">
+                        <span class="icon"><i class="fa-solid fa-chart-simple"></i></span>
+                        <span class="tittle">Reports <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="expense-report-button" href="/Expense/AdminExpenseReport">Expense Report</a></li>
+                        <li><a class="invoice-report-button" href="/Invoice/AdminInvoiceReport">Invoice Report</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn14">
+                        <span class="icon"><i class="fa-solid fa-gear"></i></span>
+                        <span class="tittle">Setting</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="btn15" asp-action="SignOut1" asp-controller="Login">
+                        <span class="icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
+                        <span class="tittle">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- ==============================main============================ -->
+        <div class="main">
+            <div class="top-bar">
+                <div class="toggle"><i class="fa-solid fa-bars"></i></div>
+                <div class="search">
+                </div>
+                <div id="change-dark-mode">
+                    <i class="fa-solid fa-sun"></i>
+                </div>
+                <div class="user-role-name">
+                    <div class="user">
+                        <img src="~/Image/Avatar/@ViewBag.employee_avatar.img" alt="">
+                    </div>
+                    <div class="role-name">
+                        <span class="user1"style="font-size: 18px;">@ViewBag.employee_avatar.name</span><br>
+                        <span class="user2"style="font-size: 14px;">@ViewBag.employee_avatar.role</span>
+                    </div>
+                </div>
+            </div>
+            <!-- ==============================Card============================== -->
+            <div class="sub-main">
+                <div class="article-11">
+                    <div class="box-tittle-1">
+                        <p>Create New Invoice</p>
+                        <img src="~/Image/svgpng.com/item (136).png" alt="">
+                    </div>
+                    <div>
+                        <form method="post" asp-action="AdminInsertInvoice" asp-controller="Invoice">
+                            <div class="sub-main-bottom sub-bg background_bg1">
+                                <div class="main-col">
+                                    <div><label>Booking ID</label></div>
+                                    <select id="booking_id" asp-for="booking_id">
+                                        @foreach (var customer1 in ViewBag.booking_list)
+                                        {
+                                            <option value="@customer1.id">@customer1.id</option>
+                                        }
+                                    </select>
+                                    @Html.ValidationMessageFor(m => m.booking_id)
+                                </div>
+                                <div class="main-col">
+                                    <div><label>Created Date</label></div>
+                                    <input type="date" asp-for="create_date" id="">
+                                    @Html.ValidationMessageFor(m => m.create_date)
+                                </div>
+                                <div class="main-col">
+                                    <div><label>Due Date</label></div>
+                                    <input type="date" asp-for="due_date" id="">
+                                    @Html.ValidationMessageFor(m => m.due_date)
+                                </div>
+                            </div>
+                            <div class="sub-main-bottom sub-bg background_bg1">
+                                <div class="main-col">
+                                    <div><label>Total</label></div>
+                                    <input type="text" id="total" value="0"
+                                        style="text-align: right; padding-right:10px; margin-left:20px;">
+                                </div>
+                                <div class="main-col">
+                                    <div><label>Tax</label></div>
+                                    <select asp-for="taxes!.taxes_name" id="tax_name">
+                                        <option value="none">0</option>
+                                        @foreach (var customer1 in ViewBag.taxes_list)
+                                        {
+                                            <option value="@customer1.taxes_name">@customer1.taxes_name</option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="main-col">
+                                    <div><label>Discount %</label></div>
+                                    <select asp-for="promotion!.name" id="promotion_name">
+                                        <option value="none">0</option>
+                                        @foreach (var customer1 in ViewBag.promotion_list)
+                                        {
+                                            <option value="@customer1.name">@customer1.name</option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="main-col">
+                                    <div><label>Grand Total</label></div>
+                                    <input type="text" asp-for="total_amount" id="grandtotal"
+                                        style="text-align: right; padding-right:10px; margin-left:20px;" value="0">
+                                </div>
+                            </div>
+                            <div class="sub-main-bottom-2">
+                                <div class="main-col">
+                                    <button class="button-29">Save Invoice</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('.myCheckbox').change(function () {
+                var checkboxId = $(this).attr('id');
+                var targetInputId = $(this).data('target');
+                var labelValue = $('label[for="' + checkboxId + '"]').text();
+                if ($(this).is(':checked')) {
+                    $('#' + targetInputId).val(labelValue);
+                } else {
+                    $('#' + targetInputId).val('');
+                }
+            });
+            var initialValue = 0;
+            $('#booking_id').change(function () {
+                var selectedOption = $(this).val();
+
+                $.ajax({
+                    type: "POST",
+                    url: "/Invoice/GetPrice",
+                    data: { selectedOption: selectedOption },
+                    success: function (response) {
+                        $('#total').val(response.price);
+                        $('#grandtotal').val(response.price);
+                    },
+                    error: function () {
+                        alert("An error occurred while retrieving contact information.");
+                    }
+                });
+            });
+            $('.myCheckbox').change(function () {
+                var checkbox = $(this);
+                var isChecked = checkbox.is(':checked');
+                var name = checkbox.siblings('label').text();
+                console.log(name);
+                if (isChecked) {
+                    $.ajax({
+                        url: '/Invoice/GetPrice2',
+                        type: 'POST',
+                        data: { selectedOption: name },
+                        success: function (response) {
+                            // Xử lý phản hồi từ máy chủ
+                            var getprice = parseFloat($('#total').val());
+                            var price = response.price;
+                            price = price + getprice;
+                            $('#total').val(price);
+                            // Thực hiện các thao tác khác với giá tương ứng
+                        },
+                        error: function (xhr, status, error) {
+                            console.error(error);
+                        }
+                    });
+                } else {
+                    $.ajax({
+                        url: '/Invoice/GetPrice2',
+                        type: 'POST',
+                        data: { selectedOption: name },
+                        success: function (response) {
+                            // Xử lý phản hồi từ máy chủ
+                            var getprice = parseFloat($('#total').val());
+                            var price = response.price;
+                            price = getprice - price;
+                            $('#total').val(price);
+                            // Thực hiện các thao tác khác với giá tương ứng
+                        },
+                        error: function (xhr, status, error) {
+                            console.error(error);
+                        }
+                    });
+                }
+            });
+            $('#tax_name').change(function () {
+                var selectedOption = $(this).val();
+
+                $.ajax({
+                    type: "POST",
+                    url: "/Invoice/GetTaxes",
+                    data: { selectedOption: selectedOption },
+                    success: function (response) {
+                        var tax =response.price;
+                        if($('#promotion_name').val() != "none"){
+                            var price= parseFloat($('#total').val());
+                            var price1= parseFloat($('#grandtotal').val());
+                            price= price1 +price*tax/100;
+                            $('#grandtotal').val(price);
+                        }else{
+                            var price= parseFloat($('#total').val());
+                            price= price +price*tax/100;
+                            $('#grandtotal').val(price);
+                        }
+                    },
+                    error: function () {
+                        alert("An error occurred while retrieving contact information.");
+                    }
+                });
+            });
+            $('#promotion_name').change(function () {
+                var selectedOption = $(this).val();
+
+                $.ajax({
+                    type: "POST",
+                    url: "/Invoice/GetPromotion",
+                    data: { selectedOption: selectedOption },
+                    success: function (response) {
+                        var tax =response.price;
+                        if($('#tax_name').val() != "none"){
+                            var price= parseFloat($('#total').val());
+                            var price1= parseFloat($('#grandtotal').val());
+                            price= price1 -price*tax/100;
+                            $('#grandtotal').val(price);
+                        }else{
+                            var price= parseFloat($('#total').val());
+                            price= price -price*tax/100;
+                            $('#grandtotal').val(price);
+                        }
+                    },
+                    error: function () {
+                        alert("An error occurred while retrieving contact information.");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

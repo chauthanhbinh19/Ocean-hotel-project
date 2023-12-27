@@ -1,0 +1,239 @@
+@model Project.Models.Taxes;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="~/Image/sea.png" type="image/x-icon">
+    <link rel="stylesheet" href="~/css/Admin.css">
+    <link rel="stylesheet" href="~/css/Button.css">
+    <script src="https://kit.fontawesome.com/d85c1eb16f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/Admin.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-rough"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <title>Hotel Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul class="nav-ul">
+                <li>
+                    <a class="btn1">
+                        <span class="icon"><img src="~/Image/svgpng.com/item (118).png" alt="" style="width: 45px;"></span>
+                        <span class="tittle">Ocean Hotel</span>
+                    </a>
+                </li>
+                <li>
+                    <a  class="btn2" href="/DashBoard/AdminDashBoard">
+                        <span class="icon"><i class="fa-solid fa-house"></i></span>
+                        <span class="tittle">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a  class="btn3">
+                        <span class="icon"><i class="fa-solid fa-people-group"></i></span>
+                        <span class="tittle">Booking <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="all-booking-button" href="/Booking/AdminBooking">All Booking</a></li>
+                        <li><a class="edit-booking-button" href="/Booking/AdminEditBooking">Edit Booking</a></li>
+                        <li><a class="add-booking-button" href="/Booking/AdminAddBooking">Add Booking</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn4">
+                        <span class="icon"><i class="fas fa-bed"></i></span>
+                        <span class="tittle">Rooms <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="all-room-button" href="/Room/AdminRoom">All Rooms</a></li>
+                        <li><a class="edit-room-button" href="/Room/AdminEditRoom">Edit Room</a></li>
+                        <li><a class="add-room-button" href="/Room/AdminAddRoom">Add Room</a></li>
+                        <li><a class="add-booking-button" href="/Booking/AdminBookingDetails">Booking Details</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn5">
+                        <span class="icon"><i class="fa-solid fa-user"></i></span>
+                        <span class="tittle">Customers <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="all-customer-button" href="/Customer/AdminCustomer">All Customers</a></li>
+                        <li><a class="edit-customer-button" href="/Customer/AdminEditCustomer">Edit Customer</a></li>
+                        <li><a class="add-customer-button" href="/Customer/AdminAddCustomer">Add Customer</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn6">
+                        <span class="icon"><i class="fa-solid fa-user"></i></span>
+                        <span class="tittle">Employees <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="all-employee-button" href="/Employee/AdminEmployee">All Employees</a></li>
+                        <li><a class="edit-employee-button" href="/Employee/AdminEditEmployee">Edit Employee</a></li>
+                        <li><a class="add-employee-button" href="/Employee/AdminAddEmployee">Add Employee</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn7">
+                        <span class="icon"><i class="fas fa-concierge-bell"></i></span>
+                        <span class="tittle">Services <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="service-button" href="/Service/AdminServices">All Services</a></li>
+                        <li><a class="shuttle-button" href="/Service/AdminShuttle">Shuttle Services</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn16">
+                        <span class="icon"><i class="fa-solid fa-couch"></i></span>
+                        <span class="tittle">Furniture <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="all-furniture-button" href="/Furniture/AdminFurniture">All Furniture</a></li>
+                        <li><a class="edit-furniture-button" href="/Furniture/AdminEditFurniture">Edit Furniture</a></li>
+                        <li><a class="add-furniture-button" href="/Furniture/AdminAddFurniture">Add Furniture</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn8" href="/Promotion/AdminPricing">
+                        <span class="icon"><i class="fa-solid fa-money-bill-wave"></i></span>
+                        <span class="tittle">Pricing</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="btn9">
+                        <span class="icon"><i class="fa-solid fa-clipboard-user"></i></span>
+                        <span class="tittle">Staff <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="leave-button" href="/Employee/AdminLeave">Leave</a></li>
+                        <li><a class="attendance-button" href="/Employee/AdminAttendance">Attandance</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn10 hovered">
+                        <span class="icon"><i class="fa-solid fa-van-shuttle"></i></span>
+                        <span class="tittle">Accounting <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul active-li">
+                        <li><a class="invoice-button" href="/Invoice/AdminInvoice">Invoices</a></li>
+                        <li><a class="payment-button" href="/Payment/AdminPayment">Payments</a></li>
+                        <li><a class="Expenses-button" href="/Expense/AdminExpense">Expenses</a></li>
+                        <li class="active"><a class="Taxes-button" href="/Taxes/AdminTaxes">Taxes</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn11">
+                        <span class="icon"><i class="fa-solid fa-book"></i></span>
+                        <span class="tittle">Payroll <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="employee-salary-button" href="/Employee/AdminEmployeeSalary">Employee Salary</a></li>
+                        <li><a class="payslip-button" href="/Employee/AdminPayslip">Payslip</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn12">
+                        <span class="icon"><i class="fas fa-chart-bar"></i></span>
+                        <span class="tittle">Chart <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="bar-button" href="/Chart/AdminBarChart">Bar Chart</a></li>
+                        <li><a class="line-button" href="/Chart/AdminLineChart">Line Chart</a></li>
+                        <li><a class="pie-button" href="/Chart/AdminPieChart">Pie Chart</a></li>
+                        <li><a class="donut-button" href="/Chart/AdminDonutChart">Donut Chart</a></li>
+                        <li><a class="mixed-button" href="/Chart/AdminMixedChart">Mixed Chart</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn13">
+                        <span class="icon"><i class="fa-solid fa-chart-simple"></i></span>
+                        <span class="tittle">Reports <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="expense-report-button" href="/Expense/AdminExpenseReport">Expense Report</a></li>
+                        <li><a class="invoice-report-button" href="/Invoice/AdminInvoiceReport">Invoice Report</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn14">
+                        <span class="icon"><i class="fa-solid fa-gear"></i></span>
+                        <span class="tittle">Setting</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="btn15" asp-action="SignOut1" asp-controller="Login">
+                        <span class="icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
+                        <span class="tittle">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- ==============================main============================ -->
+        <div class="main">
+            <div class="top-bar">
+                <div class="toggle"><i class="fa-solid fa-bars"></i></div>
+                <div class="search">
+                </div>
+                <div id="change-dark-mode">
+                    <i class="fa-solid fa-sun"></i>
+                </div>
+                <div class="user-role-name">
+                    <div class="user">
+                        <img src="~/Image/Avatar/@ViewBag.employee_avatar.img" alt="">
+                    </div>
+                    <div class="role-name">
+                        <span class="user1"style="font-size: 18px;">@ViewBag.employee_avatar.name</span><br>
+                        <span class="user2"style="font-size: 14px;">@ViewBag.employee_avatar.role</span>
+                    </div>
+                </div>
+            </div>
+            <!-- ==============================Card============================== -->
+            <div class="sub-main">
+                <div class="article-11">
+                    <div class="box-tittle-1">
+                        <p>Add Tax</p>
+                        <img src="~/Image/svgpng.com/item (135).png" alt="">
+                    </div>      
+                    <div>
+                        <form method="post" asp-controller="Taxes" asp-action="AdminInsertTaxes">
+                            <div class="sub-main-bottom sub-bg background_bg1">
+                                <div class="main-col">
+                                    <div><label>Tax Name</label></div>
+                                    <input type="text" asp-for="taxes_name" id="">
+                                    @Html.ValidationMessageFor(m => m.taxes_name)
+                                </div>
+                                <div class="main-col">
+                                    <div><label>Tax Percentage</label></div>
+                                    <input type="text" asp-for="tax_percentage" id="">
+                                    @Html.ValidationMessageFor(m => m.tax_percentage)
+                                </div>
+                                <div class="main-col">
+                                    <div><label>Status</label></div>
+                                    <select asp-for="status" id="">
+                                        <option value="Active">Active</option>
+                                        <option value="Inactive">Inactive</option>
+                                    </select>
+                                    @Html.ValidationMessageFor(m => m.status)
+                                </div>
+                                <div class="main-col"><span>&nbsp;</span></div>
+                                <div class="main-col"><span>&nbsp;</span></div>
+                                <div class="main-col"><span>&nbsp;</span></div>
+                                <div class="main-col"><span>&nbsp;</span></div>
+                                <div class="main-col"><span>&nbsp;</span></div>
+                                <div class="main-col"><span>&nbsp;</span></div>
+                            </div>
+                            <button type="submit" class="button-29" style="float:right; margin-right: 90px;">Create Tax</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

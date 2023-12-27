@@ -1,0 +1,416 @@
+@model List<Project.Models.Service>;
+@{
+  string type=@ViewBag.type;
+  int count=0;
+  int count1=0;
+  float promotion=0;
+}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="~/css/global.css" />
+    <link rel="stylesheet" href="~/css/room.css" />
+    <link rel="stylesheet" href="~/css/Nav&Footer.css">
+    <link rel="stylesheet" href="~/css/btngrad.css">
+    <link rel="stylesheet" href="~/css/inputrange.css">
+    <link rel="stylesheet" href="~/css/Scrollbar.css">
+    <link rel="stylesheet" href="~/css/Checkbox.css">
+    <link rel="stylesheet" href="~/css/scroll-btn.css">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=TradeGothic LT Extended:wght@700&display=swap"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://kit.fontawesome.com/d85c1eb16f.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="~/js/Nav.js"></script>
+  </head>
+  <body>
+    <div class="hotel-listing">
+          <div class="scroll-btn"><a href="#"><span class="scroll-up-btn"><i class="fa-solid fa-chevron-up"></i></i></span></a></div>
+    <!--Navigation-->
+    <div id="header">
+      
+        <div id="cover">
+          <a href="/Home/Index" id="logo"></a>
+          <img src="~/Image/logo.png"
+            alt="logo.vn">
+        </div>
+      </a>
+      <nav class="container1">
+        <input type="checkbox" id="check">
+        <ul id="main-menu">
+          <li><a href="/Home/Index"><i class="bi bi-house"></i> Home</a></li>
+          <li>
+            <a class="hassub" href="#"><i class="fa-solid fa-sitemap"></i> Rooms <span class="spaceicon"><i class="bi bi-chevron-down"></i></span></a>
+            <ul class="sub-menu">
+              <li class="sub-item"><a href="/Home/RoomStandard">Standard room</a></li>
+              <li class="sub-item"><a href="/Home/RoomSuperior">Superior room</a></li>
+              <li class="sub-item"><a href="/Home/RoomDeluxe">Deluxe room</a></li>
+              <li class="sub-item"><a href="/Home/RoomSuite">Suite room</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a class="hassub" href="#"><i class="fa-solid fa-bell-concierge"></i> Service <span class="spaceicon"><i
+                  class="bi bi-chevron-down"></i></span></a>
+            <ul class="sub-menu">
+              <li class="sub-item more">
+                <a class="has-moresub" href="#restaurant"> Restaurant<span class="space"><i
+                      class="fa-solid fa-chevron-right"></i></span></a>
+                <ul class="more-menu">
+                  <li><a href="/Home/ReflectionR">Reflection Restaurant</a></li>
+                  <li><a href="/Home/Cafe">Cafe de l’Opera</a></li>
+                  <li><a href="/Home/Buffet">Buffet Nineteen Restaurant</a></li>
+                  <li><a href="/Home/Tapas">Tapas Kitchen</a></li>
+                </ul>
+              </li>
+              <li class="sub-item"><a href="/Home/Bar">Bar</a></li>
+              <li class="sub-item"><a href="/Home/Gym">Gym</a></li>
+              <li class="sub-item"><a href="/Home/Spa">Spa</a></li>
+              <li class="sub-item"><a href="/Home/Beach">Beach</a></li>
+              <li class="sub-item"><a href="/Home/Shuttle">Shuttle</a></li>
+            </ul>
+          </li>
+          <li><a href="/Home/Gallery"><i class="fa-solid fa-images"></i> Gallery</a></li>
+          <li>
+            <a class="hassub" href="#"><i class="fa-regular fa-calendar"></i> Event <i
+                class="bi bi-chevron-down"></i></a>
+            <ul class="sub-menu">
+              <li class="sub-item"><a href="/Home/Wedding">Wedding</a></li>
+              <li class="sub-item"><a href="/Home/Meeting">Meeting</a></li>
+              <li class="sub-item"><a href="/Home/Corporate">Corporate events</a></li>
+            </ul>
+          </li>
+          <label for="check" class="close-menu">
+            <i class="fa-solid fa-xmark"></i>
+          </label>
+        </ul>
+      </nav>
+      <div class="signup">
+        @if(ViewBag.customer_avatar.name == null){
+          <i class="fa-solid fa-user"></i>
+          <a href="/Login/Login" id="">Sign in</a>
+          
+        }else{
+          <a href="/Home/Account">
+          <span>Hello, @ViewBag.customer_avatar.name</span>
+          </a>
+          <a href="/Home/Account">
+          <img src="~/Image/Avatar/@ViewBag.customer_avatar.img" alt=""> 
+          </a>
+          <a href="/Login/SignOut1" id=""><i class="fa-solid fa-right-from-bracket"></i></a>   
+        }
+      </div>
+    <!--End:Nav-->
+      <label for="check" class="open-menu">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+    </div>
+    <div class="landing-page-item">
+      <img class="landing-page-child" src="~/Image/z4949244113871_1f0eedc5882e8ce0268edc2526263fe1.jpg" />
+    </div>
+    <div class="booking-section">
+      <h2>Service</h2>
+      <h4>We're here to help you plan your perfect vacation.</h4>
+    </div>
+    <div id="content-1">
+      <div class="frame-parent8">
+        <div class="frame-parent9">
+          <div class="frame-parent10">
+            <div class="hotels-wrapper">
+              <div class="find-flight">
+                <button id="service" class="service-1" style="color: cornflowerblue;font-size:18px;">Service</button>
+              </div>
+            </div>
+            <div class="places">4 marked</div>
+          </div>
+          <div class="line-div"></div>
+          <div class="frame-parent11">
+            <div class="hotels-wrapper">
+              <div class="find-flight">
+                <button id="shuttle" class="shuttle-1" style="color: cornflowerblue;font-size:18px;">Shuttle</button>
+              </div>
+            </div>
+            <div class="places">4 marked</div>
+          </div>
+        </div>
+        <form action="" method="post">
+          @foreach(var service in ViewBag.service_list1){
+                <input type="hidden" asp-for="@Model[count1].id" id="service-id-@service.id" value="0">
+              count1++;
+            }
+        <div class="frame-parent13-1">
+          <div class="box-service">
+            @foreach(var service in ViewBag.service_list){
+              <div class="rectangle-parent">
+                <img class="rectangle-icon" alt="" src="~/Image/service/@service.img"/>
+                <div class="frame-parent14">
+                  <div class="frame-parent15">
+                    <div class="cvk-park-bosphorus-hotel-istan-parent">
+                      <b class="cvk-park-bosphorus">@service.name</b>
+                      <input type="hidden" name="" value="@service.name" id="service-name-@service.id">
+                      <div class="frame-parent16">
+                        <div class="location-parent">
+                          <i class="fa-solid fa-hotel" style="color:cornflowerblue;"></i>
+                          <div class="images">
+                            Ocean hotel
+                          </div>
+                        </div>
+                        <div class="frame-group">
+                          <div class="airplane-parent">
+                            <div class="hotels-wrapper">
+                              <i class="fa-solid fa-star" style="color: yellow;"></i>
+                              <i class="fa-solid fa-star" style="color: yellow;"></i>
+                              <i class="fa-solid fa-star" style="color: yellow;"></i>
+                              <i class="fa-solid fa-star" style="color: yellow;"></i>
+                              <i class="fa-solid fa-star" style="color: yellow;"></i>
+                            </div>
+                            <div class="free-breakfast">5 Star Hotel</div>
+                          </div>
+                          <div class="cafe-parent">
+                            <i class="fa-solid fa-mug-saucer"></i>
+                            <div class="sort-by-recommended-container">
+                              <span class="reviews"> service</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="airplane-parent">
+                          <div class="button1">
+                            <div class="button-wrapper">
+                              <div class="free-breakfast">5</div>
+                            </div>
+                          </div>
+                          <div class="sort-by-recommended-container">
+                            <b>Description: </b>
+                            <span class="reviews">@service.description</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="starting-from-parent">
+                      <div class="starting-from">starting from</div>
+                      <b class="night">
+                        <span>$@service.price</span>
+                        <input type="hidden" name="" value="@service.price" id="service-price-@service.id">
+                        @* <input type="hidden" asp-for="@Model[0].price"> *@
+                        <span class="night1"></span>
+                      </b>
+                      <div class="excl-tax">excl. tax</div>
+                    </div>
+                  </div>
+                  <div class="frame-child5"></div>
+                  <div class="button-parent1">
+                    <div class="button13">
+                      <div class="style-layer1">
+                        <i class="fa-solid fa-heart" style="color: cornflowerblue;"></i>
+                      </div>
+                    </div>
+                    <div class="button14">
+                      <div class="style-layer2">
+                        <div class="btn-box">
+                          <button class="btn-grad add-to-cart" id="add-to-cart" value="@service.id">Add to cart</button>
+                          @* <input type="hidden" asp-for="@Model[@count].id" id="service-id-@service.id" value="0"> *@
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              count++;
+            }
+          </div>  
+          <div class="detail-room">
+          <div class="box-detail">
+            <div class="box-detail-1">
+              <div class="avatar">
+                <img src="~/Image/@ViewBag.room.img" alt="">
+              </div>
+              <div class="room-name">
+                <input type="hidden" name="room_id" value="@ViewBag.room.id">
+                <div>@ViewBag.room.type</div>
+                <div>@ViewBag.room.name</div>
+                <div class="review-room">
+                  <div class="style-layer3">@ViewBag.room.review.rate</div>
+                  <span>Very good</span>
+                </div>
+              </div>
+            </div>
+            <div class="frame-child-6"></div>
+            <div class="protect-text">
+              <span>Your booking is protected by Ocean Hotel</span>
+            </div>
+            <div class="frame-child-6"></div>
+              <div class="box-price">
+                <div class="price-detail">
+                  <span>Check in</span>
+                  <span>@ViewBag.checkin</span>
+                  <input type="hidden" name="checkin" value="@ViewBag.checkin">
+                </div>
+                <div class="price-detail">
+                  <span>Check out</span>
+                  <span>@ViewBag.checkout</span>
+                  <input type="hidden" name="checkout" value="@ViewBag.checkout">
+                </div>
+                <div class="price-detail">
+                  <span>Number of people</span>
+                  <span>@ViewBag.number</span>
+                  <input type="hidden" name="number" value="@ViewBag.number">
+                </div>
+              </div>
+            <div class="frame-child-6"></div>
+            <div class="box-price cart">
+              <b>Price details</b>
+              <div class="price-detail">
+                <span>Room price</span>
+                <span>$@ViewBag.room.price</span>
+              </div>
+              <div class="price-detail">
+                <span>Discount</span>
+                @foreach(var promotion1 in ViewBag.promotion){
+                  promotion=promotion+ promotion1.discount_percent;
+                }
+                <span>@promotion%</span>
+              </div>
+              <div class="price-detail">
+                <span>Tax</span>
+                <span>0%</span>
+              </div>
+            </div>
+            <div class="frame-child-6"></div>
+            <div class="box-price">
+                <div class="price-detail">
+                  <span style="color:cornflowerblue;">Total</span>
+                  <span id="result">$@ViewBag.total</span>
+                  <input type="hidden" name="total" id="total" value="@ViewBag.total">
+                </div>
+            </div>
+          </div>
+          <div class="btn-box">
+            <button class="btn-grad" asp-action="Payment" asp-controller="Home">Next Step</button>
+          </div>
+          </div>
+        </div>
+        </form>
+      </div>
+    </div>
+    <!--Footer-->
+    <div class="footer">
+      <div class="footer-parent">
+        <div class="footer-frame">
+          <div class="logo-parent">
+            <img class="logo-icon1" src="../Image/logo.png"alt="logo.vn" />
+            <div class="akar-iconsfacebook-fill-parent">
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-x-twitter"></i>
+              <i class="fa-brands fa-youtube"></i>
+            </div>
+          </div>
+          <div class="text-frame">
+            <div class="our-destinations-parent">
+              <b class="helping-others">Our Destinations</b>
+              <div class="canada-parent">
+                <div class="canada">New York</div>
+                <div class="canada">Miami</div>
+                <div class="canada">NJ</div>
+                <div class="canada">Los Angeles</div>
+              </div>
+            </div>
+            <div class="our-destinations-parent">
+              <b class="helping-others">Our Events</b>
+              <div class="canada-parent">
+                <div class="canada"><a href="/Home/Wedding">Wedding</a></div>
+                <div class="canada"><a href="/Home/Meeting">Meeting</a></div>
+                <div class="canada"><a href="/Home/Corporate">Corporate</a></div>
+              </div>
+            </div>
+            <div class="our-destinations-parent">
+              <b class="helping-others">Contact Us</b>
+              <div class="canada-parent">
+                <div class="canada"><i class="fa-solid fa-phone"></i> 0932718399</div>
+                <div class="canada"><i class="fa-solid fa-envelope"></i> oceanht@gm.com</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <script src="~/js/StickyHeader.js"></script>
+    <script>
+      $(document).ready(function(){
+        var counting=0;
+        $('.service-1').on('click', function(){
+          $.ajax({
+            type:"POST",
+            url:"/Home/GetServiceList",
+            dataType:"html",
+            data:{selectedOption:"service"},
+            success: function (response) {
+              $('.box-service').html(response);
+            },
+            error: function () {
+              alert("An error occurred while retrieving contact information.");
+            }
+          })
+        });
+        $('.shuttle-1').on('click', function(){
+          $.ajax({
+            type:"POST",
+            url:"/Home/GetServiceList",
+            dataType:"html",
+            data:{selectedOption:"shuttle"},
+            success: function (response) {
+              $('.box-service').html(response);
+            },
+            error: function () {
+              alert("An error occurred while retrieving contact information.");
+            }
+          })
+        });
+        $(".add-to-cart").on('click',function(event) {
+          event.preventDefault();
+          var id=$(this).val()
+          if($('#service-name-'+id).hasClass("added")){
+
+          }else{
+            var serviceName = $('#service-name-'+id).val();
+            var servicePrice = $('#service-price-'+id).val();
+            $(".cart").append(
+              "<div class='price-detail' id='service-"+ id +"'>" +
+                "<span>" + serviceName + "</span>" +
+                "<button value='"+ id +"' class='remove-service'><i class='fa-solid fa-trash'></i></button>" +
+                "<span>$" + servicePrice + "</span>" +
+                "<input type='hidden' value='"+ servicePrice +"' id='service-t-"+ id +"'>"+
+              "</div>"
+            );
+            $('#service-id-'+id).val(id);
+            $('#service-name-'+id).addClass('added');
+              $(".remove-service").on('click',function(){
+                var id=$(this).val()
+                var servicePrice=$('#service-t-'+id).val();
+                $('#service-name-'+id).removeClass('added');
+                $('#service-'+id).remove();
+                if(servicePrice == null){
+                  servicePrice=0;
+                }
+                $('#service-id-'+id).val("");
+                $('#result').text(parseFloat($('#total').val())- parseFloat(servicePrice))
+                $('#total').val(parseFloat($('#total').val())-parseFloat(servicePrice));
+              })
+            $('#result').text(parseFloat(servicePrice)+parseFloat($('#total').val()))
+            $('#total').val(parseFloat(servicePrice)+parseFloat($('#total').val()));
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+#content{
+    position: relative;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    height: 71vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.notification{
+    background-color:rgba(15,183,107,.12);
+    color: #26af48;
+    padding: 30px 30px;
+}
+#header{
+    background: linear-gradient(90deg, #0167b0 20%, #0064ab 100%);
+  }
+/* .notification{
+    height:60vh;
+
+
+} */

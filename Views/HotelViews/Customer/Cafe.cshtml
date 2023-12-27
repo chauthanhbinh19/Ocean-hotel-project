@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+  <link rel="stylesheet" href="~/css/global.css" />
+  <link rel="stylesheet" href="~/css/Service.css" />
+  <link rel="stylesheet" href="~/css/Nav&Footer.css">
+  <link rel="stylesheet" href="~/css/Scrollbar.css">
+  <link rel="stylesheet" href="~/css/scroll-btn.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=TradeGothic LT Extended:wght@700&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <script src="https://kit.fontawesome.com/d85c1eb16f.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="~/js/Nav.js"></script>
+  <style>
+    #header{
+      background: linear-gradient(90deg, #0167b0 20%, #0064ab 100%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="service-detail-page">
+    <div class="service-page-item">
+      <img class="service-page-child"
+        src="../../Image/service/Cafe/view1.jpg" />
+    </div>
+    <div class="scroll-btn"><a href="#"><span class="scroll-up-btn"><i class="fa-solid fa-chevron-up"></i></i></span></a></div>
+    <!--Navigation-->
+    <div id="header">
+      <a href="/Home/Index" id="logo">
+        <div id="cover">
+          <img src="../../Image/logo.png" alt="logo.vn">
+        </div>
+      </a>
+      <nav class="container1">
+        <input type="checkbox" id="check">
+        <ul id="main-menu">
+          <li><a href="/Home/Index"><i class="bi bi-house"></i> Home</a></li>
+          <!-- <li><a href="./AboutUs.html"><i class="fa-regular fa-circle-question"></i> About us</a></li> -->
+          <li>
+            <a class="hassub" href="#"><i class="fa-solid fa-sitemap"></i> Rooms <span class="spaceicon"><i
+                  class="bi bi-chevron-down"></i></span></a>
+            <ul class="sub-menu">
+              <li class="sub-item"><a href="/Home/RoomStandard">Standard room</a></li>
+              <li class="sub-item"><a href="/Home/RoomSuperior">Superior room</a></li>
+              <li class="sub-item"><a href="/Home/RoomDeluxe">Deluxe room</a></li>
+              <li class="sub-item"><a href="/Home/RoomSuite">Suite room</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a class="hassub" href="#"><i class="fa-solid fa-bell-concierge"></i> Service <span class="spaceicon"><i
+                  class="bi bi-chevron-down"></i></span></a>
+            <ul class="sub-menu">
+              <li class="sub-item more">
+                <a class="has-moresub" href="#restaurant"> Restaurant<span class="space"><i
+                      class="fa-solid fa-chevron-right"></i></span></a>
+                <ul class="more-menu">
+                  <li><a href="/Home/ReflectionR">Reflection Restaurant</a></li>
+                  <li><a href="#">Cafe de l’Opera</a></li>
+                  <li><a href="/Home/Buffet">Buffet Nineteen Restaurant</a></li>
+                  <li><a href="/Home/Tapas">Tapas Kitchen</a></li>
+                </ul>
+              </li>
+              <li class="sub-item"><a href="/Home/Bar">Bar</a></li>
+              <li class="sub-item"><a href="/Home/Gym">Gym</a></li>
+              <li class="sub-item"><a href="/Home/Spa">Spa</a></li>
+              <li class="sub-item"><a href="/Home/Beach">Beach</a></li>
+              <li class="sub-item"><a href="/Home/Shuttle">Shuttle</a></li>
+            </ul>
+          </li>
+          <li><a href="/Home/Gallery"><i class="fa-solid fa-images"></i> Gallery</a></li>
+          <li>
+            <a class="hassub" href="#"><i class="fa-regular fa-calendar"></i> Event <i
+                class="bi bi-chevron-down"></i></a>
+            <ul class="sub-menu">
+              <li class="sub-item"><a href="/Home/Wedding">Wedding</a></li>
+              <li class="sub-item"><a href="/Home/Meeting">Meeting</a></li>
+              <li class="sub-item"><a href="/Home/Corporate">Corporate events</a></li>
+            </ul>
+          </li>
+          <label for="check" class="close-menu">
+            <i class="fa-solid fa-xmark"></i>
+          </label>
+        </ul>
+      </nav>
+      <div class="signup">
+        @if(ViewBag.customer_avatar.name == null){
+          <i class="fa-solid fa-user"></i>
+          <a href="/Login/Login" id="">Sign in</a>
+          
+        }else{
+          <a href="/Home/Account">
+          <span>Hello, @ViewBag.customer_avatar.name</span>
+          </a>
+          <a href="/Home/Account">
+          <img src="~/Image/Avatar/@ViewBag.customer_avatar.img" alt=""> 
+          </a>
+          <a href="/Login/SignOut1" id=""><i class="fa-solid fa-right-from-bracket"></i></a>   
+        }
+      </div>
+      <!--End:Nav-->
+      <label for="check" class="open-menu">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+    </div>
+    <div id="content">
+      <div class="frame-parent">
+        <div class="description">
+          <b class="heading">Description <i class="fa-brands fa-servicestack fa-beat"></i></b>
+          <p>Café de l’Opera is quite possibly in the best location in our city, that’s if you enjoy your views with a dash of history and a slice of modernity all rolled into one.</p>
+          <p>
+            During the day, as temperatures soar and the heavens threaten to open, Café de l’Opera becomes a refuge for travellers and the like, 
+            just as it always has been since the hotel doors opened in the 50s. Over high-tea, things slow down, friends catch-up, business associates meet and lovers hold hands.
+          </p>
+        </div>
+        <div class="section-frame">
+          <div class="open">
+            <b class="heading"><i class="fa-regular fa-clock fa-spin"></i> Opens daily </b>
+            <div class="subhead">7:00 – 23:00</div>
+          </div>
+        </div>
+        <div class="section-frame">
+          <div class="location">
+            <b class="heading"><i class="fa-solid fa-location-dot fa-bounce"></i> Location: </b>
+            <div class="subhead">Ground Floor</div>
+          </div>
+        </div>
+      </div>
+      <div class="image-section">
+        <div class="service-wrap">
+          <div class="row">
+            <div class="service-frame">
+              <div class="wrapper">
+                <img class="service-img" alt=""
+                  src="../../Image/service/Cafe/view.jpg" />
+              </div>
+            </div>
+            <div class="service-frame">
+              <div class="wrapper">
+                <img class="service-img" alt=""
+                  src="../../Image/service/Cafe/cake.jpg" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="service-frame">
+              <div class="wrapper">
+                <img class="service-img" alt=""
+                  src="../../Image/service/Cafe/pinkcake.jpg" />
+              </div>
+            </div>
+            <div class="service-frame">
+              <div class="wrapper">
+                <img class="service-img" alt=""
+                  src="../../Image/service/Cafe/fruitcake.jpg" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Footer-->
+    <div class="footer">
+      <div class="footer-parent">
+        <div class="footer-frame">
+          <div class="logo-parent">
+            <img class="logo-icon1" src="../Image/logo.png"alt="logo.vn" />
+            <div class="akar-iconsfacebook-fill-parent">
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-x-twitter"></i>
+              <i class="fa-brands fa-youtube"></i>
+            </div>
+          </div>
+          <div class="text-frame">
+            <div class="our-destinations-parent">
+              <b class="helping-others">Our Destinations</b>
+              <div class="canada-parent">
+                <div class="canada">New York</div>
+                <div class="canada">Miami</div>
+                <div class="canada">NJ</div>
+                <div class="canada">Los Angeles</div>
+              </div>
+            </div>
+            <div class="our-destinations-parent">
+              <b class="helping-others">Our Events</b>
+              <div class="canada-parent">
+                <div class="canada"><a href="/Home/Wedding">Wedding</a></div>
+                <div class="canada"><a href="/Home/Meeting">Meeting</a></div>
+                <div class="canada"><a href="/Home/Corporate">Corporate</a></div>
+              </div>
+            </div>
+            <div class="our-destinations-parent">
+              <b class="helping-others">Contact Us</b>
+              <div class="canada-parent">
+                <div class="canada"><i class="fa-solid fa-phone"></i> 0932718399</div>
+                <div class="canada"><i class="fa-solid fa-envelope"></i> oceanht@gm.com</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../../js/StickyHeader.js"></script>
+</body>
+
+</html>

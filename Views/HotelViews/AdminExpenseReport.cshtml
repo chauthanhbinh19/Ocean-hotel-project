@@ -1,0 +1,417 @@
+@model X.PagedList.IPagedList<Expenses>;
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Web.Common;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="~/Image/sea.png" type="image/x-icon">
+    <link rel="stylesheet" href="~/css/Admin.css">
+    <link rel="stylesheet" href="~/css/Button.css">
+    <script src="https://kit.fontawesome.com/d85c1eb16f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/Admin.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-rough"></script>
+    <title>Hotel Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul class="nav-ul">
+                <li>
+                    <a class="btn1">
+                        <span class="icon"><img src="~/Image/svgpng.com/item (118).png" alt="" style="width: 45px;"></span>
+                        <span class="tittle">Ocean Hotel</span>
+                    </a>
+                </li>
+                <li>
+                    <a  class="btn2" href="/DashBoard/AdminDashBoard">
+                        <span class="icon"><i class="fa-solid fa-house"></i></span>
+                        <span class="tittle">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a  class="btn3">
+                        <span class="icon"><i class="fa-solid fa-people-group"></i></span>
+                        <span class="tittle">Booking <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="all-booking-button" href="/Booking/AdminBooking">All Booking</a></li>
+                        <li><a class="edit-booking-button" href="/Booking/AdminEditBooking">Edit Booking</a></li>
+                        <li><a class="add-booking-button" href="/Booking/AdminAddBooking">Add Booking</a></li>
+                        <li><a class="add-booking-button" href="/Booking/AdminBookingDetails">Booking Details</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn4">
+                        <span class="icon"><i class="fas fa-bed"></i></span>
+                        <span class="tittle">Rooms <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="all-room-button" href="/Room/AdminRoom">All Rooms</a></li>
+                        <li><a class="edit-room-button" href="/Room/AdminEditRoom">Edit Room</a></li>
+                        <li><a class="add-room-button" href="/Room/AdminAddRoom">Add Room</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn5">
+                        <span class="icon"><i class="fa-solid fa-user"></i></span>
+                        <span class="tittle">Customers <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="all-customer-button" href="/Customer/AdminCustomer">All Customers</a></li>
+                        <li><a class="edit-customer-button" href="/Customer/AdminEditCustomer">Edit Customer</a></li>
+                        <li><a class="add-customer-button" href="/Customer/AdminAddCustomer">Add Customer</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn6">
+                        <span class="icon"><i class="fa-solid fa-user"></i></span>
+                        <span class="tittle">Employees <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="all-employee-button" href="/Employee/AdminEmployee">All Employees</a></li>
+                        <li><a class="edit-employee-button" href="/Employee/AdminEditEmployee">Edit Employee</a></li>
+                        <li><a class="add-employee-button" href="/Employee/AdminAddEmployee">Add Employee</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn7">
+                        <span class="icon"><i class="fas fa-concierge-bell"></i></span>
+                        <span class="tittle">Services <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="service-button" href="/Service/AdminServices">All Services</a></li>
+                        <li><a class="shuttle-button" href="/Service/AdminShuttle">Shuttle Services</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn16">
+                        <span class="icon"><i class="fa-solid fa-couch"></i></span>
+                        <span class="tittle">Furniture <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="all-furniture-button" href="/Furniture/AdminFurniture">All Furniture</a></li>
+                        <li><a class="edit-furniture-button" href="/Furniture/AdminEditFurniture">Edit Furniture</a></li>
+                        <li><a class="add-furniture-button" href="/Furniture/AdminAddFurniture">Add Furniture</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn8" href="/Promotion/AdminPricing">
+                        <span class="icon"><i class="fa-solid fa-money-bill-wave"></i></span>
+                        <span class="tittle">Pricing</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="btn9">
+                        <span class="icon"><i class="fa-solid fa-clipboard-user"></i></span>
+                        <span class="tittle">Staff <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="leave-button" href="/Employee/AdminLeave">Leave</a></li>
+                        <li><a class="attendance-button" href="/Employee/AdminAttendance">Attandance</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn10">
+                        <span class="icon"><i class="fa-solid fa-van-shuttle"></i></span>
+                        <span class="tittle">Accounting <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="invoice-button" href="/Invoice/AdminInvoice">Invoices</a></li>
+                        <li><a class="payment-button" href="/Payment/AdminPayment">Payments</a></li>
+                        <li><a class="Expenses-button" href="/Expense/AdminExpense">Expenses</a></li>
+                        <li><a class="Taxes-button" href="/Taxes/AdminTaxes">Taxes</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn11">
+                        <span class="icon"><i class="fa-solid fa-book"></i></span>
+                        <span class="tittle">Payroll <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="employee-salary-button" href="/Employee/AdminEmployeeSalary">Employee Salary</a></li>
+                        <li><a class="payslip-button" href="/Employee/AdminPayslip">Payslip</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn12">
+                        <span class="icon"><i class="fas fa-chart-bar"></i></span>
+                        <span class="tittle">Chart <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul">
+                        <li><a class="bar-button" href="/Chart/AdminBarChart">Bar Chart</a></li>
+                        <li><a class="line-button" href="/Chart/AdminLineChart">Line Chart</a></li>
+                        <li><a class="pie-button" href="/Chart/AdminPieChart">Pie Chart</a></li>
+                        <li><a class="donut-button" href="/Chart/AdminDonutChart">Donut Chart</a></li>
+                        <li><a class="mixed-button" href="/Chart/AdminMixedChart">Mixed Chart</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn13 hovered">
+                        <span class="icon"><i class="fa-solid fa-chart-simple"></i></span>
+                        <span class="tittle">Reports <i class="fas fa-caret-right"></i></span>
+                    </a>
+                    <ul class="nav-sub-ul active-li">
+                        <li class="active"><a class="expense-report-button" href="/Expense/AdminExpenseReport">Expense Report</a></li>
+                        <li><a class="invoice-report-button" href="/Invoice/AdminInvoiceReport">Invoice Report</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="btn14">
+                        <span class="icon"><i class="fa-solid fa-gear"></i></span>
+                        <span class="tittle">Setting</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="btn15" asp-action="SignOut1" asp-controller="Login">
+                        <span class="icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
+                        <span class="tittle">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- ==============================main============================ -->
+        <div class="main">
+            <div class="top-bar">
+                <div class="toggle"><i class="fa-solid fa-bars"></i></div>
+                <div class="search">
+                </div>
+                <div id="change-dark-mode">
+                    <i class="fa-solid fa-sun"></i>
+                </div>
+                <div class="user-role-name">
+                    <div class="user">
+                        <img src="~/Image/Avatar/@ViewBag.employee_avatar.img" alt="">
+                    </div>
+                    <div class="role-name">
+                        <span class="user1"style="font-size: 18px;">@ViewBag.employee_avatar.name</span><br>
+                        <span class="user2"style="font-size: 14px;">@ViewBag.employee_avatar.role</span>
+                    </div>
+                </div>
+            </div>
+            <!-- ==============================Card============================== -->
+            <div class="sub-main">
+                <div class="article-11">
+                    <div class="box-tittle-1">
+                        <p>Expense Report</p>
+                        <img src="~/Image/svgpng.com/item (72).png" alt="">
+                    </div>      
+                    <div class="search-box-1">
+                        <form method="post">
+                            <div class="sub-main-bottom-4 sub-bg background_bg2">
+                                <div class="main-col">
+                                    <div><label>Expense Number</label></div>
+                                    <input type="text" name="searchkeyword" id="">
+                                </div>
+                                <div class="main-col">
+                                    <div><label>From</label></div>
+                                    <input type="date" name="searchkeyword1" id="">
+                                </div>
+                                <div class="main-col">
+                                    <span><label>&nbsp;</label></span>
+                                    <button class="button-29" asp-action="AdminSearchExpenseReport" asp-controller="Expense">Search</button>
+                                </div>
+                                <div class="main-col">
+                                    <span><label>&nbsp;</label></span>
+                                    <div><button class="button-29" asp-action="AdminExpenseReport" asp-controller="Expense"><i class="fa-solid fa-rotate-right fa-spin"></i></button></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="invoice-list">
+                        <div class="box-frame-4 active-table all" id="all">
+                            <div class="box-frame4-table">
+                                <div class="box-container-3">
+                                    <table>
+                                        <thead class="thead-row">
+                                            <tr>
+                                                <th class="th-row sorting" style="min-width: 70px; max-width: 70px;">
+                                                    <div class="input">
+                                                        <div class="table-ttile">
+                                                            <input type="checkbox" name="" id="">
+                                                        </div>
+                                                        <div class="chevron">
+                                                            <div class="up"><a href="@Url.Action("AdminSortExpenseReport", "Expense", new { id = "id_asc" })"><i class="fas fa-caret-up"></i></a></div>
+                                                            <div class="down"><a href="@Url.Action("AdminSortExpenseReport", "Expense", new { id = "id_desc" })"><i class="fas fa-caret-down"></i></a></div>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class="th-row sorting" style="min-width: 100px; max-width: 100px;">
+                                                    <div class="input">
+                                                        <div class="table-ttile">
+                                                            Expense Number
+                                                        </div>
+                                                        <div class="chevron">
+                                                            <div class="up"><a href="@Url.Action("AdminSortExpenseReport", "Expense", new { id = "number_asc" })"><i class="fas fa-caret-up"></i></a></div>
+                                                            <div class="down"><a href="@Url.Action("AdminSortExpenseReport", "Expense", new { id = "number_desc" })"><i class="fas fa-caret-down"></i></a></div>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class="th-row sorting" style="min-width: 150px; max-width: 150px;">
+                                                    <div class="input">
+                                                        <div class="table-ttile">
+                                                            Item
+                                                        </div>
+                                                        <div class="chevron">
+                                                            <div class="up"><a href="@Url.Action("AdminSortExpenseReport", "Expense", new { id = "item_asc" })"><i class="fas fa-caret-up"></i></a></div>
+                                                            <div class="down"><a href="@Url.Action("AdminSortExpenseReport", "Expense", new { id = "item_desc" })"><i class="fas fa-caret-down"></i></a></div>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class="th-row sorting" style="min-width: 150px; max-width: 150px;">
+                                                    <div class="input">
+                                                        <div class="table-ttile">
+                                                            Number Of Item
+                                                        </div>
+                                                        <div class="chevron">
+                                                            <div class="up"><a href="@Url.Action("AdminSortExpenseReport", "Expense", new { id = "quantity_asc" })"><i class="fas fa-caret-up"></i></a></div>
+                                                            <div class="down"><a href="@Url.Action("AdminSortExpenseReport", "Expense", new { id = "quantity_desc" })"><i class="fas fa-caret-down"></i></a></div>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class="th-row sorting" style="min-width: 150px; max-width: 150px;">
+                                                    <div class="input">
+                                                        <div class="table-ttile">
+                                                            Employee Name
+                                                        </div>
+                                                        <div class="chevron">
+                                                            <div class="up"><a href="@Url.Action("AdminSortExpenseReport", "Expense", new { id = "employeename_asc" })"><i class="fas fa-caret-up"></i></a></div>
+                                                            <div class="down"><a href="@Url.Action("AdminSortExpenseReport", "Expense", new { id = "employeename_desc" })"><i class="fas fa-caret-down"></i></a></div>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class="th-row sorting" style="min-width: 150px; max-width: 150px;">
+                                                    <div class="input">
+                                                        <div class="table-ttile">
+                                                            Furchase From
+                                                        </div>
+                                                        <div class="chevron">
+                                                            <div class="up"><a href="@Url.Action("AdminSortExpenseReport", "Expense", new { id = "purchasefrom_asc" })"><i class="fas fa-caret-up"></i></a></div>
+                                                            <div class="down"><a href="@Url.Action("AdminSortExpenseReport", "Expense", new { id = "purchasefrom_desc" })"><i class="fas fa-caret-down"></i></a></div>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class="th-row sorting" style="min-width: 150px; max-width: 150px;">
+                                                    <div class="input">
+                                                        <div class="table-ttile">
+                                                            Furchase Date
+                                                        </div>
+                                                        <div class="chevron">
+                                                            <div class="up"><a href="@Url.Action("AdminSortExpenseReport", "Expense", new { id = "purchaseat_asc" })"><i class="fas fa-caret-up"></i></a></div>
+                                                            <div class="down"><a href="@Url.Action("AdminSortExpenseReport", "Expense", new { id = "purchaseat_desc" })"><i class="fas fa-caret-down"></i></a></div>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class="th-row sorting" style="min-width: 130px; max-width: 130px;">
+                                                    <div class="input">
+                                                        <div class="table-ttile">
+                                                            Total
+                                                        </div>
+                                                        <div class="chevron">
+                                                            <div class="up"><a href="@Url.Action("AdminSortExpenseReport", "Expense", new { id = "total_asc" })"><i class="fas fa-caret-up"></i></a></div>
+                                                            <div class="down"><a href="@Url.Action("AdminSortExpenseReport", "Expense", new { id = "total_desc" })"><i class="fas fa-caret-down"></i></a></div>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class="th-row sorting" style="min-width: 50px; max-width: 50px;">
+                                                    <div class="input">
+                                                        <div>Action
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach(var expense in ViewBag.expense_report_list){
+                                                <tr class="leave-info">
+                                                <td class="checkbox-col">
+                                                    <div class="checkbox-table"><input type="checkbox" name="" id=""></div>
+                                                </td>
+                                                <td class="id-col">
+                                                    <div class="id">@expense.expenses_number</div>
+                                                </td>
+                                                <td class="employee-col">
+                                                    <div class="name">@expense.furniture_name</div>
+                                                </td>
+                                                <td class="createddate-col">
+                                                    <div class="gender">@expense.number</div>
+                                                </td>
+                                                <td class="createddate-col">
+                                                    <div class="gender">@expense.employee_name</div>
+                                                </td>
+                                                <td class="đueate-col">
+                                                    <div class="gender">@expense.purchase_from</div>
+                                                </td>
+                                                <td class="roomtype-col">
+                                                    <div class="dateofbirth">@expense.purchase_at</div>
+                                                </td>
+                                                <td class="total-col">
+                                                    <div class="phonenumber">$ @expense.total_amount</div>
+                                                </td>
+                                                <td class="edit-col">
+                                                    <div class="edit"><span class="btn-change"><i class="fa-solid fa-print"></i> @Html.ActionLink("Print", "PrintExpense", "Expense", new{id=@expense.id})</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="bottom-table">
+                                <div class="bottom-text">Showing 1 to 10 of entries</div>
+                                <div class="bottom-button">
+                                    @if(ViewBag.searchResult ==1){
+                                        @Html.PagedListPager(Model, page =>Url.Action("AdminSearchExpenseReport", "Expense", new {page =page}),
+                                        new PagedListRenderOptions{
+                                            MaximumPageNumbersToDisplay=3,
+                                            PreviousElementClass="previous-button horizontal-paging",
+                                            LinkToPreviousPageFormat="<< Previous",
+                                            NextElementClass="next-button horizontal-paging",
+                                            LinkToNextPageFormat="Next >>",
+                                            UlElementClasses= new[] {"horizontal-paging","bottom-number"},
+                                            LinkToLastPageFormat="Last Page",
+                                            LinkToFirstPageFormat="First Page",
+                                            LiElementClasses=new [] {"page-link"},
+                                        })
+                                    }else if(ViewBag.searchResult ==2){
+                                        @Html.PagedListPager(Model, page =>Url.Action("AdminSortExpenseReport", "Expense", new {page =page}),
+                                        new PagedListRenderOptions{
+                                            MaximumPageNumbersToDisplay=3,
+                                            PreviousElementClass="previous-button horizontal-paging",
+                                            LinkToPreviousPageFormat="<< Previous",
+                                            NextElementClass="next-button horizontal-paging",
+                                            LinkToNextPageFormat="Next >>",
+                                            UlElementClasses= new[] {"horizontal-paging","bottom-number"},
+                                            LinkToLastPageFormat="Last Page",
+                                            LinkToFirstPageFormat="First Page",
+                                            LiElementClasses=new [] {"page-link"},
+                                        })
+                                    }else{
+                                        @Html.PagedListPager(Model, page =>Url.Action("AdminExpenseReport", "Expense", new {page =page}),
+                                        new PagedListRenderOptions{
+                                            MaximumPageNumbersToDisplay=3,
+                                            PreviousElementClass="previous-button horizontal-paging",
+                                            LinkToPreviousPageFormat="<< Previous",
+                                            NextElementClass="next-button horizontal-paging",
+                                            LinkToNextPageFormat="Next >>",
+                                            UlElementClasses= new[] {"horizontal-paging","bottom-number"},
+                                            LinkToLastPageFormat="Last Page",
+                                            LinkToFirstPageFormat="First Page",
+                                            LiElementClasses=new [] {"page-link"},
+                                        })
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

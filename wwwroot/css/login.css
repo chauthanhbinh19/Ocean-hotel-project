@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins",sans-serif;
+}
+.field-validation-error {
+    color: red;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background: black;
+}
+.background{
+    background: url(../Image/Mikael\ Gustafsson_upscayl_4x_realesrgan-x4plus\ \(1\).png) no-repeat;
+    /* background: url(../Image/BackgroundImg/BackGroundImage/cbc59e81176141.5cf75b90de674-removebg-preview.png) no-repeat; */
+    background-position: center;
+    background-size:cover ;
+    height: 100vh;
+    width: 100%;
+    filter: blur(10px);
+}
+/* Header */
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 13%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+
+}
+.navbar a{
+    position: relative;
+    font-size: 16px;
+    color: #fff;
+    margin-right: 30px;
+    text-decoration: none;
+}
+.navbar a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    bottom: -5px;
+    border-radius: 5px;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: .5s ease;
+}
+.navbar a:hover:after{
+    transform: translateY(0);
+    opacity: 1;
+}
+/* Container */
+.container{
+    position: relative;
+    left: 13%;
+    top: -50%;
+    width: 75%;
+    height: 550px;
+    margin-top: 20px;
+    /* background: url(../Image/background.jpg) no-repeat; */
+    background: url(../Image/image_processing20210911-14293-6ovits.gif) no-repeat;
+    background-position: center;
+    background-size:cover;
+    transform: translate(0%,-50%);
+    border-radius: 20px;
+    overflow:hidden;
+}
+.container::before{
+    content:"";
+    position:absolute;
+    top:0;
+    width:100%;
+    height:100%;
+    /* background: url(../Image/background.jpg) no-repeat; */
+    background: url(https://cdn.dribbble.com/users/5031/screenshots/4857393/media/233f9fdb02b261512ed032c5ee196016.gif) no-repeat;
+    /* background-image:linear-gradient(90deg, rgba(19, 19, 20, 0.1) 30%, rgba(14,146,255,-0.1) 45%,rgba(14,146,255,0.2) 100%),url(background.jpg); */
+    background-position: center;
+    background-size:cover;
+    z-index: 6;
+    left:-50%;
+    transform: translateX(100%);
+    transition: 1s ease-in-out;
+}
+ .panels-container{
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    display:flex;
+    align-items:center;
+    justify-content: space-around;
+}
+.panel{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width:35%;
+    padding: 0 10px;
+    text-align: center;
+    z-index: 6;
+    transition:1.1s ease-in-out;
+    transition-delay: 0.2s;
+} 
+
+.panel h3{
+    font-size: 30px;
+    font-weight: 600;
+}
+.panel p{
+    font-size: 18px;
+    padding: 10px 0;
+}
+/* Signin - Signup Form*/
+.signin-signup{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    backdrop-filter: blur(10px);
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 5;
+}
+
+form{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width:40%;
+    padding: 0 10px;
+}
+.signin-signup .form-box h2{
+    font-size: 25px;
+}
+.form-box .input-box{
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #7474BF;
+    margin: 10px 0;
+    position: relative;
+    display:flex;
+}
+.input-box .icon{
+    position: absolute;
+    top: 13px;
+    right: 0;
+    font-size: 19px;
+}
+.input-box input{
+    color:inherit;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding-right: 28px;
+    caret-color:#134366;
+}
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    font-weight: 600px;
+    pointer-events: none;
+    transition: .5s ease;
+}
+.sign-up{
+    /* color:#348AC7; */
+    color:white;
+}
+.input-box input:focus~ label,
+.input-box input:valid~ label{
+    top: -5px;
+    background: transparent !important;
+}
+.remember-password{
+    font-size: 14px;
+    font-weight: 500;
+    margin: 15px 0 15px ;
+    display: flex;
+    justify-content: space-between;
+}
+.remember-password label input{
+    accent-color: #fff;
+    margin-right: 3px;
+
+}
+.remember-password a{
+    color: #fff;
+    text-decoration: none;
+    margin-left:100px;
+}
+.remember-password a:hover{
+    text-decoration: underline;
+}
+/* Style button*/
+.btn {
+    background-image: linear-gradient(to right, #7474BF 0%, #348AC7  51%, #7474BF  100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    border-radius: 10px;
+    display: block;
+    width: 80%;
+    height: 45px;
+    border:none;
+    cursor:pointer;
+  }
+
+  .btn:hover {
+    background-position: right center; 
+    color: #fff;
+    text-decoration: none;
+  }
+  .btn-ex {
+    background-image: linear-gradient(to right, #7474BF 0%, #348AC7  51%, #7474BF  100%);
+    margin: 10px 70px;
+    padding: 12px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    border-radius: 10px;
+    display: block;
+    width: 48%;
+    height: 45px;
+    border:none;
+    cursor:pointer;
+  }
+
+  .btn-ex:hover {
+    background-position: right center; 
+    color: #fff;
+    text-decoration: none;
+  }
+/* Panel */
+.panel-left{
+    transform:translateX(-200%);
+}
+.panel-right{
+    transform:translateX(0);
+    color: navy;
+}
+.content{
+    @supports (background-clip: text) or (-webkit-background-clip: text) {
+        background-image: 
+          url("../Image/17.jpg");
+        background-size: 110% auto;
+        background-position: center;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+      }
+}
+
+/*Animation*/
+.container.sign-up-mode::before{
+    transform:translateX(0);
+}
+.container.sign-up-mode .panel-right{
+    transform:translateX(200%);
+}
+.container.sign-up-mode .panel-left{
+    transform:translateX(0);
+}
+input {
+    border: 3px solid grey;
+    border-radius: 3px;
+  }
+  
+  /* input:-webkit-autofill {
+    background:transparent;
+  }
+  input:autofill {
+    background: transparent !important;
+  }
+   */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 0s 600000s, color 0s 600000s;
+
+}

@@ -1,0 +1,22 @@
+
+@* @{
+    var name=ViewBag.name;
+}
+<h1>Customer List</h1>
+@Html.ValidationMessage("name",new {style="color:red"})
+<h1>@ViewBag.name</h1> *@
+@* <table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+    </tr>
+    @foreach (var customer in Model)
+    {
+        <tr>
+            <td>@customer.id</td>
+            <td>@customer.name</td>
+            <td>@customer.email</td>
+        </tr>
+    }
+</table> *@
